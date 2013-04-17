@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:18:12 $ $Revision: 1.12 $ -->
+    <interface name="HTMLBaseElement" inherits="HTMLElement" id="ID-73629039">
+	<descr><p>Document base URI. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#edef-BASE">BASE element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="href" id="ID-65382887">
+          <descr><p>The base URI See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-href-BASE">href attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="target" id="ID-73844298">
+          <descr><p>The default target frame. See the <loc href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

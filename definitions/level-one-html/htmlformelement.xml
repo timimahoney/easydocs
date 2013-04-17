@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:19:51 $ $Revision: 1.13 $ -->
+    <interface name="HTMLFormElement" inherits="HTMLElement" id="ID-40002357">
+	<descr><p>The <code>FORM</code> element encompasses behavior similar to a
+collection and an element. It provides direct access to the contained
+input elements as well as the attributes of the form element. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-FORM">FORM element definition</loc> in HTML 4.0.</p></descr>
+       <attribute readonly="yes" type="HTMLCollection" name="elements" id="ID-76728479">
+          <descr><p>Returns a collection of all control elements in the form.
+ </p></descr>
+       </attribute>
+       <attribute readonly="yes" type="long" name="length">
+          <descr><p>The number of form controls in the form.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="name" id="ID-22051454">
+          <descr><p>Names the form. </p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="acceptCharset" id="ID-19661795">
+          <descr><p>List of character sets supported by the server. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-accept-charset">accept-charset attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="action" id="ID-74049184">
+          <descr><p>Server-side form handler. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-action">action attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="enctype" id="ID-84227810">
+          <descr><p>The content type of the submitted form, 
+generally "application/x-www-form-urlencoded".  See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-enctype">enctype attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="method" id="ID-82545539">
+          <descr><p>HTTP method used to submit form. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-method">method attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="target" id="ID-6512890">
+          <descr><p>Frame to render the resource in. See the <loc href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <method name="submit" id="ID-76767676">
+         <descr><p>Submits the form. It performs the same action as a 
+           submit button.</p></descr>
+         <parameters>
+	 <!-- No parameters -->
+         </parameters>
+         <returns type="void">
+         <descr><p></p></descr>
+         </returns>
+         <raises>
+         <!-- No exceptions -->
+         </raises>
+       </method>
+
+       <method name="reset" id="ID-76767677">
+         <descr><p>Restores a form element's default values. It performs 
+            the same action as a reset button.</p></descr>
+         <parameters>
+	 <!-- No parameters -->
+         </parameters>
+         <returns type="void">
+         <descr><p></p></descr>
+         </returns>
+         <raises>
+         <!-- No exceptions -->
+         </raises>
+       </method>
+</interface>

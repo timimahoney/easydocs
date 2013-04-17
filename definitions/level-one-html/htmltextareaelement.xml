@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/10/01 09:02:30 $ $Revision: 1.13 $ -->
+    <interface name="HTMLTextAreaElement" inherits="HTMLElement" id="ID-24874179">
+	<descr><p>Multi-line text field. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-TEXTAREA">TEXTAREA element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="defaultValue" id="ID-36152213">
+          <descr><p>Stores the initial control value (i.e., the initial value of
+<code>value</code>). </p></descr>
+       </attribute>
+       <attribute readonly="yes" type="HTMLFormElement" name="form" id="ID-18911464">
+          <descr><p>Returns the <code>FORM</code> element containing this control.
+Returns null if this control is not within the context of a form.  </p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="accessKey" id="ID-93102991">
+          <descr><p>A single character access key to give access to the form control. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-accesskey">accesskey attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="cols" id="ID-51387225">
+          <descr><p>Width of control (in characters). See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-cols-TEXTAREA">cols attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="disabled" id="ID-98725443">
+          <descr><p>The control is unavailable in this context. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-disabled">disabled attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="name" id="ID-70715578">
+          <descr><p>Form control or object name when submitted with a form. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-name-TEXTAREA">name attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="readOnly" id="ID-39131423">
+          <descr><p>This control is read-only. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-readonly">readonly attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="rows" id="ID-46975887">
+          <descr><p>Number of text rows. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-rows-TEXTAREA">rows attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="tabIndex" id="ID-60363303">
+          <descr><p>Index that represents the element's position in the tabbing order. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-tabindex">tabindex attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+      <attribute readonly="yes" type="DOMString" name="type">
+         <descr><p>The type of this form control. </p></descr>
+      </attribute>
+       <attribute  type="DOMString" name="value" id="ID-70715579">
+          <descr><p>The current textual content of the multi-line text
+          field. If the entirety of the data can not fit into a single wstring,
+          the implementation may truncate the data.</p></descr>
+       </attribute>
+       <method name="blur" id="ID-6750689">
+          <descr><p>Removes keyboard focus from this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="focus" id="ID-39055426">
+          <descr><p>Gives keyboard focus to this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="select" id="ID-48880622">
+          <descr><p>Select the contents of the <code>TEXTAREA</code>.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+</interface>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:18:46 $ $Revision: 1.12 $ -->
+    <interface name="HTMLBRElement" inherits="HTMLElement" id="ID-56836063">
+	<descr><p>Force a line break. See the <loc href="http://www.w3.org/TR/REC-html40/struct/text.html#edef-BR">BR element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="clear" id="ID-82703081">
+          <descr><p>Control flow of text around floats. See the <loc href="http://www.w3.org/TR/REC-html40/present/graphics.html#adef-clear">clear attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

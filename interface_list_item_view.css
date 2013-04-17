@@ -1,0 +1,13 @@
+.interface-list-item-view p {
+  display: block;
+  margin: 1em 0;
+  line-height: 1.5em;
+}
+
+.interface-list-item-view code {
+  font-family: monospace;
+}
+
+.interface-list-item-view .owner {
+  color: #888;
+}

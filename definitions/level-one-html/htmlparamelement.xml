@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:23:07 $ $Revision: 1.10 $ -->
+    <interface name="HTMLParamElement" inherits="HTMLElement" id="ID-64077273">
+	<descr><p>Parameters fed to the <code>OBJECT</code> element. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#edef-PARAM">PARAM element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="name" id="ID-59871447">
+          <descr><p>The name of a run-time parameter. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-name-PARAM">name attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="type" id="ID-18179888">
+          <descr><p>Content type for the <code>value</code> attribute when
+<code>valuetype</code> has the value "ref". See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-type-PARAM">type attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="value" id="ID-77971357">
+          <descr><p>The value of a run-time parameter. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-value-PARAM">value attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="valueType" id="ID-23931872">
+          <descr><p>Information about the meaning of the <code>value</code> attribute
+value. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-valuetype">valuetype attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

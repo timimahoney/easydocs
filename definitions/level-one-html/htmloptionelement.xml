@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:22:52 $ $Revision: 1.12 $ -->
+    <interface name="HTMLOptionElement" inherits="HTMLElement" id="ID-70901257">
+	<descr><p>A selectable choice. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-OPTION">OPTION element definition</loc> in HTML 4.0.</p></descr>
+       <attribute readonly="yes" type="HTMLFormElement" name="form" id="ID-17116503">
+          <descr><p>Returns the <code>FORM</code> element containing this control.
+Returns null if this control is not within the context of a form.  </p></descr>
+       </attribute>
+       <attribute  type="boolean" name="defaultSelected" id="ID-37770574">
+          <descr><p>Stores the initial value of the <code>selected</code> attribute. </p></descr>
+       </attribute>
+       <attribute readonly="yes" type="DOMString" name="text" id="ID-48154426">
+          <descr><p>The text contained within the option element.  </p></descr>
+       </attribute>
+       <attribute  type="long" name="index" id="ID-14038413">
+          <descr><p>The index of this <code>OPTION</code> in its parent <code>SELECT</code>.  </p></descr>
+       </attribute>
+       <attribute  type="boolean" name="disabled" id="ID-23482473">
+          <descr><p>The control is unavailable in this context. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-disabled">disabled attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="label" id="ID-40736115">
+          <descr><p>Option label for use in hierarchical menus. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-label-OPTION">label attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute readonly="yes" type="boolean" name="selected" id="ID-70874476">
+          <descr><p>Means that this option is initially selected. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-selected">selected attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="value" id="ID-6185554">
+          <descr><p>The current form control value. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-value-OPTION">value attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

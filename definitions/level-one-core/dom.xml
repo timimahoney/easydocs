@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--[ DOMImplementation object description ]-->    
+<!-- $Date: 1998/09/11 08:57:40 $ $Revision: 1.16 $ -->
+<interface name="DOMImplementation" id="ID-102161490">
+  <descr><p>The <code>DOMImplementation</code> interface provides a
+      number of methods for performing operations that are independent
+      of any particular instance of the document object model. </p>
+    <p>The DOM Level 1 does not specify a way of creating a
+      document instance, and hence document creation is an operation
+      specific to an implementation. Future Levels of the DOM specification
+      are expected to provide methods for creating documents directly.</p>
+  </descr>
+  <method name="hasFeature" id="ID-5CED94D7">
+	  <descr><p>Test if the DOM implementation implements a
+	   specific feature.</p></descr> 
+    <parameters>
+      <param name="feature" type="DOMString" attr="in">
+	<descr><p>The package name of the feature to
+	    test. In Level 1, the legal values are "HTML" and
+	"XML" (case-insensitive).</p></descr></param>
+      <param name="version" type="DOMString" attr="in">
+	<descr><p>This is the version number of the package name to
+	test.  In Level 1, this is the string "1.0".
+	If the version is not specified, supporting any version of the 
+        feature will cause the method to return <code>true</code>.
+	</p></descr></param>
+    </parameters>
+    <returns type="boolean">
+      <descr><p><code>true</code> if the feature is implemented in the specified
+	version, <code>false</code> otherwise.</p></descr>
+    </returns>
+    <raises>
+      <!-- Throws no exceptions -->
+    </raises>
+  </method>
+</interface>

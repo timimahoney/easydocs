@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:20:10 $ $Revision: 1.12 $ -->
+    <interface name="HTMLFrameSetElement" inherits="HTMLElement" id="ID-43829095">
+	<descr><p>Create a grid of frames. See the <loc href="http://www.w3.org/TR/REC-html40/present/frames.html#edef-FRAMESET">FRAMESET element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="cols" id="ID-98869594">
+          <descr><p>The number of columns of frames in the frameset. See the <loc href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-cols-FRAMESET">cols attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="rows" id="ID-19739247">
+          <descr><p>The number of rows of frames in the frameset. See the <loc href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-rows-FRAMESET">rows attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

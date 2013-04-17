@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/09/08 08:18:43 $ $Revision: 1.13 $ -->
+    <interface name="HTMLSelectElement" inherits="HTMLElement" id="ID-94282980">
+	<descr><p>The select element allows the selection of an option. The contained
+options can be directly accessed through the select element as a
+collection. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-SELECT">SELECT element definition</loc> in HTML 4.0.</p></descr>
+       <attribute readonly="yes" type="DOMString" name="type" id="ID-58783172">
+          <descr><p>The type of control created. </p></descr>
+       </attribute>
+       <attribute  type="long" name="selectedIndex" id="ID-85676760">
+          <descr><p>The ordinal index of the selected option. The value -1 is returned if
+no element is selected. If multiple options are selected, the index of
+the first selected option is returned. </p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="value" id="ID-59351919">
+          <descr><p>The current form control value. </p></descr>
+       </attribute>
+       <attribute readonly="yes" type="long" name="length" id="ID-5933486">
+          <descr><p>The number of options in this <code>SELECT</code>. </p></descr>
+       </attribute>
+       <attribute readonly="yes" type="HTMLFormElement" name="form" id="ID-20489458">
+          <descr><p>Returns the <code>FORM</code> element containing this control.
+Returns null if this control is not within the context of a form.  </p></descr>
+       </attribute>
+       <attribute  readonly="yes" type="HTMLCollection" name="options" id="ID-30606413">
+          <descr><p>The collection of <code>OPTION</code> elements contained by this element. </p></descr>
+       </attribute>
+       <attribute  type="boolean" name="disabled" id="ID-79102918">
+          <descr><p>The control is unavailable in this context. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-disabled">disabled attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="multiple" id="ID-13246613">
+          <descr><p>If true, multiple <code>OPTION</code> elements may 
+be selected in this <code>SELECT</code>. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-multiple">multiple attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="name" id="ID-41636323">
+          <descr><p>Form control or object name when submitted with a form. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-name-SELECT">name attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="size" id="ID-18293826">
+          <descr><p>Number of visible rows. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-size-SELECT">size attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="tabIndex" id="ID-40676705">
+          <descr><p>Index that represents the element's position in the tabbing order. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-tabindex">tabindex attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <method name="add" id="ID-14493106">
+          <descr><p>Add a new element to the collection of <code>OPTION</code> elements
+for this <code>SELECT</code>.</p></descr>
+          <parameters>
+	  
+<param id="ID-43168006" name="element" type="HTMLElement" attr="in">
+<descr><p>The element to add.</p></descr>
+</param>
+<param id="ID-76828919" name="before" type="HTMLElement" attr="in">
+<descr><p>The element to insert before, or NULL for the head of the list.</p></descr>
+</param>
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="remove" id="ID-33404570">
+          <descr><p>Remove an element from the collection of <code>OPTION</code> elements
+for this <code>SELECT</code>. Does nothing if no element has the given
+index.</p></descr>
+          <parameters>
+	  
+<param id="ID-36270997" name="index" type="long" attr="in">
+<descr><p>The index of the item to remove.</p></descr>
+</param>
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="blur" id="ID-28216144">
+          <descr><p>Removes keyboard focus from this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="focus" id="ID-32130014">
+          <descr><p>Gives keyboard focus to this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+</interface>

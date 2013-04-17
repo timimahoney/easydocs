@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:22:26 $ $Revision: 1.12 $ -->
+    <interface name="HTMLObjectElement" inherits="HTMLElement" id="ID-9893177">
+	<descr><p>Generic embedded object. <emph>Note.</emph> In principle, all
+properties on the object element are read-write but in some
+environments some properties may be read-only once the underlying
+object is instantiated. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#edef-OBJECT">OBJECT element definition</loc> in HTML 4.0.</p></descr>
+       <attribute readonly="yes" type="HTMLFormElement" name="form" id="ID-46094773">
+          <descr><p>Returns the <code>FORM</code> element containing this control.
+Returns null if this control is not within the context of a form.  </p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="code" id="ID-75241146">
+          <descr><p>Applet class file. See the <code>code</code> attribute for
+HTMLAppletElement. </p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="align" id="ID-16962097">
+          <descr><p>Aligns this object (vertically or horizontally) 
+with respect to its surrounding text. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-align-IMG">align attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="archive" id="ID-47783837">
+          <descr><p>Space-separated list of archives. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-archive-OBJECT">archive attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="border" id="ID-82818419">
+          <descr><p>Width of border around the object. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-border">border attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="codeBase" id="ID-25709136">
+          <descr><p>Base URI for <code>classid</code>, <code>data</code>, and
+<code>archive</code> attributes. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-codebase-OBJECT">codebase attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="codeType" id="ID-19945008">
+          <descr><p>Content type for data downloaded via <code>classid</code> attribute. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-codetype">codetype attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="data" id="ID-81766986">
+          <descr><p>A URI specifying the location of the object's data.  See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-data">data attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="declare" id="ID-942770">
+          <descr><p>Declare (for future reference), but do not instantiate, this
+object. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-declare">declare attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="height" id="ID-88925838">
+          <descr><p>Override height. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-height-IMG">height attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="hspace" id="ID-17085376">
+          <descr><p>Horizontal space to the left and right of this image, applet, or object. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-hspace">hspace attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="name" id="ID-20110362">
+          <descr><p>Form control or object name when submitted with a form. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-name-INPUT">name attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="standby" id="ID-25039673">
+          <descr><p>Message to render while loading the object. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-standby">standby attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="tabIndex" id="ID-27083787">
+          <descr><p>Index that represents the element's position in the tabbing order. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-tabindex">tabindex attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="type" id="ID-91665621">
+          <descr><p>Content type for data downloaded via <code>data</code> attribute. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-type-OBJECT">type attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="useMap" id="ID-6649772">
+          <descr><p>Use client-side image map. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-usemap">usemap attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="vspace" id="ID-8682483">
+          <descr><p>Vertical space above and below this image, applet, or object. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-vspace">vspace attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="width" id="ID-38538620">
+          <descr><p>Override width. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-width-IMG">width attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

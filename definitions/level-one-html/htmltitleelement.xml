@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:25:02 $ $Revision: 1.12 $ -->
+    <interface name="HTMLTitleElement" inherits="HTMLElement" id="ID-79243169">
+	<descr><p>The document title. See the <loc href="http://www.w3.org/TR/REC-html40/struct/global.html#edef-TITLE">TITLE element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="text" id="ID-77500413">
+          <descr><p>The specified title as a string. </p></descr>
+       </attribute>
+</interface>

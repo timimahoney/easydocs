@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 09:41:23 $ $Revision: 1.9 $ -->
+    <interface name="HTMLFieldSetElement" inherits="HTMLElement" id="ID-7365882">
+	<descr><p>Organizes form controls into logical groups. See the 
+           <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-FIELDSET">FIELDSET 
+           element definition</loc> in HTML 4.0.</p></descr>
+       <attribute readonly="yes" type="HTMLFormElement" name="form" id="ID-75392630">
+          <descr><p>Returns the <code>FORM</code> element containing this control.
+Returns null if this control is not within the context of a form.  </p></descr>
+       </attribute>
+</interface>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:22:45 $ $Revision: 1.10 $ -->
+    <interface name="HTMLOptGroupElement" inherits="HTMLElement" id="ID-38450247">
+	<descr><p>Group options together in logical subdivisions. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-OPTGROUP">OPTGROUP element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="boolean" name="disabled" id="ID-15518803">
+          <descr><p>The control is unavailable in this context. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-disabled">disabled attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="label" id="ID-95806054">
+          <descr><p>Assigns a label to this option group. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-label-OPTGROUP">label attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:18:54 $ $Revision: 1.12 $ -->
+    <interface name="HTMLButtonElement" inherits="HTMLElement" id="ID-34812697">
+	<descr><p>Push button. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-BUTTON">BUTTON element definition</loc> in HTML 4.0.</p></descr>
+       <attribute readonly="yes" type="HTMLFormElement" name="form" id="ID-71254493">
+          <descr><p>Returns the <code>FORM</code> element containing this control.
+Returns null if this control is not within the context of a form.  </p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="accessKey" id="ID-73169431">
+          <descr><p>A single character access key to give access to the form control. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-accesskey">accesskey attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="disabled" id="ID-92757155">
+          <descr><p>The control is unavailable in this context. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-disabled">disabled attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="name" id="ID-11029910">
+          <descr><p>Form control or object name when submitted with a form. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-name-BUTTON">name attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="tabIndex" id="ID-39190908">
+          <descr><p>Index that represents the element's position in the tabbing order. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-tabindex">tabindex attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute readonly="yes" type="DOMString" name="type" id="ID-27430092">
+          <descr><p>The type of button.
+ See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-type-BUTTON">type attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="value" id="ID-72856782">
+          <descr><p>The current form control value. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-value-BUTTON">value attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

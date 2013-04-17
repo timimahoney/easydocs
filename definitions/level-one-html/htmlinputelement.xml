@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:21:12 $ $Revision: 1.12 $ -->
+    <interface name="HTMLInputElement" inherits="HTMLElement" id="ID-6043025">
+	<descr><p>Form control. <emph>Note.</emph> Depending upon the environment
+the page is being viewed, the value property may be read-only for the
+file upload input type. For the "password" input type, the actual value
+returned may be masked to prevent unauthorized use. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#edef-INPUT">INPUT element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="defaultValue" id="ID-26091157">
+          <descr><p>Stores the initial control value (i.e., the initial value of
+<code>value</code>). </p></descr>
+       </attribute>
+       <attribute  type="boolean" name="defaultChecked" id="ID-20509171">
+          <descr><p>When <code>type</code> has the value "Radio" or "Checkbox", 
+stores the initial value of the <code>checked</code> attribute. </p></descr>
+       </attribute>
+       <attribute readonly="yes" type="HTMLFormElement" name="form" id="ID-63239895">
+          <descr><p>Returns the <code>FORM</code> element containing this control.
+Returns null if this control is not within the context of a form.  </p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="accept" id="ID-15328520">
+          <descr><p>A comma-separated list of content types that a server processing this
+form will handle correctly. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-accept">accept attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="accessKey" id="ID-59914154">
+          <descr><p>A single character access key to give access to the form control. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-accesskey">accesskey attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="align" id="ID-96991182">
+          <descr><p>Aligns this object (vertically or horizontally) 
+with respect to its surrounding text. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-align-IMG">align attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="alt" id="ID-92701314">
+          <descr><p>Alternate text for user agents not rendering the normal content
+of this element. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-alt">alt attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="checked" id="ID-30233917">
+          <descr><p>Describes whether a radio or check box is checked, when
+<code>type</code> has the value "Radio" or "Checkbox".  The value is
+TRUE if explicitly set. Represents the current state of the checkbox
+or radio button. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-checked">checked attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="disabled" id="ID-50886781">
+          <descr><p>The control is unavailable in this context. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-disabled">disabled attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="maxLength" id="ID-54719353">
+          <descr><p>Maximum number of characters for text fields, when <code>type</code>
+has the value "Text" or "Password". See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-maxlength">maxlength attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="name" id="ID-89658498">
+          <descr><p>Form control or object name when submitted with a form. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-name-INPUT">name attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="boolean" name="readOnly" id="ID-88461592">
+          <descr><p>This control is read-only. When <code>type</code> has the value "text"
+or "password" only. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-readonly">readonly attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="size" id="ID-79659438">
+          <descr><p>Size information. The precise meaning is specific to each type of
+field. 
+ See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-size-INPUT">size attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="src" id="ID-97320704">
+          <descr><p>When the <code>type</code> attribute has the value "Image", this
+attribute specifies the location of the image to be used to decorate
+the graphical submit button. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-src">src attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="tabIndex" id="ID-62176355">
+          <descr><p>Index that represents the element's position in the tabbing order. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-tabindex">tabindex attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute readonly="yes" type="DOMString" name="type" id="ID-62883744">
+          <descr><p>The type of control created. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-type-INPUT">type attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="useMap" id="ID-32463706">
+          <descr><p>Use client-side image map. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-usemap">usemap attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="value" id="ID-49531485">
+          <descr><p>The current form control value. Used for radio buttons and check boxes. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-value-INPUT">value attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <method name="blur" id="ID-26838235">
+          <descr><p>Removes keyboard focus from this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="focus" id="ID-65996295">
+          <descr><p>Gives keyboard focus to this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="select" id="ID-34677168">
+          <descr><p>Select the contents of the text area. For <code>INPUT</code> elements
+whose <code>type</code> attribute has one of the following values:
+"Text", "File", or "Password".</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="click" id="ID-2651361">
+          <descr><p>Simulate a mouse-click. For <code>INPUT</code> elements whose
+<code>type</code> attribute has one of the following
+values: "Button", "Checkbox", "Radio", "Reset", or "Submit".</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+</interface>

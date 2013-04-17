@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:23:15 $ $Revision: 1.12 $ -->
+    <interface name="HTMLQuoteElement" inherits="HTMLElement" id="ID-70319763">
+	<descr><p>For the <code>Q</code> and <code>BLOCKQUOTE</code> elements. See the <loc href="http://www.w3.org/TR/REC-html40/struct/text.html#edef-Q">Q element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="cite" id="ID-53895598">
+          <descr><p>A URI designating a document that designates a source document or message. See the <loc href="http://www.w3.org/TR/REC-html40/struct/text.html#adef-cite-Q">cite attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

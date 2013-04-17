@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:25:08 $ $Revision: 1.12 $ -->
+    <interface name="HTMLUListElement" inherits="HTMLElement" id="ID-86834457">
+	<descr><p>Unordered list. See the <loc href="http://www.w3.org/TR/REC-html40/struct/lists.html#edef-UL">UL element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="boolean" name="compact" id="ID-39864178">
+          <descr><p>Reduce spacing between list items. See the <loc href="http://www.w3.org/TR/REC-html40/struct/lists.html#adef-compact">compact attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="type" id="ID-96874670">
+          <descr><p>Bullet style. See the <loc href="http://www.w3.org/TR/REC-html40/struct/lists.html#adef-type-UL">type attribute definition</loc> in HTML 4.0. This attribute is deprecated in HTML 4.0.</p></descr>
+       </attribute>
+</interface>

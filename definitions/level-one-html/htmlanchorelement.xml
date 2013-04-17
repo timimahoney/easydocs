@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Date: 1998/08/31 12:17:43 $ $Revision: 1.12 $ -->
+    <interface name="HTMLAnchorElement" inherits="HTMLElement" id="ID-48250443">
+	<descr><p>The anchor element. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#edef-A">A element definition</loc> in HTML 4.0.</p></descr>
+       <attribute  type="DOMString" name="accessKey" id="ID-89647724">
+          <descr><p>A single character access key to give access to the form control. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-accesskey">accesskey attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="charset" id="ID-67619266">
+          <descr><p>The character encoding of the linked resource. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-charset">charset attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="coords" id="ID-92079539">
+          <descr><p>Comma-separated list of lengths, defining an active region geometry.
+See also <code>shape</code> for the shape of the region. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-coords">coords attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="href" id="ID-88517319">
+          <descr><p>The URI of the linked resource. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-href">href attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="hreflang" id="ID-87358513">
+          <descr><p>Language code of the linked resource. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-hreflang">hreflang attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="name" id="ID-32783304">
+          <descr><p>Anchor name. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-name-A">name attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="rel" id="ID-3815891">
+          <descr><p>Forward link type. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-rel">rel attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="rev" id="ID-58259771">
+          <descr><p>Reverse link type. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-rev">rev attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="shape" id="ID-49899808">
+          <descr><p>The shape of the active area. The coordinates are given
+by <code>coords</code>. See the <loc href="http://www.w3.org/TR/REC-html40/struct/objects.html#adef-shape">shape attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="long" name="tabIndex" id="ID-41586466">
+          <descr><p>Index that represents the element's position in the tabbing order. See the <loc href="http://www.w3.org/TR/REC-html40/interact/forms.html#adef-tabindex">tabindex attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="target" id="ID-6414197">
+          <descr><p>Frame to render the resource in. See the <loc href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <attribute  type="DOMString" name="type" id="ID-63938221">
+          <descr><p>Advisory content type. See the <loc href="http://www.w3.org/TR/REC-html40/struct/links.html#adef-type-A">type attribute definition</loc> in HTML 4.0.</p></descr>
+       </attribute>
+       <method name="blur" id="ID-65068939">
+          <descr><p>Removes keyboard focus from this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+       <method name="focus" id="ID-47150313">
+          <descr><p>Gives keyboard focus to this element.</p></descr>
+          <parameters>
+	  <!-- No parameters -->
+          </parameters>
+          <returns type="void">
+             <descr><p></p></descr>
+          </returns>
+          <raises>
+          <!-- No exceptions -->
+          </raises>
+       </method>
+</interface>
