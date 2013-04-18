@@ -1,7 +1,26 @@
-.interface-list-item-view p {
+.interface-list-item-view .description {
+  max-height: 3em;
+  overflow: hidden;
+}
+
+.interface-list-item-view .description p {
   display: block;
-  margin: 1em 0;
+  margin-bottom: 1em;
   line-height: 1.5em;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.interface-list-item-view .description.expanded {
+  max-height: none;
+  overflow: auto;
+}
+
+.interface-list-item-view .description.expanded p {
+  overflow: auto;
+  white-space: normal;
 }
 
 .interface-list-item-view code {
@@ -10,4 +29,46 @@
 
 .interface-list-item-view .owner {
   color: #888;
+}
+
+.interface-list-item-view h3 {
+  font-family: monospace;
+}
+
+.interface-list-item-view.method h3 {
+  background-color: #FEE;
+}
+
+.interface-list-item-view.attribute h3 {
+  background-color: #EFE;
+}
+
+.interface-list-item-view.class h3 {
+  background-color: #EEF;
+}
+
+.interface-list-item-view .owner {
+  font-weight: 400;
+}
+
+.interface-list-item-view .parameter:after {
+  content: ', ';
+}
+
+.interface-list-item-view .parameters span:last-of-type.parameter:after {
+  content: none;
+}
+
+.interface-list-item-view .parameter .type {
+  color: #777;
+  font-weight: 400;
+}
+
+.interface-list-item-view .parameter .type:after {
+  content: ' ';
+}
+
+.interface-list-item-view .parameter .name {
+  color: #444;
+  font-weight: 400;
 }

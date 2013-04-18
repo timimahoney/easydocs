@@ -3,22 +3,43 @@ require 'interface_database.rb',
 
 class SearchController
 
-  def initialize
+  attr_reader :element
 
-    # FIXME: This should actually do the initialization and loading.
-    # Right now, we're hacking it from the main page.
-    # We can assume that the page has already been loaded.
-    
-    load_html('search')
+  def initialize
   end
+
+  def load(&callback)
+    load_html('search.html') { |success| callback.call(success) }
+  end
+
+  private
 
   # Loads the HTML for a page into the element of this controller.
   # This acts as setting the view for this controller.
   # FIXME: This should be in the controller superclass.
-  def load_html(page_name)
+  def load_html(page_name, &callback)
     # FIXME: Do the actual loading.
-    @element = $window.document.get_element_by_id('search-controller')
-    did_load
+    request = XMLHttpRequest.new
+    request.open('GET', page_name)
+    request.response_type = 'document'
+    request.onreadystatechange do 
+      next if request.ready_state != XMLHttpRequest::DONE
+
+      response = request.response
+      if !response
+        callback.call(false)
+        next
+      end
+
+      @element = $window.document.create_element('div')
+      @element.class_list.add("#{page_name}-controller")
+
+      response.body.children.entries.each { |child| @element.append_child(child) }
+      did_load
+      callback.call(true)
+    end
+
+    request.send()
   end
 
   def did_load
@@ -37,7 +58,13 @@ class SearchController
     interfaces = db.find_interfaces(current_input)
     $window.console.log('Time for finding interfaces: ', Time.now - start)
     clear_results()
-    interfaces.each { |interface| add_interface_to_results(interface) }
+    start = Time.now
+    timeout_time = 0
+    interfaces.each do |interface| 
+      $window.set_timeout(timeout_time) { add_interface_to_results(interface) }
+      timeout_time += 5
+    end
+    $window.console.log('Time for adding results: ', Time.now - start)
   end
 
   def clear_results

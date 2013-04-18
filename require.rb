@@ -6,12 +6,8 @@ def require(*urls, &callback)
 end
 
 class Requirer
+  @@instance = nil
 
-  # FIXME: We shouldn't need multiple instances
-  # because we shouldn't have multiple windows.
-  @@instances = {}
-
-  @window
   @url_statuses
   @unfinished_requires
 
@@ -20,13 +16,12 @@ class Requirer
   #
   # [window] the +Window+ of the +Requirer+ you want to return.
   #          If +nil+, then this defaults to the current +Window+.
-  def self.instance(window = $window)
-    @@instances[window] = Requirer.new(window) unless @@instances[window]
-    @@instances[window]
+  def self.instance()
+    @@instance = Requirer.new unless @@instance
+    @@instance
   end
 
-  def initialize(window)
-    @window = window;
+  def initialize()
     @url_statuses = {}
     @unfinished_requires = []
   end
@@ -57,21 +52,19 @@ class Requirer
     unstarted_urls = urls.select { |url| !@url_statuses[url] }
     unstarted_urls.each do |url|
       @url_statuses[url] = :loading
-      script_element = @window.document.create_element('script')
+      script_element = $window.document.create_element('script')
       script_element.type = 'text/ruby'
       script_element.src = url
       script_element.async = false
       script_element.onload do
         @url_statuses[url] = :loaded
-        puts "require loaded #{url}"
         check_finished_and_call_callbacks()
       end
       script_element.onerror do
         @url_statuses[url] = :error
-        puts "require error #{url}"
         check_finished_and_call_callbacks()
       end
-      @window.document.head.append_child(script_element)
+      $window.document.head.append_child(script_element)
     end
   end
 
