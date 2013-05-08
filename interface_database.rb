@@ -44,7 +44,6 @@ class InterfaceDatabase
     search_term = search_term.downcase
 
     results = @cached_searches[search_term]
-    $window.console.log('found cached results') if results
     return results if results
 
     # We can narrow down the number of interfaces to search through
@@ -54,14 +53,10 @@ class InterfaceDatabase
       substring = search_term[0..index]
 
       interfaces_to_search = @cached_searches[substring]
-      $window.console.log("Found #{interfaces_to_search.size} partial matches for #{substring}") if interfaces_to_search
       break if interfaces_to_search
-
-      $window.console.log("Found nothing for #{substring}") if interfaces_to_search
     end
 
     if !interfaces_to_search
-      $window.console.log('Searching all interfaces')
       interfaces_to_search = @interfaces if !interfaces_to_search
     end
     find_interfaces_internal(search_term, interfaces_to_search)
@@ -88,8 +83,6 @@ class InterfaceDatabase
     results_similarities = results_similarities.delete_if { |o| o[0] <= 0 }
     results_similarities.sort! { |a, b| b[0] <=> a[0] }
     results = results_similarities.map { |o| o[1] }
-
-    $window.console.log("Found #{results.size} results for #{search_term}")
 
     @cached_searches[search_term] = results
 

@@ -1,0 +1,111 @@
+li.interface-list-item {
+  list-style: none;
+  padding-bottom: 3.5em;
+  border-top: 1px solid #ccc;
+}
+
+.interface-list-item h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+  padding-left: 0.77em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin-top: 0;
+  border-left: 1em solid;
+  background-color: #f8f8f8;
+}
+
+.interface-list-item.attribute h3 {
+  border-left-color: #5577AA;
+}
+
+.interface-list-item.method h3 {
+  border-left-color: #C45E5A;
+}
+
+.interface-list-item.class h3 {
+  background-color: #EED776;
+}
+
+.interface-list-item .interface-content {
+  margin: 0 2.6em;
+}
+
+.interface-list-item .description {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.interface-list-item .declaration > code {
+  display: block;
+  font-weight: 400;
+}
+
+.interface-list-item .declaration {
+  background-color: #f7f7f7;
+  padding: 0.5em;
+  border-left: 0.2em solid #ddd;
+}
+
+.interface-list-item .declaration .return-type {
+  color: #777;
+}
+
+.interface-list-item .declaration .return-type:after {
+  content: ' ';
+}
+
+.interface-list-item .parameter:after {
+  content: ', ';
+}
+
+.interface-list-item .parameters span:last-of-type.parameter:after {
+  content: none;
+}
+
+.interface-list-item .parameter .type {
+  color: #777;
+}
+
+.interface-list-item .parameter .type:after {
+  content: ' ';
+}
+
+.interface-list-item .parameter .name {
+  color: #444;
+}
+
+.interface-list-item dl.info {
+  font-size: 1em;
+  margin: 0;
+  margin-top: 1.2em;
+}
+
+.interface-list-item .info dt {
+  font-weight: 500;
+  float: left;
+  width: 7em;
+  padding-top: 0.15em;
+  margin: 0;
+}
+
+.interface-list-item .info dd {
+  padding-left: 5em;
+  margin-bottom: 0.3em;
+}
+
+.interface-list-item .info dd:last-child {
+  margin-bottom: 0;
+}
+
+.interface-list-item .section-header {
+  font-size: 1em;
+  margin-top: 1.3em;
+  margin-bottom: 0.4em;
+  font-weight: 600;
+}
+
+.interface-list-item.glow {
+  background-color: #ccc;
+}

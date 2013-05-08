@@ -12,7 +12,7 @@ class InterfaceLoader
     unloaded_files = Hash[files.map { |o| [o, 1] }]
     files.each do |filename|
       load_interface(filename) do |interface|
-        $window.console.log("Loaded interface: #{filename}")
+        # $window.console.log("Loaded interface: #{filename}")
         interfaces.push(interface) if interface
         unloaded_files.delete(filename)
         callback.call(interfaces) if unloaded_files.empty?
@@ -28,7 +28,7 @@ class InterfaceLoader
       if request.ready_state == XMLHttpRequest::DONE
         response = request.response_xml
         if response.nil?
-          $window.console.log('nil for', filename)
+          # $window.console.log('nil for', filename)
         else
           interface = parse_interface_xml(response)
         end
@@ -50,6 +50,7 @@ class InterfaceLoader
     interface[:attributes] = attribute_nodes.map do |node|
       attribute = {}
       node_attributes = node.attributes
+      attribute[:interface_type] = :attribute
       attribute[:return_type] = node_attributes['type'].value
       attribute[:name] = node_attributes['name'].value
       attribute[:readonly] = !node_attributes['readonly'].nil?
@@ -62,6 +63,7 @@ class InterfaceLoader
     method_nodes = xml.get_elements_by_tag_name('method')
     interface[:methods] = method_nodes.map do |node|
       method = {}
+      method[:interface_type] = :method
       method[:name] = node.attributes['name'].value
       method[:description] = node.query_selector('descr')
       returns = node.query_selector('returns')

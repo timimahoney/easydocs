@@ -1,0 +1,19 @@
+html {
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+}
+
+code {
+  font-family: Source Code Pro, Menlo, Consolas, monospace;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.transition {
+  transition-duration: 0.25s;
+}
+
+.transition-short {
+  transition-duration: 0.15s;
+}

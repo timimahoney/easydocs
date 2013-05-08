@@ -1,46 +1,14 @@
 require 'interface_database.rb',
-        'interface_list_item_view.rb' do
+        'interface_list_item.rb',
+        'page.rb' do
 
-class SearchController
-
-  attr_reader :element
+class SearchPage < Page
 
   def initialize
-  end
-
-  def load(&callback)
-    load_html('search.html') { |success| callback.call(success) }
+    super('search')
   end
 
   private
-
-  # Loads the HTML for a page into the element of this controller.
-  # This acts as setting the view for this controller.
-  # FIXME: This should be in the controller superclass.
-  def load_html(page_name, &callback)
-    # FIXME: Do the actual loading.
-    request = XMLHttpRequest.new
-    request.open('GET', page_name)
-    request.response_type = 'document'
-    request.onreadystatechange do 
-      next if request.ready_state != XMLHttpRequest::DONE
-
-      response = request.response
-      if !response
-        callback.call(false)
-        next
-      end
-
-      @element = $window.document.create_element('div')
-      @element.class_list.add("#{page_name}-controller")
-
-      response.body.children.entries.each { |child| @element.append_child(child) }
-      did_load
-      callback.call(true)
-    end
-
-    request.send()
-  end
 
   def did_load
     @input = @element.query_selector('#search-input')
@@ -78,7 +46,6 @@ class SearchController
   def add_interface_to_results(interface)
     # FIXME: Should we have a class for ResultListItem?
     list_item = InterfaceListItemView.new
-    list_item.interface = interface
     @result_list.append_child(list_item)
   end
 

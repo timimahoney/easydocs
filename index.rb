@@ -1,29 +1,48 @@
-require 'search_controller.rb',
+require 'class_page.rb',
         'interface_database.rb',
-        'loading_screen.rb' do
+        'loading_screen.rb',
+        'search_page.rb' do
 
-console.log('Require finished')
 
-window.add_event_listener('load') do
-  $window.console.log('showing loading screen')
+def initialize_application(event)
   loading_screen = LoadingScreen.new
   loading_screen.show
-  still_loading = [:search, :database];
-
-  $search_controller = SearchController.new
-  $search_controller.load do
-    $window.console.log('Search was loaded.')
-    still_loading.delete(:search)
-    $window.document.body.insert_before($search_controller.element, loading_screen.element)
-    loading_screen.hide if still_loading.size == 0
-  end
-
   InterfaceDatabase.instance.load_interfaces do
-    console.log('Interfaces were loaded.')
-    still_loading.delete(:database)
-    loading_screen.hide if still_loading.size == 0
+    show_class_page
+    loading_screen.hide
   end 
 
-end # onload
+  # show_search_page
+  
+
+  
+
+end
+
+def show_search_page
+  loading_screen = LoadingScreen.new
+  loading_screen.show
+
+  search_page = SearchPage.new
+  search_page.load do
+    $window.document.body.insert_before(search_page.element, loading_screen.element)
+    loading_screen.hide
+  end
+end
+
+def show_class_page
+
+  document_results = InterfaceDatabase.instance.find_interfaces('document')
+  document = document_results.find { |interface| interface[:name] == 'Document' }
+
+  class_page = ClassPage.new
+  class_page.load do
+    $window.document.body.append_child(class_page.element)
+    class_page.interface = document
+  end
+end
+
+
+window.add_event_listener('load', method(:initialize_application)) 
 
 end # require

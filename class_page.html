@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<div class='content'>
+
+  <header>
+    <h1>HTMLDocument</h1>
+    <div class='interface-description'>
+      <p>
+        The <code>Document</code> interface represents the entire HTML or XML document. Conceptually, it is the <termref def="dt-root-node">root</termref> of the document tree, and provides the  primary access to the document's data.
+      </p>
+      <p>
+        Since elements, text nodes, comments, processing instructions, etc. cannot exist outside the context of a <code>Document</code>, the <code>Document</code> interface also contains the factory methods needed to create these objects. The <code>Node</code> objects created have a <code>ownerDocument</code> attribute which associates them with the <code>Document</code> within whose context they were created.
+      </p>
+    </div>
+  </header>
+
+  <ol class='member-list'>
+    <dt class='attribute'>body</dt>
+    <dd>
+      <code class='declaration'>HTMLBodyElement body</code>
+      <p>
+        The element that contains the content for the document. In documents with <code>BODY</code> contents, returns the <code>BODY</code> element, and in frameset documents, this returns the outermost <code>FRAMESET</code> element.
+      </p>
+    </dd>
+
+    <dt class='method'>createElement</dt>
+    <dd>
+      <code class='declaration'>Element createElement(DOMString tagName)</code>
+      <p>
+        Creates an element of the type specified. Note that the instance returned implements the <xtermref href="ID-745549614">Element</xtermref> interface, so attributes can be specified directly  on the returned object.
+      </p>
+      
+      <h3>Parameters</h3>
+      <dl class='parameter-list'>
+        <dt><code>tagName</code></dt>
+        <dd>
+          The name of the element type to instantiate. For XML, this is case-sensitive. For HTML, the <code>tagName</code> parameter may be provided in any case, but it must be mapped to the canonical uppercase form by the DOM implementation.
+        </dd>
+      </dl>
+
+      <h3>Returns</h3>
+      <p>
+        A new <code>Element</code> object.
+      </p>
+    </returns>
+      
+      <h3>Exceptions</h3>
+      <dl class='exception-list'>
+        <dt><code>DOMException</code></dt>
+        <dd>
+          <p>
+            INVALID_CHARACTER_ERR: Raised if the specified name contains an invalid character.
+          </p>
+        </dd>
+      </dl>
+    </dd>
+
+    <dt class='attribute'>doctype</dt>
+    <dd>
+      <code class='declaration'>DocumentType doctype</code>
+      <p>
+        The Document Type Declaration (see <code>DocumentType</code>) associated with this document. For HTML documents as well as XML documents without a document type declaration this returns <code>null</code>. The DOM Level 2 does not support editing the Document Type Declaration. <code>docType</code> cannot be altered in any way, including through the use of methods inherited from the <code>Node</code> interface, such as <code>insertNode</code> or <code>removeNode</code>.
+      </p>
+    </dd>
+
+    <dt class='attribute'>documentElement</dt>
+    <dd>
+      <code class='declaration'>Element documentElement</code>
+      <p>
+        This is a <termref def="dt-convenience">convenience</termref> attribute that allows direct access to the child node that is the root element of the document. For HTML documents, this is the element with the tagName "HTML".
+      </p>
+    </dd>
+
+    <dt class='method'>getElementById</dt>
+    <dd>
+      <code class='declaration'>Element getElementById(DOMString elementId)</code>
+      <p>
+        Returns the <code>Element</code> whose <code>ID</code> is given by <code>elementId</code>. If no such element exists, returns <code>null</code>. Behavior is not defined if more than one element has this <code>ID</code>.
+
+        <p>
+          The DOM implementation must have information that says which attributes are of type ID. Attributes with the name "ID" are not of type ID unless so defined. Implementations that do not know whether attributes are of type ID or not are expected to return <code>null</code>.
+        </p>
+      </p>
+
+      <h3>Parameters</h3>
+      <dl class='parameter-list'>
+        <dt><code>elementId</code></dt>
+        <dd>
+          <p>
+            The unique <code>id</code> value for an element.
+          </p>
+        </dd>
+      </dl>
+
+      <h3>Returns</h3>
+      <p>
+        The matching element.
+      </p>
+    </dd>
+
+    <dt class='method'>getElementsByTagName</dt>
+    <dd>
+      <code class='declaration'>NodeList getElementsByTagName(DOMString tagname)</code>
+      <p>
+        Returns a <code>NodeList</code> of all the <code>Element</code>s with a given tag name in the order in which they would be encountered in a preorder traversal of the <code>Document</code> tree.
+      </p>
+
+      <h3>Parameters</h3>
+      <dl class='parameter-list'>
+        <dt><code>tagname</code></dt>
+        <dd>
+          <p>
+            The name of the tag to match on. The special value "*" matches all tags.
+          </p>
+        </dd>
+      </dl>
+
+      <h3>Returns</h3>
+      <p>
+        A new <code>NodeList</code> object containing all the matched <code>Element</code>s.
+      </p>
+    </dd>
+
+  </ol>
+</div>
+
+<ol class='member-list-sidebar'>
+  <li class='attribute'><code>body</code></li>
+  <li class='method'><code>createElement</code></li>
+  <li class='attribute'><code>doctype</code></li>
+  <li class='attribute'><code>documentElement</code></li>
+  <li class='method'><code>getElementById</code></li>
+  <li class='method'><code>getElementsByTagName</code></li>
+</ol>
