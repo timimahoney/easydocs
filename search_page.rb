@@ -22,17 +22,17 @@ class SearchPage < Page
     $window.console.log("Search changed, input=#{current_input}")
 
     db = InterfaceDatabase.instance
-    start = Time.now
     interfaces = db.find_interfaces(current_input)
-    $window.console.log('Time for finding interfaces: ', Time.now - start)
     clear_results()
-    start = Time.now
+
+    @timeout_ids.each { |id| $window.clear_timeout(id) } if @timeout_ids
+    @timeout_ids = []
     timeout_time = 0
-    interfaces.each do |interface| 
-      $window.set_timeout(timeout_time) { add_interface_to_results(interface) }
+    interfaces.each do |interface|
+      timeout_id = $window.set_timeout(timeout_time) { add_interface_to_results(interface) }
+      @timeout_ids.push(timeout_id)
       timeout_time += 5
     end
-    $window.console.log('Time for adding results: ', Time.now - start)
   end
 
   def clear_results
