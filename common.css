@@ -1,5 +1,12 @@
 html {
   font-family: Source Sans Pro, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -8,6 +15,7 @@ code {
 
 p {
   line-height: 1.5em;
+  font-weight: 300;
 }
 
 .transition {
