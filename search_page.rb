@@ -12,7 +12,7 @@ class SearchPage < Page
 
   def did_load
     @input = @element.query_selector('#search-input')
-    @result_list = @element.query_selector('#result-list')
+    @result_list = @element.query_selector('.result-list')
 
     @input.add_event_listener('keyup', method(:on_search_change))
   end
