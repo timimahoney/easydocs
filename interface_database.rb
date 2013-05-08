@@ -87,38 +87,41 @@ class InterfaceDatabase
   end
 
   def compare_class(interface, search_term)
-    compare_string(interface[:name], search_term)
+    compare_string(interface[:name], search_term) * 2
   end
 
   def compare_attribute(attribute, search_term)
     attribute_similarity = compare_string(attribute[:name], search_term)
     class_similarity = compare_string(attribute[:owner][:name], search_term)
-    attribute_similarity + (class_similarity / 2)
+    attribute_similarity + (class_similarity / 4)
   end
 
   def compare_method(method, search_term)
     method_similarity = compare_string(method[:name], search_term)
     class_similarity = compare_string(method[:owner][:name], search_term)
-    method_similarity + (class_similarity / 2)
+    method_similarity + (class_similarity / 4)
   end
 
   def compare_string(haystack, needle)
     similarity = 0
     needle_fragments = needle.split(/[\.\_ ]/)
+    haystack_downcase = haystack.downcase
     needle_fragments.each do |substring|
-      position = haystack.downcase.index(substring.downcase)
-      if position
+      substring_downcase = substring.downcase
+      if haystack_downcase == substring_downcase
+        similarity += 15
+        next
+      end
+
+      position = haystack_downcase.index(substring_downcase)
+      if position == 0
         similarity += 10
+      elsif position
+        similarity += 5
       end
     end
 
     similarity
-    # # $window.console.log('needle fragments', needle_fragments)
-    # # $window.console.log(needle)
-    # position = haystack.downcase.index(needle.downcase)
-    # return 0 if position.nil?
-    # return 1 if position == 0
-    # return 0.5 
   end
 
 end # InterfaceDatabase
