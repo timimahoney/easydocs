@@ -51,14 +51,11 @@ class InterfaceDatabase
     interfaces_to_search = nil
     (0..search_term.length - 2).to_a.reverse.each do |index|
       substring = search_term[0..index]
-
       interfaces_to_search = @cached_searches[substring]
       break if interfaces_to_search
     end
+    interfaces_to_search = @interfaces if !interfaces_to_search
 
-    if !interfaces_to_search
-      interfaces_to_search = @interfaces if !interfaces_to_search
-    end
     find_interfaces_internal(search_term, interfaces_to_search)
   end
 
@@ -94,18 +91,34 @@ class InterfaceDatabase
   end
 
   def compare_attribute(attribute, search_term)
-    compare_string(attribute[:name], search_term)
+    attribute_similarity = compare_string(attribute[:name], search_term)
+    class_similarity = compare_string(attribute[:owner][:name], search_term)
+    attribute_similarity + (class_similarity / 2)
   end
 
   def compare_method(method, search_term)
-    compare_string(method[:name], search_term)
+    method_similarity = compare_string(method[:name], search_term)
+    class_similarity = compare_string(method[:owner][:name], search_term)
+    method_similarity + (class_similarity / 2)
   end
 
   def compare_string(haystack, needle)
-    position = haystack.downcase.index(needle.downcase)
-    return 0 if position.nil?
-    return 1 if position == 0
-    return 0.5 
+    similarity = 0
+    needle_fragments = needle.split(/[\.\_ ]/)
+    needle_fragments.each do |substring|
+      position = haystack.downcase.index(substring.downcase)
+      if position
+        similarity += 10
+      end
+    end
+
+    similarity
+    # # $window.console.log('needle fragments', needle_fragments)
+    # # $window.console.log(needle)
+    # position = haystack.downcase.index(needle.downcase)
+    # return 0 if position.nil?
+    # return 1 if position == 0
+    # return 0.5 
   end
 
 end # InterfaceDatabase
