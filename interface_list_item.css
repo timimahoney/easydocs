@@ -4,27 +4,44 @@ li.interface-list-item {
   border-top: 1px solid #ccc;
 }
 
-.interface-list-item h3 {
-  font-size: 1.5em;
-  font-weight: 700;
-  padding-left: 0.77em;
+.interface-list-item .interface-header {
+  padding-left: 1.6em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   margin-top: 0;
+  margin-bottom: 0.5em;
   border-left: 1em solid;
   background-color: #f8f8f8;
 }
 
-.interface-list-item.attribute h3 {
+.interface-list-item.attribute .interface-header {
   border-left-color: #5577AA;
 }
 
-.interface-list-item.method h3 {
+.interface-list-item.method .interface-header {
   border-left-color: #C45E5A;
 }
 
-.interface-list-item.class h3 {
-  background-color: #EED776;
+.interface-list-item.class .interface-header {
+  border-left-color: #EED776;
+}
+
+.interface-list-item .interface-header .interface-name {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.interface-list-item .interface-header .parent-class {
+  display: none;
+  font-size: 1.3em;
+  font-weight: 200;
+  margin-bottom: 0.1em;
+  color: #999;
+}
+
+.interface-list-item.show-parent .interface-header .parent-class {
+  display: block;
 }
 
 .interface-list-item .interface-content {
@@ -35,6 +52,10 @@ li.interface-list-item {
   display: block;
   font-size: 1.2em;
   margin-bottom: 1em;
+}
+
+.interface-list-item.class .declaration {
+  display: none;
 }
 
 .interface-list-item .declaration > code {
@@ -77,9 +98,14 @@ li.interface-list-item {
 }
 
 .interface-list-item dl.info {
+  display: none;
   font-size: 1em;
   margin: 0;
   margin-top: 1.2em;
+}
+
+.interface-list-item.method dl.info {
+  display: block;
 }
 
 .interface-list-item .info dt {

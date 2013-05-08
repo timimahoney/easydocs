@@ -45,7 +45,9 @@ class SearchPage < Page
 
   def add_interface_to_results(interface)
     # FIXME: Should we have a class for ResultListItem?
-    list_item = InterfaceListItemView.new
+    list_item = InterfaceListItem.new
+    list_item.interface = interface
+    list_item.show_parent_class = true
     @result_list.append_child(list_item)
   end
 

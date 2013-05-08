@@ -2,6 +2,7 @@ require 'string_utils.rb' do
 
 module InterfaceListItem
   attr_accessor :interface
+  attr_accessor :show_parent_class
 
   def self.new
     obj = $window.document.create_element('li')
@@ -16,17 +17,33 @@ module InterfaceListItem
     class_list.remove('class', 'method', 'attribute')
     class_list.add(interface[:interface_type].to_s)
 
-    @title.inner_text = Documentation.underscore(interface[:name])
+    update_header
     update_description
     update_declaration
     update_info
   end
 
+  def show_parent_class=(show_parent_class)
+    @show_parent_class = show_parent_class
+    if @show_parent_class
+      class_list.add('show-parent')
+    else
+      class_list.remove('show-parent')
+    end
+  end
+
   def initialize_interface_list_item
     class_list.add('interface-list-item')
 
-    @title = owner_document.create_element('h3')
-    append_child(@title)
+    @title_container = owner_document.create_element('div')
+    @title_container.class_list.add('interface-header')
+    @parent_class = owner_document.create_element('span')
+    @parent_class.class_list.add('parent-class')
+    @title_container.append_child(@parent_class)
+    @title = owner_document.create_element('span')
+    @title.class_list.add('interface-name')
+    @title_container.append_child(@title)
+    append_child(@title_container)
 
     @content = owner_document.create_element('div')
     @content.class_list.add('interface-content')
@@ -59,6 +76,21 @@ module InterfaceListItem
   end
 
   private
+
+  def update_header
+    interface_name = interface[:name]
+    case interface[:interface_type]
+    when :attribute, :method
+      interface_name = Documentation.underscore(interface_name)
+    end
+    @title.inner_text = interface_name
+
+    if interface[:owner]
+      @parent_class.inner_text = interface[:owner][:name]
+    else
+      @parent_class.inner_html = ''
+    end
+  end
 
   def update_declaration
     type = interface[:interface_type]
@@ -129,23 +161,12 @@ module InterfaceListItem
       description_node.child_nodes.each { |node| @description.append_child(node) }
     end
 
-      # exceptions = node.query_selector('raises').get_elements_by_tag_name('exception')
-      # method[:exceptions] = exceptions.map do |exception_node|
-      #   exception = {}
-      #   exception[:name] = exception_node.attributes['name'].value
-      #   exception[:description] = exception_node.query_selector('descr')
-      # end
+    # FIXME: Show exceptions.
   end
 
   def update_info
     @info.inner_html = ''
-
-    if interface[:interface_type] != :method
-      @info.style.display = 'none'
-      return
-    end
-
-    @info.style.display = 'block'
+    return if interface[:interface_type] != :method
 
     interface[:parameters].each do |parameter|
       parameter_name = owner_document.create_element('dt')
