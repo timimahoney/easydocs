@@ -8,15 +8,9 @@ def initialize_application(event)
   loading_screen = LoadingScreen.new
   loading_screen.show
   InterfaceDatabase.instance.load_interfaces do
-    show_class_page
+    show_search_page
     loading_screen.hide
-  end 
-
-  # show_search_page
-  
-
-  
-
+  end
 end
 
 def show_search_page
