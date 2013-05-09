@@ -1,7 +1,11 @@
 html {
-  font-family: Source Sans Pro, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  background: #fefefe;
+}
+
+* {
+  font-family: Source Sans Pro, Helvetica, sans-serif;
 }
 
 body {
@@ -24,4 +28,8 @@ p {
 
 .transition-short {
   transition-duration: 0.15s;
+}
+
+.hidden {
+  opacity: 0;
 }

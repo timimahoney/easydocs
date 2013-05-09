@@ -3,3 +3,66 @@
   padding: 0;
   list-style: none;
 }
+
+.search-page header {
+  transition-duration: 0.3s;
+}
+
+.search-page header.center {
+  margin-top: 10em;
+}
+
+.search-page header .text {
+  margin-top: 0.9em;
+  padding: 0 2.6em;
+}
+
+.search-page header h1 {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 0;
+  margin-right: 0.2em;
+  margin-bottom: 0.2em;
+  line-height: 1em;
+  color: #444;
+}
+
+.search-page header h2 {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 200;
+  margin: 0;
+  margin-bottom: 0.2em;
+  line-height: 1em;
+  color: #aaa;
+}
+
+.search-page header .border {
+  height: 0.4em;
+  opacity: 0.3;
+  background: linear-gradient(0, 
+                              #C45E5A 33%, 
+                              #EED776 33%, 
+                              #EED776 67%, 
+                              #5577AA 67%);
+}
+
+.search-page .input-container {
+  padding: 0.7em 2.6em;
+}
+
+.search-page input {
+  font-size: 1.7em;
+  font-weight: 200;
+  width: 100%;
+  max-width: 19.1em;
+  padding: 0.1em 0.5em;
+  margin: 0;
+  color: #444;
+  border: 1px solid #ddd;
+}
+
+.search-page input:focus {
+  outline: none;
+}
