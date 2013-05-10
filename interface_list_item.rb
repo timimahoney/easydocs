@@ -1,6 +1,8 @@
 require 'string_utils.rb' do
 
 module InterfaceListItem
+  CLICKED_INTERFACE = 'clicked interface'
+
   attr_accessor :interface
   attr_accessor :show_parent_class
 
@@ -43,6 +45,7 @@ module InterfaceListItem
     @title = owner_document.create_element('span')
     @title.class_list.add('interface-name')
     @title_container.append_child(@title)
+    @title_container.onclick = method(:on_click_interface)
     append_child(@title_container)
 
     @content = owner_document.create_element('div')
@@ -182,7 +185,7 @@ module InterfaceListItem
       @info.append_child(parameter_description)
     end
 
-    if interface[:return_type]
+    if interface[:return_type] and interface[:return_type] != 'void'
       return_name = owner_document.create_element('dt')
       return_name_code = owner_document.create_element('code')
       return_name_code.inner_text = 'return'
@@ -196,6 +199,12 @@ module InterfaceListItem
       @info.append_child(return_description)
     end
   end
+
+  def on_click_interface(event)
+    click_interface_event = CustomEvent.new(InterfaceListItem::CLICKED_INTERFACE, {:detail => self})
+    dispatch_event(click_interface_event)
+  end
+
 
 end # InterfaceListItemView
 

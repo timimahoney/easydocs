@@ -5,9 +5,7 @@ li.interface-list-item {
 }
 
 .interface-list-item .interface-header {
-  padding-left: 1.6em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 0.2em 1.6em;
   margin-top: 0;
   margin-bottom: 0.5em;
   border-left: 1em solid;
@@ -26,10 +24,25 @@ li.interface-list-item {
   border-left-color: #EED776;
 }
 
+.interface-list-item .interface-header:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.interface-list-item .interface-header:hover .interface-name {
+  color: #111;
+}
+
+.interface-list-item .interface-header:active {
+  background-color: #e0e0e0;
+}
+
 .interface-list-item .interface-header .interface-name {
   display: block;
+  clear: left;
   font-size: 1.5em;
   font-weight: 700;
+  color: #222;
 }
 
 .interface-list-item .interface-header .parent-class {
@@ -42,6 +55,7 @@ li.interface-list-item {
 
 .interface-list-item.show-parent .interface-header .parent-class {
   display: block;
+  float: left;
 }
 
 .interface-list-item .interface-content {
@@ -106,6 +120,10 @@ li.interface-list-item {
 
 .interface-list-item.method dl.info {
   display: block;
+}
+
+.interface-list-item.method dl.info:empty {
+  display: none;
 }
 
 .interface-list-item .info dt {
