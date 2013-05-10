@@ -53,7 +53,7 @@ class Requirer
     unstarted_urls.each do |url|
       @url_statuses[url] = :loading
       script_element = $window.document.create_element('script')
-      script_element.type = 'text/ruby'
+      script_element.type = url[-3, 3] == '.js' ? 'text/javascript' : 'text/ruby'
       script_element.src = url
       script_element.async = false
       script_element.onload do
