@@ -1,5 +1,6 @@
 require 'interface_database.rb',
         'interface_list_item.rb',
+        'class_page.rb',
         'page.rb' do
 
 class SearchPage < Page
@@ -48,12 +49,22 @@ class SearchPage < Page
 
   def add_interface_to_results(interface)
     # FIXME: Should we have a class for ResultListItem?
+    # FIXME: Cache list item views and reuse them.
     list_item = InterfaceListItem.new
     list_item.interface = interface
     list_item.show_parent_class = true
     @result_list.append_child(list_item)
+
+    list_item.add_event_listener(InterfaceListItem::CLICKED_INTERFACE, method(:on_click_interface))
   end
 
-end # SearchController
+  def on_click_interface(event)
+    list_item = event.detail
+    class_page = ClassPage.new
+    class_page.interface = list_item.interface
+    WebDocs.page_stack.push(page: class_page, animated: true)
+  end
+
+end # SearchPage
 
 end # require
