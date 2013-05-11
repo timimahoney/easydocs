@@ -59,10 +59,19 @@ class InterfaceDatabase
     find_interfaces_internal(search_term, interfaces_to_search)
   end
 
+  def find_interface(name: nil, type: nil)
+    return nil if !name
+
+    found_interface = @interfaces.find do |interface| 
+      interface[:name] == name && (!type || interface[:interface_type] == type)
+    end
+
+    found_interface
+  end
+
   private
 
   def find_interfaces_internal(search_term, all_interfaces)
-    term_lowercase = search_term.downcase
     results_similarities = all_interfaces.map do |interface|
       similarity = 0
       case interface[:interface_type]
@@ -122,6 +131,11 @@ class InterfaceDatabase
     end
 
     similarity
+  end
+
+  def self.method_missing(method, *arguments)
+    # Try to call a method on the singleton instance.
+    instance.send(method, *arguments)
   end
 
 end # InterfaceDatabase

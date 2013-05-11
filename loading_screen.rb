@@ -6,17 +6,11 @@ class LoadingScreen
   def initialize
     @element = $window.document.create_element('div')
     @element.class_list.add('loading-screen', 'hidden', 'transition')
-    @element.id = "loading_screen#{Time.now.to_f}"
-    
-    spin_script = $window.document.create_element('script')
-    spin_script.type = 'text/javascript'
-    spin_script.src = 'spin.min.js'
-    $window.document.head.append_child(spin_script)
-
-    spin_script.onload do
-      add_spinner_script = $window.document.create_element('script')
-      add_spinner_script.type = 'text/javascript'
-      script = <<EOF
+    @element.id = "loading_screen#{Time.now.to_f}"  
+  
+    add_spinner_script = $window.document.create_element('script')
+    add_spinner_script.type = 'text/javascript'
+    script = <<EOF
   var options = {
     lines: 8, // The number of lines to draw
     length: 0, // The length of each line
@@ -38,9 +32,8 @@ class LoadingScreen
   var target = document.getElementById('#{@element.id}');
   var spinner = new Spinner(options).spin(target);
 EOF
-      add_spinner_script.inner_html = script
-      $window.document.head.append_child(add_spinner_script);
-    end
+    add_spinner_script.inner_html = script
+    $window.document.head.append_child(add_spinner_script);
   end
 
   def show

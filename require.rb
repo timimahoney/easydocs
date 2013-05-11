@@ -8,8 +8,7 @@ end
 class Requirer
   @@instance = nil
 
-  @url_statuses
-  @unfinished_requires
+  attr_accessor :prefix
 
   ##
   # Returns a singleton instance of a +Requirer+ for a specified +Window+.
@@ -24,6 +23,7 @@ class Requirer
   def initialize()
     @url_statuses = {}
     @unfinished_requires = []
+    @prefix = '/'
   end
 
   ##
@@ -54,7 +54,8 @@ class Requirer
       @url_statuses[url] = :loading
       script_element = $window.document.create_element('script')
       script_element.type = url[-3, 3] == '.js' ? 'text/javascript' : 'text/ruby'
-      script_element.src = url
+      script_element.src = "#{prefix}#{url}"
+      $window.console.log('script element url:', script_element.src)
       script_element.async = false
       script_element.onload do
         @url_statuses[url] = :loaded

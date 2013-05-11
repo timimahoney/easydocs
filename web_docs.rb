@@ -1,6 +1,6 @@
 require 'loading_screen.rb',
         'page_stack.rb',
-        'search_page.rb' do
+        'url_handler.rb' do
 
 class WebDocs
   attr_reader :page_stack
@@ -14,11 +14,19 @@ class WebDocs
   end
 
   def start
-    @page_stack.load do
-      $window.document.body.append_child(@page_stack.element)
-      search_page = SearchPage.new
-      @page_stack.push(page:search_page, animated:false)
-      InterfaceDatabase.instance.load_interfaces
+    $window.console.log('Loaded page. URL: ', $window.location)
+
+
+    InterfaceDatabase.instance.load_interfaces do
+      @page_stack.load do
+        $window.document.body.append_child(@page_stack.element)
+
+        path = $window.location.pathname
+        path = path[1..path.length]
+        $window.console.log('Relative path: ', path)
+        page = URLHandler.page_for_url(path)
+        @page_stack.push(page:page, animated:false)
+      end
     end
   end
 
