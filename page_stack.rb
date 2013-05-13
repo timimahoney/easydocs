@@ -7,24 +7,24 @@ class PageStack < Page
     super('page-stack')
     @stack = []
     @id_to_page = {}
-    @next_page_id = 0
     $window.add_event_listener('popstate', method(:on_pop_state))
   end
 
   def push(page: nil, animated: true)
-    $window.console.log('In push.', page, animated)
     return if !page
 
     @stack.push(page)
-    page_id = @next_page_id
-    @next_page_id += 1
-    @id_to_page[page_id] = page
+    @id_to_page[page.object_id] = page
+
+    $window.console.log('pushing page: ', page.location_bar_url)
+
     $window.history.push_state({
       :page_stack => true,
-      :page_id => page_id
+      :page_id => page.object_id,
+      :page_url => page.location_bar_url
     }, nil, page.location_bar_url)
 
-    show_page(page)
+    load_and_show_page(page)
   end
 
 
@@ -43,20 +43,44 @@ class PageStack < Page
 
   private
 
-  def show_page(page)
-    # FIXME: Show a loading screen when pushing a non-loaded page.
+  def load_and_show_page(page)
     loading_screen = LoadingScreen.new
     loading_screen.show
+
     page.load do
-      @element.append_child(page.element) if page.element
       loading_screen.hide
+
+      if page.element
+        hide_page(@current_page) if @current_page
+        @current_page = page
+        show_page(@current_page)
+      end
     end
   end
 
+  def show_page(page)
+    page.will_appear
+    @element.append_child(page.element)
+    page.did_appear
+  end
+
+  def hide_page(page)
+    page.will_disappear
+    @element.remove_child(page.element)
+    page.did_disappear
+  end
+
   def on_pop_state(event)
-    $window.console.log('PageStack: on_pop_state:', $window.history.state, event.state)
+    $window.console.log('PageStack: on_pop_state:', event.state)
     return if !event.state
     return if !event.state[:page_stack]
+
+    page_to_show = @id_to_page[event.state[:page_id]]
+    return if !page_to_show
+
+    hide_page(@current_page) if @current_page
+    @current_page = page_to_show
+    show_page(@current_page)
   end
 
 end # PageStack

@@ -24,16 +24,16 @@ li.interface-list-item {
   border-left-color: #EED776;
 }
 
-.interface-list-item .interface-header:hover {
+.interface-list-item.clickable .interface-header:hover {
   background-color: #f0f0f0;
   cursor: pointer;
 }
 
-.interface-list-item .interface-header:hover .interface-name {
+.interface-list-item.clickable .interface-header:hover .interface-name {
   color: #111;
 }
 
-.interface-list-item .interface-header:active {
+.interface-list-item.clickable .interface-header:active {
   background-color: #e0e0e0;
 }
 

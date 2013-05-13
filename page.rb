@@ -24,6 +24,18 @@ class Page
     "/#{page_name}"
   end
 
+  def will_appear
+  end
+
+  def did_appear
+  end
+
+  def will_disappear
+  end
+
+  def did_disappear
+  end
+
   protected
 
   # Loads the HTML for the page.
@@ -45,7 +57,6 @@ class Page
   # will be filled with the content loaded from the URL.
   def did_load
   end
-
 
   private
 

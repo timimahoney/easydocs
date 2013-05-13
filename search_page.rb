@@ -59,11 +59,15 @@ class SearchPage < Page
   end
 
   def on_click_interface(event)
-    class_page = ClassPage.new
     interface = event.detail.interface
-    interface = interface[:owner] if interface[:owner]
-    $window.console.log('interface:', interface)
-    class_page.interface = interface
+    class_page = ClassPage.new
+    if interface[:interface_type] == :class
+      class_page.interface = interface
+    else
+      class_page.interface = interface[:owner]
+      class_page.current_member = interface
+    end
+    
     WebDocs.page_stack.push(page: class_page, animated: true)
   end
 

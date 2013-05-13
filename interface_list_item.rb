@@ -5,6 +5,7 @@ module InterfaceListItem
 
   attr_accessor :interface
   attr_accessor :show_parent_class
+  attr_accessor :is_header_clickable
 
   def self.new
     obj = $window.document.create_element('li')
@@ -31,6 +32,16 @@ module InterfaceListItem
       class_list.add('show-parent')
     else
       class_list.remove('show-parent')
+    end
+  end
+
+  def is_header_clickable=(is_clickable)
+    @is_header_clickable = is_clickable
+
+    if @is_header_clickable
+      class_list.add('clickable')
+    else
+      class_list.remove('clickable')
     end
   end
 
@@ -66,6 +77,8 @@ module InterfaceListItem
     @info = owner_document.create_element('dl')
     @info.class_list.add('info')
     @declaration_container.append_child(@info)
+
+    self.is_header_clickable = true
   end
 
   def glow
@@ -201,10 +214,11 @@ module InterfaceListItem
   end
 
   def on_click_interface(event)
+    return if !is_header_clickable
+
     click_interface_event = CustomEvent.new(InterfaceListItem::CLICKED_INTERFACE, {:detail => self})
     dispatch_event(click_interface_event)
   end
-
 
 end # InterfaceListItemView
 

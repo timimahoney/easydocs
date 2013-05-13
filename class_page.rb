@@ -6,6 +6,7 @@ require 'interface_database.rb',
 class ClassPage < Page
 
   attr_accessor :interface
+  attr_accessor :current_member
 
   def initialize(url: nil)
     super('class')
@@ -17,7 +18,7 @@ class ClassPage < Page
       class_name, member_name = url.split('/')
       if class_name
         self.interface = InterfaceDatabase.find_interface(name: class_name, type: :class)
-        @current_member = find_member(member_name)
+        self.current_member = find_member(member_name)
       end
     end
   end
@@ -33,11 +34,24 @@ class ClassPage < Page
     update_interface_elements if @element
   end
 
+  def current_member=(new_member)
+    @current_member = new_member
+    update_location_bar_url
+  end
+
   def location_bar_url
     return "/#{@page_name}" if !@interface
     return "/#{@page_name}/#{interface[:name]}" if !@current_member
     member_name = Documentation.underscore(@current_member[:name])
     return "/#{@page_name}/#{interface[:name]}/#{member_name}"
+  end
+
+  def will_appear
+    $window.add_event_listener('popstate', method(:on_pop_state))
+  end
+
+  def will_disappear
+    $window.remove_event_listener('popstate', method(:on_pop_state))
   end
 
   protected
@@ -74,6 +88,7 @@ class ClassPage < Page
   def add_member_elements(member)
     list_item = InterfaceListItem.new
     list_item.interface = member
+    list_item.is_header_clickable = false
     @member_list.append_child(list_item)
 
     sidebar_item = $window.document.create_element('li')
@@ -85,9 +100,8 @@ class ClassPage < Page
       scroll_to_member(member)
       list_item.glow
 
-      return if @current_member == member
-      @current_member = member
-      update_location_bar_url
+      return if self.current_member == member
+      self.current_member = member
     end
   end
 
@@ -119,8 +133,23 @@ class ClassPage < Page
     @members.find { |member| member[:name].downcase == lowercase_member_name }
   end
 
-  def update_location_bar_url
-    $window.history.push_state({ :class_page => true }, nil, location_bar_url)
+  def update_location_bar_url(replace_state: false)
+    new_state = { :class_page => object_id }
+    new_state[:member_name] = @current_member[:name] if @current_member
+    if replace_state
+      $window.history.replace_state(new_state, nil, location_bar_url)  
+    else
+      $window.history.push_state(new_state, nil, location_bar_url)
+    end
+  end
+
+  def on_pop_state(event)
+    $window.console.log("ClassPage on_pop_state", event.state)
+    return if event.state[:class_page] != object_id
+
+    $window.console.log("ClassPage on_pop_state for this page.")
+    member = find_member(event.state[:member_name])
+    scroll_to_member(member)
   end
 
 end # SearchController
