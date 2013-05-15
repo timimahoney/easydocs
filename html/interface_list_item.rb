@@ -178,6 +178,8 @@ module InterfaceListItem
     return if interface[:interface_type] != :method
 
     interface[:parameters].each do |parameter|
+      next if parameter[:description].size <= 0
+
       parameter_name = owner_document.create_element('dt')
       parameter_name_code = owner_document.create_element('code')
       parameter_name_code.inner_text = Documentation.underscore(parameter[:name])
@@ -189,7 +191,7 @@ module InterfaceListItem
       @info.append_child(parameter_description)
     end
 
-    if interface[:return_type] and interface[:return_type] != 'void'
+    if interface[:return_type] and interface[:return_type] != 'void' and interface[:return_description].size > 0
       return_name = owner_document.create_element('dt')
       return_name_code = owner_document.create_element('code')
       return_name_code.inner_text = 'return'
