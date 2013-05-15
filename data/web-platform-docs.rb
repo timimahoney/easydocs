@@ -147,7 +147,9 @@ end
 
 def convert_to_html(description)
   return nil if !description
-  description = description.gsub(/'[']+([^']+)'[']+/, '<code>\1</code>')
+  description.gsub!(/'[']+([^']+)'[']+/, '<code>\1</code>')
+  description.gsub!(/\[\[([^|]+)\|([^\]]+)\]\]/, '<a data-webdocs-url=\'\1\'><code>\2</code></a>')
+
   paragraphs = description.split("\n")
 
   elements = []
