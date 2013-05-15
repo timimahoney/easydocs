@@ -48,7 +48,7 @@ class InterfaceLoader
     interface = {}
 
     interface[:id] = xml.attributes['id'].value
-    interface[:name] = Documentation.camelize(xml.attributes['name'].value)
+    interface[:name] = xml.attributes['name'].value
     interface[:description] = xml.attributes['description'].value
     interface[:full_url] = xml.attributes[:full_url].value
     interface[:parent_id] = xml.attributes[:parent_id].value if xml.attributes[:parent_id]

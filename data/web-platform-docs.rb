@@ -1,5 +1,6 @@
 require 'net/http'
 require 'json'
+require 'active_support/all'
 
 API_BASE_URL = 'http://docs.webplatform.org/w/api.php?format=json&action=ask&query='
 
@@ -14,6 +15,7 @@ def request_interfaces
     interface[:full_url]       = data['fullurl']
     interface[:description]    = printouts['Summary'][0]
     interface[:name]           = printouts['API name'][0]['fulltext'] if printouts['API name'][0]
+    interface[:name]           = interface[:name].split('.').last.camelize if interface[:name]
     interface[:parent_id]      = printouts['Subclass of'][0]['fulltext'] if printouts['Subclass of'][0]
     interface
   end
