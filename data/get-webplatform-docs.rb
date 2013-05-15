@@ -1,13 +1,15 @@
 require './web-platform-docs.rb'
 require 'nokogiri'
 
-# p 'Requesting interfaces from WebPlatform.org...'
-# request_and_write_all
+p 'Requesting interfaces from WebPlatform.org...'
+output_dir = ARGV[0] || './'
 
-interfaces = read_json(filename: 'interfaces.json')[:interfaces]
-methods = read_json(filename: 'methods.json')[:methods]
-parameters = read_json(filename: 'parameters.json')[:parameters]
-properties = read_json(filename: 'properties.json')[:properties]
+# request_and_write_all(output_dir)
+
+interfaces = read_json(filename: "#{output_dir}/interfaces.json")[:interfaces]
+methods = read_json(filename: "#{output_dir}/methods.json")[:methods]
+parameters = read_json(filename: "#{output_dir}/parameters.json")[:parameters]
+properties = read_json(filename: "#{output_dir}/properties.json")[:properties]
 
 
 p 'Mapping interfaces to IDs...'
@@ -107,6 +109,6 @@ builder = Nokogiri::XML::Builder.new do |xml|
 end
 
 p 'Outputting XML...'
-File.open('interfaces.xml', 'w') do |file|
+File.open("#{output_dir}/interfaces.xml", 'w') do |file|
   file.write(builder.to_xml)
 end

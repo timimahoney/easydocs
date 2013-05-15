@@ -129,18 +129,18 @@ def request_results_for_query(query)
   results
 end
 
-def request_and_write_all
+def request_and_write_all(output_dir)
   interfaces = request_interfaces
-  write_json(hash: { :interfaces => interfaces }, filename: 'interfaces.json')
+  write_json(hash: { :interfaces => interfaces }, filename: "#{output_dir}/interfaces.json")
 
   methods = request_methods
-  write_json(hash: { :methods => methods }, filename: 'methods.json')
+  write_json(hash: { :methods => methods }, filename: "#{output_dir}/methods.json")
 
   parameters = request_method_parameters
-  write_json(hash: { :parameters => parameters }, filename: 'parameters.json')
+  write_json(hash: { :parameters => parameters }, filename: "#{output_dir}/parameters.json")
 
   properties = request_properties
-  write_json(hash: { :properties => properties }, filename: 'properties.json')
+  write_json(hash: { :properties => properties }, filename: "#{output_dir}/properties.json")
 end
 
 def convert_to_html(description)
