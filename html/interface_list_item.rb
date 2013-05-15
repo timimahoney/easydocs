@@ -170,14 +170,7 @@ module InterfaceListItem
   end
 
   def update_description
-    @description.inner_html = ''
-
-    if interface[:description]
-      description_node = interface[:description].clone_node(true)
-      description_node.child_nodes.each { |node| @description.append_child(node) }
-    end
-
-    # FIXME: Show exceptions.
+    @description.inner_html = interface[:description]
   end
 
   def update_info
@@ -192,9 +185,7 @@ module InterfaceListItem
       @info.append_child(parameter_name)
 
       parameter_description = owner_document.create_element('dd')
-      parameter[:description].child_nodes.each do |child|
-        parameter_description.append_child(child.clone_node(true))
-      end
+      parameter_description.inner_html = parameter[:description]
       @info.append_child(parameter_description)
     end
 
@@ -206,9 +197,7 @@ module InterfaceListItem
       @info.append_child(return_name)
       
       return_description = owner_document.create_element('dd')
-      interface[:return_description].child_nodes.each do |child| 
-        return_description.append_child(child.clone_node(true))
-      end
+      return_description.inner_html = interface[:return_description]
       @info.append_child(return_description)
     end
   end

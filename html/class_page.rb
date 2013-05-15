@@ -78,10 +78,7 @@ class ClassPage < Page
     return if !@interface
 
     @title_element.inner_text = @interface[:name]
-
-    description_node = @interface[:description].clone_node(true)
-    description_node.child_nodes.each { |node| @interface_description_element.append_child(node) }
-
+    @interface_description_element.inner_html = @interface[:description]
     @members.each { |member| add_member_elements(member) }
   end
 
