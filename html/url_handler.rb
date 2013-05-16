@@ -9,7 +9,7 @@ class URLHandler
     remaining_url = split_path.drop(1).join('/')
     case top_level_path
     when 'search'
-      SearchPage.new
+      SearchPage.new(url: remaining_url)
     when 'class'
       ClassPage.new(url: remaining_url)
     else

@@ -18,15 +18,18 @@ class PageStack < Page
 
     $window.console.log('pushing page: ', page.location_bar_url)
 
-    $window.history.push_state({
-      :page_stack => true,
-      :page_id => page.object_id,
-      :page_url => page.location_bar_url
-    }, nil, page.location_bar_url)
+    $window.history.push_state(state_object_for_page(page), nil, page.location_bar_url)
 
     load_and_show_page(page)
   end
 
+  def update_location_bar_url
+    current_state = $window.history.state
+    if current_state && current_state.is_a?(Hash) && current_state[:page_stack]
+      page = @id_to_page[current_state[:page_id]]
+      $window.history.replace_state(state_object_for_page(page), nil, page.location_bar_url)
+    end
+  end
 
   protected
 
@@ -42,6 +45,14 @@ class PageStack < Page
 
 
   private
+
+  def state_object_for_page(page)
+    {
+      :page_stack => true,
+      :page_id => page.object_id,
+      :page_url => page.location_bar_url
+    }
+  end
 
   def load_and_show_page(page)
     loading_screen = LoadingScreen.new

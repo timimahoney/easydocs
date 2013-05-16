@@ -5,8 +5,33 @@ require 'interface_database.rb',
 
 class SearchPage < Page
 
-  def initialize
+  attr_accessor :search_text
+
+  def initialize(url: nil)
     super('search')
+    self.search_text = url.split('/')[0] if url
+  end
+
+  def location_bar_url
+    return "/#{@page_name}" if !search_text || search_text.size == 0
+    return "/#{@page_name}/#{search_text}"
+  end
+
+  def search_text
+    if !@input
+      @initial_search_text 
+    else
+      @input.value
+    end
+  end
+
+  def search_text=(new_text)
+    if !@input
+      @initial_search_text = new_text
+    else
+      @input.value = new_text
+      on_search_change(nil)
+    end
   end
 
   private
@@ -17,6 +42,12 @@ class SearchPage < Page
     @header = @element.query_selector('header')
 
     @input.add_event_listener('keyup', method(:on_search_change))
+
+    if @initial_search_text
+      @input.value = @initial_search_text
+      on_search_change(nil)
+      remove_instance_variable(:@initial_search_text)
+    end
   end
 
   def on_search_change(event)
@@ -37,6 +68,8 @@ class SearchPage < Page
       @timeout_ids.push(timeout_id)
       timeout_time += 5
     end
+
+    WebDocs.page_stack.update_location_bar_url
   end
 
   def clear_results
