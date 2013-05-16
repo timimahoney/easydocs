@@ -1,6 +1,7 @@
 require 'net/http'
 require 'json'
 require 'active_support/all'
+require 'nokogiri'
 
 API_BASE_URL = 'http://docs.webplatform.org/w/api.php?format=json&action=ask&query='
 
@@ -148,7 +149,10 @@ end
 def convert_to_html(description)
   return nil if !description
   description.gsub!(/'[']+([^']+)'[']+/, '<code>\1</code>')
-  description.gsub!(/\[\[([^|]+)\|([^\]]+)\]\]/, '<a data-webdocs-url=\'\1\'><code>\2</code></a>')
+  description.gsub!(/\[\[([^|]+)\|([^\]]+)\]\]/, '<a class=\'webplatform-link\' data-webplatform-url=\'\1\'><code>\2</code></a>')
+  nbsp = Nokogiri::HTML("&nbsp;").text
+  description.gsub!(nbsp, '')
+
 
   paragraphs = description.split("\n")
 
