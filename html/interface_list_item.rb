@@ -118,14 +118,15 @@ module InterfaceListItem
     # and method parameter types to the classes.
     return_type_element = owner_document.create_element('span')
     return_type_element.class_list.add('return-type')
-    return_type_element.inner_text = interface[:return_type]
     @declaration.append_child(return_type_element)
 
     case type 
     when :method
+      return_type_element.inner_text = interface[:return_type]
       method_signature = create_method_signature
       @declaration.append_child(method_signature)
-    when :attribute 
+    when :attribute
+      return_type_element.inner_text = interface[:type]
       name = owner_document.create_element('span')
       name.inner_text = Documentation.underscore(interface[:name])
       @declaration.append_child(name)
