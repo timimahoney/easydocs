@@ -26,10 +26,21 @@ class InterfaceLoader
       end
       
       interfaces = parse_webdocs_interfaces(response)
+      add_parent_interfaces(interfaces)
       $window.console.log('Interfaces: ', interfaces)
       callback.call(interfaces)
     end
     request.send()
+  end
+
+  def self.add_parent_interfaces(interfaces)
+    interface_ids = interfaces.map { |interface| [interface[:id], interface] }
+    interface_by_id = Hash[interface_ids]
+    interfaces.each do |interface|
+      parent = interface_by_id[interface[:parent_id]]
+      next if !parent || parent[:id] == interface[:id]
+      interface[:parent] = parent
+    end
   end
 
   def self.parse_webdocs_interfaces(xml)

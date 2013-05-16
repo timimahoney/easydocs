@@ -28,6 +28,12 @@ class ClassPage < Page
 
     if @interface
       @members = @interface[:methods] + @interface[:attributes]
+      parent = @interface[:parent]
+      while parent
+        @members += parent[:methods]
+        @members += parent[:attributes]
+        parent = parent[:parent]
+      end
       @members.sort_by! { |member| member[:name] }
     end
 
@@ -85,7 +91,10 @@ class ClassPage < Page
   def add_member_elements(member)
     list_item = InterfaceListItem.new
     list_item.interface = member
-    list_item.is_header_clickable = false
+    show_class = member[:owner_id] != @interface[:id]
+    list_item.is_header_clickable = show_class
+    list_item.show_parent_class = show_class
+    list_item.add_event_listener(InterfaceListItem::CLICKED_INTERFACE, method(:on_click_member))
     @member_list.append_child(list_item)
 
     sidebar_item = $window.document.create_element('li')
@@ -100,6 +109,14 @@ class ClassPage < Page
       return if self.current_member == member
       self.current_member = member
     end
+  end
+
+  def on_click_member(event)
+    member = event.detail.interface
+    class_page = ClassPage.new
+    class_page.interface = member[:owner]
+    class_page.current_member = member
+    WebDocs.page_stack.push(page: class_page, animated: true)
   end
 
   def scroll_to_member(member)
