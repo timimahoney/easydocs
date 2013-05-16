@@ -67,6 +67,15 @@ methods.each do |method|
   end
 end
 
+interface_names = {}
+interfaces.each do |interface|
+  if interface_names[interface[:name]]
+    p "Duplicate: #{interface[:name]}. #{interface[:id]} #{interface_names[interface[:name]][:id]}"
+  else
+    interface_names[interface[:name]] = interface
+  end
+end
+
 
 p 'Building XML...'
 builder = Nokogiri::XML::Builder.new do |xml|
