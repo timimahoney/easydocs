@@ -102,7 +102,18 @@ builder = Nokogiri::XML::Builder.new do |xml|
             method_attributes[:description] = method[:description]
             method_attributes[:full_url] = method[:full_url]
             xml.method_(method_attributes) {
-              method[:parameters].each { |parameter| xml.parameter(parameter) }
+
+              method[:parameters].each do |parameter|
+                parameter_attributes = {}
+                parameter_attributes[:id] = parameter[:id]
+                parameter_attributes[:name] = parameter[:name]
+                parameter_attributes[:type] = parameter[:type]
+                parameter_attributes[:owner_id] = parameter[:owner_id]
+                parameter_attributes[:description] = parameter[:description]
+                parameter_attributes[:optional] = parameter[:optional]
+                parameter_attributes[:full_url] = parameter[:full_url]
+                xml.parameter(parameter_attributes)
+              end
             }
           end
         } # methods
