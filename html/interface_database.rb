@@ -96,7 +96,7 @@ class InterfaceDatabase
   end
 
   def compare_class(interface, search_term)
-    compare_string(interface[:name], search_term) * 2
+    compare_string(interface[:name], search_term)
   end
 
   def compare_attribute(attribute, search_term)
