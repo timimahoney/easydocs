@@ -27,9 +27,6 @@ class InterfaceDatabase
         results
       end
 
-      # Do an initial caching of the letters.
-      ('a'..'z').each { |letter| find_interfaces(letter) }
-
       callback.call(@interfaces) if callback
     end
   end
