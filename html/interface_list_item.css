@@ -77,6 +77,11 @@ li.interface-list-item {
   font-weight: 400;
 }
 
+.interface-list-item .declaration > code span {
+  font-weight: 400;
+  font-family: Source Code Pro, monospace;
+}
+
 .interface-list-item .declaration {
   background-color: #f7f7f7;
   padding: 0.5em;
