@@ -4,7 +4,7 @@ module InterfaceListItem
   CLICKED_INTERFACE = 'clicked interface'
 
   attr_accessor :interface
-  attr_accessor :show_parent_class
+  attr_accessor :show_owner_class
   attr_accessor :is_header_clickable
 
   def self.new
@@ -26,12 +26,12 @@ module InterfaceListItem
     update_info
   end
 
-  def show_parent_class=(show_parent_class)
-    @show_parent_class = show_parent_class
-    if @show_parent_class
-      class_list.add('show-parent')
+  def show_owner_class=(show_owner_class)
+    @show_owner_class = show_owner_class
+    if @show_owner_class
+      class_list.add('show-owner')
     else
-      class_list.remove('show-parent')
+      class_list.remove('show-owner')
     end
   end
 
@@ -50,9 +50,9 @@ module InterfaceListItem
 
     @title_container = owner_document.create_element('div')
     @title_container.class_list.add('interface-header')
-    @parent_class = owner_document.create_element('span')
-    @parent_class.class_list.add('parent-class')
-    @title_container.append_child(@parent_class)
+    @owner_class = owner_document.create_element('span')
+    @owner_class.class_list.add('owner-class')
+    @title_container.append_child(@owner_class)
     @title = owner_document.create_element('span')
     @title.class_list.add('interface-name')
     @title_container.append_child(@title)
@@ -102,9 +102,9 @@ module InterfaceListItem
     @title.inner_text = interface_name
 
     if interface[:owner]
-      @parent_class.inner_text = interface[:owner][:name]
+      @owner_class.inner_text = interface[:owner][:name]
     else
-      @parent_class.inner_html = ''
+      @owner_class.inner_html = ''
     end
   end
 
@@ -135,9 +135,9 @@ module InterfaceListItem
 
   def create_method_signature
     signature = owner_document.create_element('span')
-    signature.class_list.add('method_signature')
+    signature.class_list.add('method-signature')
     method_name = owner_document.create_element('span')
-    method_name.class_list.add('method_name')
+    method_name.class_list.add('method-name')
     method_name.inner_text = Documentation.underscore(interface[:name])
     signature.append_child(method_name)
     open_parentheses = owner_document.create_element('span')

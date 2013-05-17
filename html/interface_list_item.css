@@ -1,14 +1,19 @@
 li.interface-list-item {
   list-style: none;
-  padding-bottom: 3.5em;
-  border-top: 1px solid #ccc;
+  padding-bottom: 1em;
+  margin-bottom: 3.5em;
+  box-shadow: 1px 1px 0.3em rgba(0, 0, 0, 0.5);
+  background-color: #fefefe;
+  border-radius: 0.15em;
+  overflow: hidden;
 }
 
 .interface-list-item .interface-header {
-  padding: 0.2em 1.6em;
+  padding: 0.4em 1.6em 0.2em 1.6em;
   margin-top: 0;
   margin-bottom: 0.5em;
   border-left: 1em solid;
+  border-bottom: 1px solid #eee;
   background-color: #f8f8f8;
 }
 
@@ -45,17 +50,18 @@ li.interface-list-item {
   color: #222;
 }
 
-.interface-list-item .interface-header .parent-class {
+.interface-list-item .interface-header .owner-class {
   display: none;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 200;
-  margin-bottom: 0.1em;
+  margin-top: 0.05em;
   color: #999;
+  line-height: 1.5em;
 }
 
-.interface-list-item.show-parent .interface-header .parent-class {
+.interface-list-item.show-owner .interface-header .owner-class {
   display: block;
-  float: left;
+  float: right;
 }
 
 .interface-list-item .interface-content {

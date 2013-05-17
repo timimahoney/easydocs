@@ -6,15 +6,19 @@
 
 .search-page header {
   transition-duration: 0.3s;
+  background-color: #333;
+  padding-top: 0.9em;
+  margin-bottom: 1em;
 }
 
 .search-page header.center {
-  margin-top: 10em;
+  padding-top: 10em;
 }
 
 .search-page header .text {
   margin-top: 0.9em;
   padding: 0 2.6em;
+  text-shadow: 1px 1px 0.3em #000;
 }
 
 .search-page header h1 {
@@ -25,7 +29,7 @@
   margin-right: 0.2em;
   margin-bottom: 0.2em;
   line-height: 1em;
-  color: #444;
+  color: #eee;
 }
 
 .search-page header h2 {
@@ -40,16 +44,19 @@
 
 .search-page header .border {
   height: 0.4em;
-  opacity: 0.3;
-  background: linear-gradient(0, 
+  opacity: 1;
+  background: linear-gradient(180deg, 
                               #C45E5A 33%, 
                               #EED776 33%, 
                               #EED776 67%, 
                               #5577AA 67%);
+  box-shadow: 1px 1px 0.5em black;
 }
 
 .search-page .input-container {
   padding: 0.7em 2.6em;
+  background-color: #ddd;
+  box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.2);
 }
 
 .search-page input {
@@ -60,7 +67,10 @@
   padding: 0.1em 0.5em;
   margin: 0;
   color: #444;
-  border: 1px solid #ddd;
+  border: none;
+  box-shadow: 1px 1px 0.1em rgba(0, 0, 0, 0.5);
+  border-radius: 0.1em;
+  background-color: #fefefe;
 }
 
 .search-page input:focus {

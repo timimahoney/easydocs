@@ -93,7 +93,7 @@ class ClassPage < Page
     list_item.interface = member
     show_class = member[:owner_id] != @interface[:id]
     list_item.is_header_clickable = show_class
-    list_item.show_parent_class = show_class
+    list_item.show_owner_class = show_class
     list_item.add_event_listener(InterfaceListItem::CLICKED_INTERFACE, method(:on_click_member))
     @member_list.append_child(list_item)
 

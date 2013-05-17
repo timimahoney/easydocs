@@ -43,5 +43,6 @@ p {
 }
 
 .page-stack > div {
-  background: #fefefe;
+  background: #eee;
+  background: linear-gradient(#eaeaea, #efefef);
 }

@@ -89,7 +89,7 @@ class SearchPage < Page
     # FIXME: Cache list item views and reuse them.
     list_item = InterfaceListItem.new
     list_item.interface = interface
-    list_item.show_parent_class = true
+    list_item.show_owner_class = true
     @result_list.append_child(list_item)
 
     list_item.add_event_listener(InterfaceListItem::CLICKED_INTERFACE, method(:on_click_interface))
