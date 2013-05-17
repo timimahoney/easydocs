@@ -34,6 +34,10 @@ class SearchPage < Page
     end
   end
 
+  def did_appear
+    @input.focus
+  end
+
   private
 
   def did_load
