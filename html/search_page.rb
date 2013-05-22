@@ -55,8 +55,6 @@ class SearchPage < Page
   end
 
   def on_search_change(event)
-    @header.class_list.remove('center')
-
     current_input = @input.value
     $window.console.log("Search changed, input=#{current_input}")
 
