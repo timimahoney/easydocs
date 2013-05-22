@@ -78,6 +78,10 @@ li.interface-list-item {
   display: none;
 }
 
+.interface-list-item code {
+  font-weight: 400;
+}
+
 .interface-list-item .declaration > code {
   display: block;
   font-weight: 400;
