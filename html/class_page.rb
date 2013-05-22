@@ -47,6 +47,8 @@ class ClassPage < Page
   def current_member=(new_member)
     @current_member = new_member
     WebDocs.page_stack.update_location_bar_url
+
+    update_current_member_dimming
   end
 
   def location_bar_url
@@ -58,6 +60,7 @@ class ClassPage < Page
 
   def will_appear
     $window.add_event_listener('popstate', method(:on_pop_state))
+    update_current_member_dimming
   end
 
   def did_appear
@@ -91,12 +94,31 @@ class ClassPage < Page
 
   private
 
-  def on_scroll_content(event)
-    if !@scrolling_programmatically
-      self.current_member = nil
+  def update_current_member_dimming
+    return if !@attributes_list || !@methods_list
+    all_list_items = @attributes_list.child_nodes.entries + @methods_list.child_nodes.entries
+    if !@current_member
+      all_list_items.each { |item| item.class_list.remove('dim') }
+      $window.set_timeout(300) do
+        all_list_items.each { |item| item.class_list.remove('transition') }
+      end
     else
-      @scrolling_programmatically = false
+      member_index = (@attributes + @methods).index(@current_member)      
+      all_list_items.each_with_index do |item, index|
+        if index == member_index
+          item.class_list.remove('dim', 'transition')
+        else
+          item.class_list.add('dim', 'transition')
+        end
+      end
     end
+  end
+
+  def on_scroll_content(event)
+    if !@scrolling_programmatically && @current_member
+      self.current_member = nil
+    end
+    @scrolling_programmatically = false
 
     update_placemarker
   end
@@ -166,7 +188,6 @@ class ClassPage < Page
 
     sidebar_item.onclick do
       scroll_to_member(member)
-      list_item.glow
 
       return if self.current_member == member
       self.current_member = member

@@ -160,6 +160,6 @@ li.interface-list-item {
   font-weight: 600;
 }
 
-.interface-list-item.glow {
-  background-color: #ccc;
+.interface-list-item.dim {
+  opacity: 0.15;
 }

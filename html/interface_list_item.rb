@@ -83,16 +83,6 @@ module InterfaceListItem
     self.is_header_clickable = true
   end
 
-  def glow
-    $window.clear_timeout(@glow_timeout_id) if @glow_timeout_id
-    class_list.add('glow')
-    class_list.add('transition-short')
-    @glow_timeout_id = $window.set_timeout(200) do
-      class_list.remove('glow')
-      $window.set_timeout(300) { class_list.remove('transition-short') }
-    end
-  end
-
   private
 
   def update_header
