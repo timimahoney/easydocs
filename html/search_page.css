@@ -69,6 +69,10 @@
   background-color: #fefefe;
 }
 
+.search-page .display-none {
+  display: none;
+}
+
 .search-page input:focus {
   outline: none;
 }

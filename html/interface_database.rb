@@ -3,6 +3,8 @@ require 'interface_loader.rb' do
 class InterfaceDatabase
   @@singleton_instance = nil
 
+  LIMIT = 100
+
   attr_reader :interfaces
 
   def self.instance
@@ -31,17 +33,14 @@ class InterfaceDatabase
     end
   end
 
-  ##
-  # Finds the interfaces in the database for a search term.
-  # This will perform a fuzzy search throughout the interface database
-  # to find something that matches. It returns a list of hashes.
-  # 
-  # FIXME: Should this return instances of Interface instead of hashes?
-  def find_interfaces(search_term)
+  def find_interfaces(search_term, &callback)
     search_term = search_term.downcase
 
     results = @cached_searches[search_term]
-    return results if results
+    if results
+      callback.call(results)
+      return
+    end
 
     # We can narrow down the number of interfaces to search through
     # by checking if we have cached results for a partial match of this search term.
@@ -53,7 +52,9 @@ class InterfaceDatabase
     end
     interfaces_to_search = @interfaces if !interfaces_to_search
 
-    find_interfaces_internal(search_term, interfaces_to_search)
+    found_interfaces = find_interfaces_internal(search_term, interfaces_to_search)
+    found_interfaces = found_interfaces[0..LIMIT] if found_interfaces.size > LIMIT
+    callback.call(found_interfaces)
   end
 
   def find_interface(name: nil, type: nil)

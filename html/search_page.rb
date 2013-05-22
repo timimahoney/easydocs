@@ -6,10 +6,12 @@ require 'interface_database.rb',
 class SearchPage < Page
 
   attr_accessor :search_text
+  attr_reader :interfaces
 
   def initialize(url: nil)
     super('search')
     self.search_text = url.split('/')[0] if url
+    @interface_list_items = []
   end
 
   def location_bar_url
@@ -55,42 +57,42 @@ class SearchPage < Page
   end
 
   def on_search_change(event)
-    current_input = @input.value
-    $window.console.log("Search changed, input=#{current_input}")
-
-    db = InterfaceDatabase.instance
-    interfaces = db.find_interfaces(current_input)
-    clear_results()
-
-    @timeout_ids.each { |id| $window.clear_timeout(id) } if @timeout_ids
-    @timeout_ids = []
-    timeout_time = 0
-    interfaces.each do |interface|
-      timeout_id = $window.set_timeout(timeout_time) { add_interface_to_results(interface) }
-      @timeout_ids.push(timeout_id)
-      timeout_time += 5
-    end
-
+    search_string = @input.value
     WebDocs.page_stack.update_location_bar_url
-  end
+    $window.console.log("Search changed, input=#{search_string}")
 
-  def clear_results
-    child = @result_list.first_child
-    while child
-      @result_list.remove_child(child)
-      child = @result_list.first_child
+    InterfaceDatabase.instance.find_interfaces(search_string) do |interfaces|
+      next if search_string != @input.value
+      self.interfaces = interfaces
     end
   end
 
-  def add_interface_to_results(interface)
-    # FIXME: Should we have a class for ResultListItem?
-    # FIXME: Cache list item views and reuse them.
-    list_item = InterfaceListItem.new
-    list_item.interface = interface
-    list_item.show_owner_class = true
-    @result_list.append_child(list_item)
+  def interfaces=(new_interfaces)
+    @interfaces = new_interfaces
 
-    list_item.add_event_listener(InterfaceListItem::CLICKED_INTERFACE, method(:on_click_interface))
+    if !@interfaces
+      @interface_list_items.each { |item| item.style.display = 'none' }
+      return
+    end
+
+    @interfaces.each_with_index do |interface, index|
+      item = @interface_list_items[index]
+      if !item
+        item = InterfaceListItem.new
+        item.show_owner_class = true
+        @interface_list_items.push(item)
+        @result_list.append_child(item)
+      end
+
+      item.interface = interface
+      item.class_list.remove('display-none')
+    end
+
+    items_to_none = @interface_list_items[@interfaces.size..@interface_list_items.size]
+    items_to_none.each do |item|
+      break if item.class_list.contains('display-none')
+      item.class_list.add('display-none')
+    end
   end
 
   def on_click_interface(event)
