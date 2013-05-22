@@ -27,14 +27,16 @@ class ClassPage < Page
     @interface = new_interface
 
     if @interface
-      @members = @interface[:methods] + @interface[:attributes]
+      @methods = @interface[:methods]
+      @attributes = @interface[:attributes]
       parent = @interface[:parent]
       while parent
-        @members += parent[:methods]
-        @members += parent[:attributes]
+        @methods += parent[:methods]
+        @attributes += parent[:attributes]
         parent = parent[:parent]
       end
-      @members.sort_by! { |member| member[:name] }
+      @methods.sort_by! { |method| method[:name] }
+      @attributes.sort_by! { |attribute| attribute[:name] }
     end
 
     update_interface_elements if @element
@@ -64,9 +66,10 @@ class ClassPage < Page
 
   def did_load
     @content_container = @element.query_selector('.content')
-    @member_list = @element.query_selector('.member-list')
-    @attributes_list = @element.query_selector('.attributes-list')
-    @methods_list = @element.query_selector('.methods-list')
+    @methods_list = @element.query_selector('.member-list.methods')
+    @attributes_list = @element.query_selector('.member-list.attributes')
+    @attributes_sidebar_list = @element.query_selector('.sidebar-list.attributes')
+    @methods_sidebar_list = @element.query_selector('.sidebar-list.methods')
     @title_element = @element.query_selector('header>h1')
     @interface_description_element = @element.query_selector('.interface-description')
     @interface_list_item = InterfaceListItem.new
@@ -91,36 +94,38 @@ class ClassPage < Page
   def update_interface_elements
     @attributes_list.inner_html = ''
     @methods_list.inner_html = ''
-    @member_list.inner_html = ''
+    @attributes_sidebar_list.inner_html = ''
+    @methods_sidebar_list.inner_html = ''
     @title_element.inner_html = ''
     @interface_list_item.interface = nil
 
     return if !@interface
 
+    @element.query_selector_all('.attributes').each do |attributes_element|
+      attributes_element.style.display = @attributes.length == 0 ? 'none' : 'block'
+    end
+
     @title_element.inner_text = @interface[:name]
     @interface_list_item.interface = @interface
-    @members.each { |member| add_member_elements(member) }
+
+    @methods.each { |method| add_member_elements(method, @methods_list, @methods_sidebar_list) }
+    @attributes.each { |attribute| add_member_elements(attribute, @attributes_list, @attributes_sidebar_list) }
   end
 
-  def add_member_elements(member)
+  def add_member_elements(member, list, sidebar_list)
     list_item = InterfaceListItem.new
     list_item.interface = member
     show_class = member[:owner_id] != @interface[:id]
     list_item.is_header_clickable = show_class
     list_item.show_owner_class = show_class
     list_item.add_event_listener(InterfaceListItem::CLICKED_INTERFACE, method(:on_click_member))
-    @member_list.append_child(list_item)
+    list.append_child(list_item)
 
     sidebar_item = $window.document.create_element('li')
     sidebar_item.inner_text = Documentation.underscore(member[:name])
     sidebar_item.class_list.add(member[:interface_type].to_s)
     sidebar_item.class_list.add('ellipsize')
-    case member[:interface_type]
-    when :attribute
-      @attributes_list.append_child(sidebar_item)
-    when :method
-      @methods_list.append_child(sidebar_item)
-    end
+    sidebar_list.append_child(sidebar_item)
 
     sidebar_item.onclick do
       scroll_to_member(member)
@@ -140,9 +145,21 @@ class ClassPage < Page
   end
 
   def scroll_to_member(member)
-    member_index = @members.index(member)
-    return if !member_index
-    element = @member_list.child_nodes[member_index]
+    return if !member
+
+    case member[:interface_type]
+    when :attribute
+      data_array = @attributes
+      list = @attributes_list
+    when :method
+      data_array = @methods
+      list = @methods_list
+    end
+
+    index = data_array.index(member)
+    return if !index
+
+    element = list.child_nodes[index]
     return if !element
     center_element_on_page(element)
   end
@@ -163,9 +180,9 @@ class ClassPage < Page
   end
 
   def find_member(member_name)
-    return nil if !@members || !member_name
+    return nil if !@attributes || !@methods || !member_name
     lowercase_member_name = Documentation.lower_camel_case(member_name).downcase
-    @members.find { |member| member[:name].downcase == lowercase_member_name }
+    (@attributes + @methods).find { |member| member[:name].downcase == lowercase_member_name }
   end
 
   def on_pop_state(event)

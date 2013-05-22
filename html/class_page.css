@@ -14,10 +14,6 @@
   overflow: hidden;
 }
 
-p code {
-  font-weight: 400;
-}
-
 .class-page .content {
   position: absolute;
   top: 0;
@@ -37,8 +33,20 @@ p code {
   margin: 0 1em 4em 2em;
 }
 
+.class-page .content h2 {
+  font-size: 2.5em;
+  font-weight: 200;
+  color: #bbb;
+  margin: 0.1em 0.315em;
+  text-shadow: 0 1px 0 #fafafa;
+}
+
+.class-page .content h2.attributes {
+  margin-left: 0.41em;
+}
+
 .class-page .member-list {
-  margin: 1em;
+  margin: 0 1em;
   padding: 0;
 }
 
@@ -148,7 +156,7 @@ p code {
 
 .class-page .sidebar-list li {
   font-size: 0.8em;
-  padding: 0.1em 1.07em;
+  padding: 0.1em 1.13em;
   margin: 0 0.2em;
   border-radius: 0.3em;
   color: #bbb;
@@ -173,4 +181,12 @@ p code {
 
 .class-page .sidebar-list li.method {
   border-left-color: #C45E5A;
+}
+
+.class-page .sidebar-list-container .place-marker {
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #ddd;
 }
