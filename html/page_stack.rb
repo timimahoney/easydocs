@@ -21,7 +21,11 @@ class PageStack < Page
 
     $window.console.log('pushing page: ', page.location_bar_url)
 
-    $window.history.push_state(state_object_for_page(page), nil, page.location_bar_url)
+    if @stack.size == 1 && !$window.history.state
+      $window.history.replace_state(state_object_for_page(page), nil, page.location_bar_url)
+    else
+      $window.history.push_state(state_object_for_page(page), nil, page.location_bar_url)
+    end
 
     load_and_show_page(page, animated)
   end

@@ -1,6 +1,7 @@
 require 'interface_database.rb',
         'interface_list_item.rb',
         'page.rb',
+        'search_page.rb',
         'string_utils.rb' do
 
 class ClassPage < Page
@@ -88,6 +89,7 @@ class ClassPage < Page
     @sidebar_list_container = @element.query_selector('.sidebar-list-container')
 
     @content_container.onscroll = method(:on_scroll_content)
+    @element.query_selector('.search-button').onclick = method(:on_click_search)
 
     update_interface_elements
     scroll_to_member(@current_member)
@@ -113,6 +115,11 @@ class ClassPage < Page
         end
       end
     end
+  end
+
+  def on_click_search(event)
+    search_page = SearchPage.new
+    WebDocs.page_stack.push(page: search_page, animated:true)
   end
 
   def on_scroll_content(event)

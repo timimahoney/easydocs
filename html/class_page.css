@@ -90,31 +90,29 @@
 
 .class-page .search-button {
   position: absolute;
-  top: 0.5em;
-  right: 1.5em;
-  left: 1.5em;
-  margin: 0.2em;
-  color: #ccc;
-  background: linear-gradient(0, #4e4e4e, #505050);
-  box-shadow: 0.05em 0.05em 0.1em #000;
-  text-shadow: 0.05em 0.05em 0.1em #333;
+  font-size: 1em;
+  top: 0.57em;
+  right: 0.55em;
+  left: 0.55em;
+  height: 1.55em;
+  color: #555;
+  background: linear-gradient(0, #aaa, #bbb);
+  box-shadow: 0.1em 0.1em 0.3em #111;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  font-weight: 300;
   border: none;
   border-radius: 0.1em;
   cursor: pointer;
 }
 
 .class-page .search-button:hover {
-  color: #eee;
-  background: linear-gradient(0, #525252, #555555);
-  box-shadow: 0.05em 0.05em 0.25em #000;
-  text-shadow: 0.05em 0.05em 0.1em #111;
+  background: linear-gradient(0, #bbb, #ddd);
+  box-shadow: 0.1em 0.1em 0.5em #000;
 }
 
 .class-page .search-button:active {
-  color: #ccc;
-  background: linear-gradient(0, #494949, #4b4b4b);
-  box-shadow: 0.05em 0.05em 0.05em #111;
-  text-shadow: 0.05em 0.05em 0.05em #222;
+  background: linear-gradient(0, #9f9f9f, #999);
+  box-shadow: 0.1em 0.1em 0.1em #222;
 }
 
 .class-page .search-button:before {
