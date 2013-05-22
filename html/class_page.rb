@@ -72,11 +72,21 @@ class ClassPage < Page
     @interface_list_item = InterfaceListItem.new
     @interface_description_element.append_child(@interface_list_item)
 
+    @content_container.onscroll = method(:on_scroll_content)
+
     update_interface_elements
     scroll_to_member(@current_member)
   end
 
   private
+
+  def on_scroll_content(event)
+    if !@scrolling_programmatically
+      self.current_member = nil
+    else
+      @scrolling_programmatically = false
+    end
+  end
 
   def update_interface_elements
     @attributes_list.inner_html = ''
@@ -148,6 +158,7 @@ class ClassPage < Page
 
     target_y = @content_container.scroll_top + item_rect.top + (item_rect.height / 2)
     new_scroll_y = target_y - (@content_container.client_height / 2)
+    @scrolling_programmatically = true
     @content_container.scroll_top = new_scroll_y
   end
 
