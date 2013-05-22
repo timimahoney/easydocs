@@ -80,6 +80,7 @@ class SearchPage < Page
       if !item
         item = InterfaceListItem.new
         item.show_owner_class = true
+        item.add_event_listener(InterfaceListItem::CLICKED_INTERFACE, method(:on_click_interface))
         @interface_list_items.push(item)
         @result_list.append_child(item)
       end
