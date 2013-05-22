@@ -82,6 +82,7 @@ class ClassPage < Page
     @title_element = @element.query_selector('header>h1')
     @interface_description_element = @element.query_selector('.interface-description')
     @interface_list_item = InterfaceListItem.new
+    @interface_list_item.is_header_clickable = false
     @interface_description_element.append_child(@interface_list_item)
     @placemarker = @element.query_selector('.place-marker')
     @sidebar_list_container = @element.query_selector('.sidebar-list-container')
