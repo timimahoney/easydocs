@@ -185,8 +185,13 @@
 
 .class-page .sidebar-list-container .place-marker {
   position: absolute;
-  right: 0;
-  width: 1em;
+  top: 0;
+  right: 0.2em;
+  left: 0.2em;
+  border-radius: 0.3em;
+  border: 0.1em solid rgba(255, 255, 255, 0.05);
   height: 1em;
-  background-color: #ddd;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition-duration: 0.3s;
+  pointer-events: none;
 }

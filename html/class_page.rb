@@ -8,6 +8,8 @@ class ClassPage < Page
   attr_accessor :interface
   attr_accessor :current_member
 
+  PLACEMARKER_UPDATE_INTERVAL = 0.1
+
   def initialize(url: nil)
     super('class')
 
@@ -58,6 +60,10 @@ class ClassPage < Page
     $window.add_event_listener('popstate', method(:on_pop_state))
   end
 
+  def did_appear
+    update_placemarker
+  end
+
   def will_disappear
     $window.remove_event_listener('popstate', method(:on_pop_state))
   end
@@ -74,6 +80,8 @@ class ClassPage < Page
     @interface_description_element = @element.query_selector('.interface-description')
     @interface_list_item = InterfaceListItem.new
     @interface_description_element.append_child(@interface_list_item)
+    @placemarker = @element.query_selector('.place-marker')
+    @sidebar_list_container = @element.query_selector('.sidebar-list-container')
 
     @content_container.onscroll = method(:on_scroll_content)
 
@@ -89,6 +97,35 @@ class ClassPage < Page
     else
       @scrolling_programmatically = false
     end
+
+    update_placemarker
+  end
+
+  def update_placemarker
+    # Don't update the placemarker position too often. Otherwise, it's slow.
+    now = Time.now.to_f
+    time_since_last_update = now - (@last_placemarker_update || 0)
+    return if time_since_last_update < PLACEMARKER_UPDATE_INTERVAL
+    @last_placemarker_update = now.to_f
+
+    # Find the top and bottom visible elements, then move the marker to cover those.
+    minimum_top = @content_container.scroll_top
+    maximum_bottom = @content_container.scroll_top + @content_container.offset_height
+    all_children = @attributes_list.child_nodes.entries + @methods_list.child_nodes.entries
+    all_sidebar_children = @attributes_sidebar_list.child_nodes.entries + @methods_sidebar_list.child_nodes.entries
+    visible = all_children.find_all do |child|
+      (child.offset_top + child.offset_height > minimum_top) && (child.offset_top < maximum_bottom)
+    end
+
+    first_visible_index = all_children.index(visible.first)
+    last_visible_index = all_children.index(visible.last)
+    first_sidebar_item = all_sidebar_children[first_visible_index]
+    last_sidebar_item = all_sidebar_children[last_visible_index]
+
+    first_sidebar_top = first_sidebar_item.offset_top
+    last_sidebar_bottom = last_sidebar_item.offset_top + last_sidebar_item.offset_height - 2
+    @placemarker.style.top = "#{first_sidebar_top}px" # ['-webkit-transform'] = "translateY(#{first_sidebar_top}px)"
+    @placemarker.style.height = "#{last_sidebar_bottom - first_sidebar_top}px"
   end
 
   def update_interface_elements
