@@ -42,7 +42,7 @@ class ClassPage < Page
 
   def current_member=(new_member)
     @current_member = new_member
-    update_location_bar_url
+    WebDocs.page_stack.update_location_bar_url
   end
 
   def location_bar_url
@@ -65,9 +65,12 @@ class ClassPage < Page
   def did_load
     @content_container = @element.query_selector('.content')
     @member_list = @element.query_selector('.member-list')
-    @sidebar_list = @element.query_selector('.member-list-sidebar')
+    @attributes_list = @element.query_selector('.attributes-list')
+    @methods_list = @element.query_selector('.methods-list')
     @title_element = @element.query_selector('header>h1')
-    @interface_description_element = @element.query_selector('header .interface-description')
+    @interface_description_element = @element.query_selector('.interface-description')
+    @interface_list_item = InterfaceListItem.new
+    @interface_description_element.append_child(@interface_list_item)
 
     update_interface_elements
     scroll_to_member(@current_member)
@@ -76,15 +79,16 @@ class ClassPage < Page
   private
 
   def update_interface_elements
-    @sidebar_list.inner_html = ''
+    @attributes_list.inner_html = ''
+    @methods_list.inner_html = ''
     @member_list.inner_html = ''
     @title_element.inner_html = ''
-    @interface_description_element.inner_html = ''
+    @interface_list_item.interface = nil
 
     return if !@interface
 
     @title_element.inner_text = @interface[:name]
-    @interface_description_element.inner_html = @interface[:description]
+    @interface_list_item.interface = @interface
     @members.each { |member| add_member_elements(member) }
   end
 
@@ -100,7 +104,13 @@ class ClassPage < Page
     sidebar_item = $window.document.create_element('li')
     sidebar_item.inner_text = Documentation.underscore(member[:name])
     sidebar_item.class_list.add(member[:interface_type].to_s)
-    @sidebar_list.append_child(sidebar_item)
+    sidebar_item.class_list.add('ellipsize')
+    case member[:interface_type]
+    when :attribute
+      @attributes_list.append_child(sidebar_item)
+    when :method
+      @methods_list.append_child(sidebar_item)
+    end
 
     sidebar_item.onclick do
       scroll_to_member(member)
@@ -145,16 +155,6 @@ class ClassPage < Page
     return nil if !@members || !member_name
     lowercase_member_name = Documentation.lower_camel_case(member_name).downcase
     @members.find { |member| member[:name].downcase == lowercase_member_name }
-  end
-
-  def update_location_bar_url(replace_state: false)
-    new_state = { :class_page => object_id }
-    new_state[:member_name] = @current_member[:name] if @current_member
-    if replace_state
-      $window.history.replace_state(new_state, nil, location_bar_url)  
-    else
-      $window.history.push_state(new_state, nil, location_bar_url)
-    end
   end
 
   def on_pop_state(event)

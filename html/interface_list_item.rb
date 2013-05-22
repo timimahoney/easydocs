@@ -17,6 +17,8 @@ module InterfaceListItem
   def interface=(interface)
     @interface = interface
 
+    return if !interface
+
     class_list.remove('class', 'method', 'attribute')
     class_list.add(interface[:interface_type].to_s)
 

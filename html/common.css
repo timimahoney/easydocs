@@ -46,3 +46,13 @@ p {
   background: #eee;
   background: linear-gradient(#eaeaea, #efefef);
 }
+
+.ellipsize {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
