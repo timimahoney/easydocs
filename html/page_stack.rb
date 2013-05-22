@@ -30,6 +30,7 @@ class PageStack < Page
     current_state = $window.history.state
     if current_state && current_state.is_a?(Hash) && current_state[:page_stack]
       page = @id_to_page[current_state[:page_id]]
+      return if !page
       $window.history.replace_state(state_object_for_page(page), nil, page.location_bar_url)
     end
   end

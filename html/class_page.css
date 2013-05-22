@@ -57,20 +57,33 @@ p code {
 }
 
 .class-page header {
-  height: 3em;
+  height: 4.2em;
+  position: relative;
 }
 
 .class-page header h1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   font-size: 1em;
   padding: 0 0 0 0.5em;
   margin: 0;
   line-height: 1.5em;
   color: #eee;
-  text-shadow: 1px 1px 0.6em #000;
+  text-shadow: 0.1em 0.1em 0.17em #111;
+  box-shadow: 0 0.15em 0em #2D2D2D,
+              0 0.15em 0.5em #2D2D2D;
   border-left: 0.6em solid #EED776;
+  background-color: #555;
+  z-index: 1000;
 }
 
 .class-page .search-button {
+  position: absolute;
+  top: 0.5em;
+  right: 1.5em;
+  left: 1.5em;
   margin: 0.2em;
   color: #ccc;
   background: linear-gradient(0, #4e4e4e, #505050);
@@ -118,7 +131,7 @@ p code {
 
 .class-page .sidebar-list-container {
   position: absolute;
-  top: 3em;
+  top: 4.2em;
   right: 0;
   bottom: 0;
   left: 0;
@@ -135,19 +148,23 @@ p code {
 
 .class-page .sidebar-list li {
   font-size: 0.8em;
-  padding: 0.1em 1.285em;
+  padding: 0.1em 1.07em;
+  margin: 0 0.2em;
+  border-radius: 0.3em;
   color: #bbb;
   font-family: Source Code Pro, monospace;
 }
 
 .class-page .sidebar-list li:hover {
-  background-color: #444;
+  background-color: #444444;
+  box-shadow: 0.08em 0.08em 0.4em #222;
   cursor: pointer;
 }
 
 .class-page .sidebar-list li:active {
-  background-color: #f0f0f0;
-  color: #666;
+  background-color: #404040;
+  box-shadow: 0.08em 0.08em 0.05em #2f2f2f;
+  color: #aaa;
 }
 
 .class-page .sidebar-list li.attribute {
