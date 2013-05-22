@@ -15,3 +15,23 @@
   left: 0;
   overflow: auto;
 }
+
+.page-stack-transition {
+  transition-duration: 0.3s;
+}
+
+.page-stack .after-hide-position {
+  -webkit-transform: translateX(-0.5em);
+}
+
+.page-stack .before-show-position {
+  -webkit-transform: translateX(0.5em);
+}
+
+.page-stack .before-show-transparency {
+  opacity: 0;
+}
+
+.page-stack .after-hide-transparency {
+  opacity: 1;
+}
