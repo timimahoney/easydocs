@@ -178,6 +178,13 @@ def convert_to_html(description)
   elements.join('')
 end
 
+TYPE_REPLACEMENTS = { 'DOM Node' => 'Node',
+                      'Boolean'  => 'boolean' }
+
+def replace_type_name_if_needed(typename)
+  TYPE_REPLACEMENTS[typename] || typename
+end
+
 def load_interfaces_with_attached_members(output_dir)
   interfaces = read_json(filename: "#{output_dir}/interfaces.json")[:interfaces]
   methods = read_json(filename: "#{output_dir}/methods.json")[:methods]
@@ -197,6 +204,7 @@ def load_interfaces_with_attached_members(output_dir)
   p 'Attaching properties to interfaces...'
   properties.each do |property|
     property[:description] = convert_to_html(property[:description])
+    property[:type] = replace_type_name_if_needed(property[:type])
 
     # Some properties have multiple owners.
     owner_ids = property[:owner_id].split(',')
@@ -214,6 +222,7 @@ def load_interfaces_with_attached_members(output_dir)
   methods.each do |method|
     method[:description] = convert_to_html(method[:description])
     method[:return_description] = convert_to_html(method[:return_description])
+    method[:return_type] = replace_type_name_if_needed(method[:return_type])
     id_to_method[method[:id]] = method
     method[:parameters] = []
   end
@@ -222,6 +231,7 @@ def load_interfaces_with_attached_members(output_dir)
   p 'Attaching parameters to methods...'
   parameters.each do |parameter|
     parameter[:description] = convert_to_html(parameter[:description])
+    parameter[:type] = replace_type_name_if_needed(parameter[:type])
     method = id_to_method[parameter[:owner_id]]
     method[:parameters].push(parameter)
   end
