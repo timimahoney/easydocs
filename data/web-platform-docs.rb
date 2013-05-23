@@ -41,13 +41,13 @@ def read_json(filename: 'file.json')
 end
 
 def request_methods
-  methods = []
   limit = 100
+  threads = []
   (0...7).each do |i|
-    these_methods = request_methods_internal(limit: limit, offset: i * limit)
-    methods += these_methods
+    threads << Thread.new { request_methods_internal(limit: limit, offset: i * limit) }
   end
 
+  methods = threads.flat_map(&:value)
   methods
 end
 
@@ -70,13 +70,13 @@ def request_methods_internal(limit: 100, offset: 0)
 end
 
 def request_method_parameters
-  parameters = []
+  threads = []
   limit = 100
   (0...15).each do |i|
-    these_parameters = request_method_parameters_internal(limit: limit, offset: i * limit)
-    parameters += these_parameters
+    threads << Thread.new { request_method_parameters_internal(limit: limit, offset: i * limit) }
   end
 
+  parameters = threads.flat_map(&:value)
   parameters
 end
 
@@ -99,13 +99,13 @@ def request_method_parameters_internal(limit: 100, offset: 0)
 end
 
 def request_properties
-  properties = []
+  threads = []
   limit = 100
   (0...15).each do |i|
-    these_properties = request_properties_internal(limit: limit, offset: i * limit)
-    properties += these_properties
+    threads << Thread.new { request_properties_internal(limit: limit, offset: i * limit) }
   end
 
+  properties = threads.flat_map(&:value)
   properties
 end
 
