@@ -98,6 +98,14 @@ li.interface-list-item {
   border-left: 0.2em solid #ddd;
 }
 
+.interface-list-item .declaration .readonly {
+  color: #aaa;
+}
+
+.interface-list-item .declaration .readonly:after {
+  content: ' ';
+}
+
 .interface-list-item .declaration .return-type {
   color: #777;
 }

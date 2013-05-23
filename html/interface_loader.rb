@@ -88,7 +88,7 @@ class InterfaceLoader
     attribute[:id] = node.attributes['id'].value
     attribute[:type] = node.attributes['type'].value
     attribute[:name] = node.attributes['name'].value
-    attribute[:readonly] = node.attributes['readonly'] == 'true'
+    attribute[:readonly] = node.attributes['readonly'].value == 'true'
     attribute[:description] = node.attributes['description'].value
     attribute[:owner_id] = node.attributes['owner_id'].value
     attribute[:full_url] = node.attributes['full_url'].value

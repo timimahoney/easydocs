@@ -118,6 +118,12 @@ module InterfaceListItem
       method_signature = create_method_signature
       @declaration.append_child(method_signature)
     when :attribute
+      if interface[:readonly]
+        readonly_element = owner_document.create_element('span')
+        readonly_element.class_list.add('readonly')
+        readonly_element.inner_html = 'readonly'
+        @declaration.insert_before(readonly_element, return_type_element)
+      end
       return_type_element.inner_text = interface[:type]
       name = owner_document.create_element('span')
       name.inner_text = Documentation.underscore(interface[:name])
