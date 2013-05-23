@@ -27,7 +27,6 @@ class InterfaceLoader
       
       interfaces = parse_webdocs_interfaces(response)
       add_parent_interfaces(interfaces)
-      $window.console.log('Interfaces: ', interfaces)
       callback.call(interfaces)
     end
     request.send()
@@ -127,7 +126,6 @@ class InterfaceLoader
     unloaded_files = Hash[files.map { |o| [o, 1] }]
     files.each do |filename|
       load_interface(filename) do |interface|
-        # $window.console.log("Loaded interface: #{filename}")
         interfaces.push(interface) if interface
         unloaded_files.delete(filename)
         callback.call(interfaces) if unloaded_files.empty?
@@ -142,11 +140,7 @@ class InterfaceLoader
     request.onreadystatechange do |event|
       if request.ready_state == XMLHttpRequest::DONE
         response = request.response_xml
-        if response.nil?
-          # $window.console.log('nil for', filename)
-        else
-          interface = parse_interface_xml(response)
-        end
+        interface = parse_interface_xml(response) if response
         callback.call(interface)
       end
     end
