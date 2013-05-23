@@ -101,7 +101,7 @@ class InterfaceLoader
     method[:name] = node.attributes['name'].value
     method[:return_type] = node.attributes['return_type'].value
     method[:description] = node.attributes['description'].value
-    method[:return_description] = ""
+    method[:return_description] = node.attributes['return_description'].value
     method[:owner_id] = node.attributes['owner_id'].value
     method[:full_url] = node.attributes['full_url'].value
     

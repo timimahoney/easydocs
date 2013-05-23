@@ -96,14 +96,16 @@ li.interface-list-item {
   background-color: #f7f7f7;
   padding: 0.5em;
   border-left: 0.2em solid #ddd;
+  overflow: auto;
 }
 
-.interface-list-item .declaration .readonly {
+.interface-list-item .method-signature {
+  font-size: 0.9em;
+}
+
+.interface-list-item .declaration .readonly:before {
+  content: 'readonly ';
   color: #aaa;
-}
-
-.interface-list-item .declaration .readonly:after {
-  content: ' ';
 }
 
 .interface-list-item .declaration .return-type {
@@ -114,55 +116,77 @@ li.interface-list-item {
   content: ' ';
 }
 
+.interface-list-item .parameter {
+  color: #555;
+}
+
 .interface-list-item .parameter:after {
   content: ', ';
+  color: #999;
 }
 
 .interface-list-item .parameters span:last-of-type.parameter:after {
   content: none;
 }
 
-.interface-list-item .parameter .type {
-  color: #777;
+.interface-list-item .parameters:after {
+  color: #999;
+  content: ')';
 }
 
-.interface-list-item .parameter .type:after {
-  content: ' ';
+.interface-list-item .parameters:before {
+  color: #999;
+  content: '(';
 }
 
-.interface-list-item .parameter .name {
-  color: #444;
-}
-
-.interface-list-item dl.info {
+.interface-list-item ol.method-info {
   display: none;
   font-size: 1em;
-  margin: 0;
-  margin-top: 1.2em;
+  margin: 0.6em 0 0 0;
+  padding: 0.3em 0 0 0;
+  border-top: 1px solid #ddd;
+  list-style: none;
 }
 
-.interface-list-item.method dl.info {
+.interface-list-item.method ol.method-info {
   display: block;
 }
 
-.interface-list-item.method dl.info:empty {
+.interface-list-item.method ol.method-info:empty {
   display: none;
 }
 
-.interface-list-item .info dt {
+.interface-list-item .method-info li > code {
   font-weight: 500;
   float: left;
-  padding-top: 0.15em;
   margin: 0;
 }
 
-.interface-list-item .info dd {
-  padding-left: 10em;
-  margin-bottom: 0.3em;
+.interface-list-item .method-info li > code span {
+  display: inline-block;
+  font-size: 0.8em;
+  width: 9em;
+  padding-right: 0.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Source Code Pro, monospace;
 }
 
-.interface-list-item .info dd:last-child {
-  margin-bottom: 0;
+.interface-list-item .method-info .parameter-name {
+  
+}
+
+.interface-list-item .method-info .parameter-type {
+  color: #777;
+}
+
+.interface-list-item .method-info .return .parameter-name {
+  font-weight: 600;
+}
+
+.interface-list-item .method-info li .parameter-description {
+  padding-left: 16em;
 }
 
 .interface-list-item .section-header {

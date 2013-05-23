@@ -74,11 +74,12 @@ module InterfaceListItem
     @content.append_child(@declaration_container)
 
     @declaration = owner_document.create_element('code')
+    @declaration.class_list.add('method-signature')
     @declaration_container.append_child(@declaration)
 
-    @info = owner_document.create_element('dl')
-    @info.class_list.add('info')
-    @declaration_container.append_child(@info)
+    @method_info = owner_document.create_element('ol')
+    @method_info.class_list.add('method-info')
+    @declaration_container.append_child(@method_info)
 
     self.is_header_clickable = true
   end
@@ -111,19 +112,13 @@ module InterfaceListItem
     return_type_element = owner_document.create_element('span')
     return_type_element.class_list.add('return-type')
     @declaration.append_child(return_type_element)
+    @declaration.class_list.add('readonly') if interface[:readonly]
 
     case type 
     when :method
       return_type_element.inner_text = interface[:return_type]
-      method_signature = create_method_signature
-      @declaration.append_child(method_signature)
+      append_method_signature
     when :attribute
-      if interface[:readonly]
-        readonly_element = owner_document.create_element('span')
-        readonly_element.class_list.add('readonly')
-        readonly_element.inner_html = 'readonly'
-        @declaration.insert_before(readonly_element, return_type_element)
-      end
       return_type_element.inner_text = interface[:type]
       name = owner_document.create_element('span')
       name.inner_text = Documentation.underscore(interface[:name])
@@ -131,41 +126,21 @@ module InterfaceListItem
     end
   end
 
-  def create_method_signature
-    signature = owner_document.create_element('span')
-    signature.class_list.add('method-signature')
+  def append_method_signature
     method_name = owner_document.create_element('span')
     method_name.class_list.add('method-name')
     method_name.inner_text = Documentation.underscore(interface[:name])
-    signature.append_child(method_name)
-    open_parentheses = owner_document.create_element('span')
-    open_parentheses.class_list.add('parentheses')
-    open_parentheses.inner_text = '('
-    signature.append_child(open_parentheses)
+    @declaration.append_child(method_name)
 
     parameters = owner_document.create_element('span')
     parameters.class_list.add('parameters')
     interface[:parameters].each do |parameter|
       param_span = owner_document.create_element('span')
       param_span.class_list.add('parameter')
-      type = owner_document.create_element('span')
-      type.class_list.add('type')
-      type.inner_text = parameter[:type]
-      param_span.append_child(type)
-      name = owner_document.create_element('span')
-      name.class_list.add('name')
-      name.inner_text = Documentation.underscore(parameter[:name])
-      param_span.append_child(name)
+      param_span.inner_text = Documentation.underscore(parameter[:name])
       parameters.append_child(param_span)
     end
-    signature.append_child(parameters)
-
-    close_parentheses = owner_document.create_element('span')
-    close_parentheses.class_list.add('parentheses')
-    close_parentheses.inner_text = ')'
-    signature.append_child(close_parentheses)
-
-    signature
+    @declaration.append_child(parameters)
   end
 
   def update_description
@@ -173,33 +148,42 @@ module InterfaceListItem
   end
 
   def update_info
-    @info.inner_html = ''
+    @method_info.inner_html = ''
     return if interface[:interface_type] != :method
 
-    interface[:parameters].each do |parameter|
-      next if parameter[:description].size <= 0
-
-      parameter_name = owner_document.create_element('dt')
-      parameter_name_code = owner_document.create_element('code')
-      parameter_name_code.inner_text = Documentation.underscore(parameter[:name])
-      parameter_name.append_child(parameter_name_code)
-      @info.append_child(parameter_name)
-
-      parameter_description = owner_document.create_element('dd')
-      parameter_description.inner_html = parameter[:description]
-      @info.append_child(parameter_description)
+    items = interface[:parameters].dup
+    if interface[:return_type] != 'void' and interface[:return_description].size > 0
+      items.push({
+        :name        => 'return', 
+        :type        => interface[:return_type],
+        :description => interface[:return_description],
+        :is_return   => true
+      })
     end
 
-    if interface[:return_type] and interface[:return_type] != 'void' and interface[:return_description].size > 0
-      return_name = owner_document.create_element('dt')
-      return_name_code = owner_document.create_element('code')
-      return_name_code.inner_text = 'return'
-      return_name.append_child(return_name_code)
-      @info.append_child(return_name)
-      
-      return_description = owner_document.create_element('dd')
-      return_description.inner_html = interface[:return_description]
-      @info.append_child(return_description)
+    items.each do |parameter|
+      next if parameter[:description].size <= 0
+
+      list_item = owner_document.create_element('li')
+      list_item.class_list.add('return') if parameter[:is_return]
+
+      code = owner_document.create_element('code')
+      name = owner_document.create_element('span')
+      name.class_list.add('parameter-name')
+      name.inner_text = Documentation.underscore(parameter[:name])
+      code.append_child(name)
+      type = owner_document.create_element('span')
+      type.class_list.add('parameter-type')
+      type.inner_text = parameter[:type]
+      code.append_child(type)
+      list_item.append_child(code)
+
+      description = owner_document.create_element('div')
+      description.class_list.add('parameter-description')
+      description.inner_html = parameter[:description]
+      list_item.append_child(description)
+
+      @method_info.append_child(list_item)
     end
   end
 
