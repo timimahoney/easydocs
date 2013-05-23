@@ -55,7 +55,6 @@ class Requirer
       script_element = $window.document.create_element('script')
       script_element.type = url[-3, 3] == '.js' ? 'text/javascript' : 'text/ruby'
       script_element.src = "#{prefix}#{url}"
-      $window.console.log('script element url:', script_element.src)
       script_element.async = false
       script_element.onload do
         @url_statuses[url] = :loaded
