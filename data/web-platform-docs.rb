@@ -22,12 +22,15 @@ def request_interfaces
   end
 
   interfaces.delete_if { |interface| !interface[:name] }
+
+  bad_interfaces = ['dom/apis/document', 'dom/apis/window']
+  interfaces.delete_if { |interface| bad_interfaces.include? interface[:id] }
   interfaces
 end
 
 def write_json(hash: nil, filename: 'file.json')
   File.open(filename, 'w') do |file|
-    file.write(JSON.dump(hash))
+    file.write(JSON.pretty_generate(hash))
   end
 end
 
@@ -50,16 +53,17 @@ end
 
 def request_methods_internal(limit: 100, offset: 0)
   p "Requesting methods #{offset} through #{offset + limit}..."
-  results = request_results_for_query("[[Method_applies_to::~*]]|?Summary|?API_name|?Javascript_data_type|?Method_applies_to|limit=#{limit}|offset=#{offset}")
+  results = request_results_for_query("[[Method_applies_to::~*]]|?Summary|?API_name|?Javascript_data_type|?Method_applies_to|?Return_value_description|limit=#{limit}|offset=#{offset}")
   methods = results.map do |id, data|
     printouts = data['printouts']
     method = {}
-    method[:id]            = id
-    method[:full_url]      = data['fullurl']
-    method[:description]   = printouts['Summary'][0]
-    method[:name]          = printouts['API name'][0]['fulltext'] if printouts['API name'][0]
-    method[:return_type]   = printouts['Javascript data type'][0]
-    method[:owner_id]      = printouts['Method applies to'][0]['fulltext']
+    method[:id]                 = id
+    method[:full_url]           = data['fullurl']
+    method[:description]        = printouts['Summary'][0]
+    method[:name]               = printouts['API name'][0]['fulltext'] if printouts['API name'][0]
+    method[:return_type]        = printouts['Javascript data type'][0]
+    method[:return_description] = printouts['Return value description'][0]
+    method[:owner_id]           = printouts['Method applies to'][0]['fulltext']
     method
   end
   methods
@@ -209,6 +213,7 @@ def load_interfaces_with_attached_members(output_dir)
   id_to_method = {}
   methods.each do |method|
     method[:description] = convert_to_html(method[:description])
+    method[:return_description] = convert_to_html(method[:return_description])
     id_to_method[method[:id]] = method
     method[:parameters] = []
   end
@@ -273,6 +278,7 @@ def build_xml(interfaces)
               method_attributes[:return_type] = method[:return_type]
               method_attributes[:owner_id] = method[:owner_id]
               method_attributes[:description] = method[:description]
+              method_attributes[:return_description] = method[:return_description]
               method_attributes[:full_url] = method[:full_url]
               xml.method_(method_attributes) {
 

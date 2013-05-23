@@ -4,7 +4,7 @@ require 'nokogiri'
 p 'Requesting interfaces from WebPlatform.org...'
 output_dir = ARGV[0] || './'
 
-# request_and_write_all(output_dir)
+request_and_write_all(output_dir)
 interfaces = load_interfaces_with_attached_members(output_dir)
 # check_for_duplicates(interfaces)
 builder = build_xml(interfaces)
