@@ -152,7 +152,7 @@ class ClassPage < Page
     first_sidebar_item = all_sidebar_children[first_visible_index]
     last_sidebar_item = all_sidebar_children[last_visible_index]
 
-    first_sidebar_top = first_sidebar_item.offset_top
+    first_sidebar_top = first_sidebar_item.offset_top + 1
     last_sidebar_bottom = last_sidebar_item.offset_top + last_sidebar_item.offset_height - 2
     @placemarker.style.top = "#{first_sidebar_top}px" # ['-webkit-transform'] = "translateY(#{first_sidebar_top}px)"
     @placemarker.style.height = "#{last_sidebar_bottom - first_sidebar_top}px"

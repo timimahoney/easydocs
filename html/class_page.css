@@ -189,8 +189,7 @@
   left: 0.2em;
   border-radius: 0.3em;
   border: 0.1em solid rgba(255, 255, 255, 0.05);
-  height: 1em;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.2);
   transition-duration: 0.2s;
   pointer-events: none;
 }
