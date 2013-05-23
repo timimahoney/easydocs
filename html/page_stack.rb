@@ -19,8 +19,6 @@ class PageStack < Page
     @stack.push(page)
     @id_to_page[page.object_id] = page
 
-    $window.console.log('pushing page: ', page.location_bar_url)
-
     if @stack.size == 1 && !$window.history.state
       $window.history.replace_state(state_object_for_page(page), nil, page.location_bar_url)
     else
@@ -46,11 +44,6 @@ class PageStack < Page
     element.class_list.add('page-stack')
     callback.call(element)
   end
-
-  def did_load
-    $window.console.log('page stack did load')
-  end
-
 
   private
 
@@ -113,7 +106,6 @@ class PageStack < Page
   end
 
   def on_pop_state(event)
-    $window.console.log('PageStack: on_pop_state:', event.state)
     return if !event.state
     return if !event.state[:page_stack]
 
@@ -122,7 +114,6 @@ class PageStack < Page
 
     page_index = @stack.index(page_to_show)
     previous_index = @stack.index(@current_page) || 0
-    $window.console.log("Page index: #{page_index} previous=#{previous_index}")
     going_forward = (page_index > previous_index)
     previous_page_new_style = going_forward ? PAGE_AFTER_HIDE_STYLE : PAGE_BEFORE_SHOW_STYLE
     next_page_new_style = going_forward ? PAGE_BEFORE_SHOW_STYLE : PAGE_AFTER_HIDE_STYLE

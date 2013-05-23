@@ -59,7 +59,6 @@ class SearchPage < Page
   def on_search_change(event)
     search_string = @input.value
     WebDocs.page_stack.update_location_bar_url
-    $window.console.log("Search changed, input=#{search_string}")
 
     InterfaceDatabase.instance.find_interfaces(search_string) do |interfaces|
       next if search_string != @input.value

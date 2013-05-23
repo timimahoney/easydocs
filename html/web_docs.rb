@@ -14,16 +14,12 @@ class WebDocs
   end
 
   def start
-    $window.console.log('Loaded page. URL: ', $window.location)
-
-
     InterfaceDatabase.instance.load_interfaces do
       @page_stack.load do
         $window.document.body.append_child(@page_stack.element)
 
         path = $window.location.pathname
         path = path[1..path.length]
-        $window.console.log('Relative path: ', path)
         page = URLHandler.page_for_url(path)
         @page_stack.push(page:page, animated:false)
       end
