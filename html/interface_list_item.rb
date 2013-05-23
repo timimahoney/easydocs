@@ -128,7 +128,6 @@ module InterfaceListItem
 
   def append_method_signature
     method_name = owner_document.create_element('span')
-    method_name.class_list.add('method-name')
     method_name.inner_text = Documentation.underscore(interface[:name])
     @declaration.append_child(method_name)
 

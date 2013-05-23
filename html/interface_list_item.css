@@ -12,7 +12,7 @@ li.interface-list-item {
   padding: 0.4em 1.57em 0.2em 1.57em;
   margin: 0;
   border-left: 1em solid;
-  background-color: #f8f8f8;
+  background: linear-gradient(0, #F0F0F0, #FAFAFA);
 }
 
 .interface-list-item.attribute .interface-header {
@@ -65,7 +65,7 @@ li.interface-list-item {
 .interface-list-item .interface-content {
   margin: 0;
   padding: 0 2.6em;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ddd;
 }
 
 .interface-list-item .description {
@@ -82,34 +82,48 @@ li.interface-list-item {
   font-weight: 400;
 }
 
-.interface-list-item .declaration > code {
-  display: block;
-  font-weight: 400;
-}
-
 .interface-list-item .declaration > code span {
-  font-weight: 400;
   font-family: Source Code Pro, monospace;
 }
 
 .interface-list-item .declaration {
-  background-color: #f7f7f7;
+  font-size: 0.9em;
   padding: 0.5em;
-  border-left: 0.2em solid #ddd;
+  background-color: #444;
+  border-radius: 0.3em;
+  box-shadow: inset 0.1em 0.1em 0.5em #333;
   overflow: auto;
 }
 
 .interface-list-item .method-signature {
-  font-size: 0.9em;
+  display: block;
+  margin: -0.5em;
+  padding: 0.5em;
+  color: #fdfdfd;
+  text-shadow: 0.07em 0.07em 0.1em #444;
+  box-shadow: 0 0.1em 0.5em #333;
+  border-bottom: 0.1em solid #444;
+  background: linear-gradient(0, #6a6a6a, #737373);
+  z-index: 1000;
+  font-weight: 700;
+}
+
+.interface-list-item.attribute .method-signature {
+  border-bottom: none;
 }
 
 .interface-list-item .declaration .readonly:before {
   content: 'readonly ';
-  color: #aaa;
+  color: #bbb;
 }
 
 .interface-list-item .declaration .return-type {
-  color: #777;
+  color: #ddd;
+  display: none;
+}
+
+.interface-list-item.attribute .declaration .return-type {
+  display: inline;
 }
 
 .interface-list-item .declaration .return-type:after {
@@ -117,12 +131,11 @@ li.interface-list-item {
 }
 
 .interface-list-item .parameter {
-  color: #555;
+  color: #f0f0f0;
 }
 
 .interface-list-item .parameter:after {
   content: ', ';
-  color: #999;
 }
 
 .interface-list-item .parameters span:last-of-type.parameter:after {
@@ -130,21 +143,19 @@ li.interface-list-item {
 }
 
 .interface-list-item .parameters:after {
-  color: #999;
   content: ')';
 }
 
 .interface-list-item .parameters:before {
-  color: #999;
+  color: #ddd;
   content: '(';
 }
 
 .interface-list-item ol.method-info {
   display: none;
   font-size: 1em;
-  margin: 0.6em 0 0 0;
+  margin: 0.8em 0 0 0;
   padding: 0.3em 0 0 0;
-  border-top: 1px solid #ddd;
   list-style: none;
 }
 
@@ -164,7 +175,6 @@ li.interface-list-item {
 
 .interface-list-item .method-info li > code span {
   display: inline-block;
-  font-size: 0.8em;
   width: 9em;
   padding-right: 0.5em;
   white-space: nowrap;
@@ -174,19 +184,46 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info .parameter-name {
-  
+  color: #ddd; 
 }
 
 .interface-list-item .method-info .parameter-type {
-  color: #777;
+  color: #999;
 }
 
-.interface-list-item .method-info .return .parameter-name {
-  font-weight: 600;
+.interface-list-item .method-info li {
+  margin-bottom: 0.6em;
 }
 
 .interface-list-item .method-info li .parameter-description {
-  padding-left: 16em;
+  padding-left: 19em;
+  color: #ddd;
+}
+
+.interface-list-item .method-info li .parameter-description p {
+  font-weight: 400;
+}
+
+.interface-list-item .method-info li .parameter-description p:last-of-type {
+  margin-bottom: 0;
+}
+
+.interface-list-item .method-info li .parameter-description p:first-of-type {
+  margin-top: 0;
+}
+
+.interface-list-item .method-info li:last-of-type {
+  margin-bottom: 0;
+}
+
+.interface-list-item .method-info li.return {
+  border-top: 1px solid #555;
+  padding-top: 0.5em;
+}
+
+.interface-list-item .method-info li:first-of-type {
+  border-top: none;
+  padding-top: 0;
 }
 
 .interface-list-item .section-header {
