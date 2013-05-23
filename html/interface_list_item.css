@@ -10,10 +10,8 @@ li.interface-list-item {
 
 .interface-list-item .interface-header {
   padding: 0.4em 1.57em 0.2em 1.57em;
-  margin-top: 0;
-  margin-bottom: 0.5em;
+  margin: 0;
   border-left: 1em solid;
-  border-bottom: 1px solid #eee;
   background-color: #f8f8f8;
 }
 
@@ -65,7 +63,9 @@ li.interface-list-item {
 }
 
 .interface-list-item .interface-content {
-  margin: 0 2.6em;
+  margin: 0;
+  padding: 0 2.6em;
+  border-top: 1px solid #eee;
 }
 
 .interface-list-item .description {
