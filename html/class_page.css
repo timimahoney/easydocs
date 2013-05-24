@@ -22,6 +22,9 @@
   bottom: 0;
   overflow: auto;
   font-weight: 300;
+  border-left: 0.1em solid #777;
+  box-shadow: -0.5em 0 1em rgba(0, 0, 0, 0.5);
+  z-index: 1001;
 }
 
 .class-page .interface-description {
@@ -61,8 +64,6 @@
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  box-shadow: inset -0.5em 0 1em #111;
-  border-right: 0.2em solid #555;
 }
 
 .class-page header {
@@ -84,7 +85,7 @@
   box-shadow: 0 0.15em 0em #2D2D2D,
               0 0.15em 0.5em #2D2D2D;
   border-left: 0.6em solid #EED776;
-  background-color: #555;
+  background: linear-gradient(0, #5a5a5a, #676767);
   z-index: 1000;
 }
 

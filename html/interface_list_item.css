@@ -110,6 +110,7 @@ li.interface-list-item {
 
 .interface-list-item.attribute .method-signature {
   border-bottom: none;
+  box-shadow: 0 0.1em 0.5em #333, inset 0.1em 0.1em 0.3em #333;
 }
 
 .interface-list-item .declaration .readonly:before {
@@ -187,6 +188,10 @@ li.interface-list-item {
   color: #ddd; 
 }
 
+.interface-list-item .method-info li.return .parameter-name {
+  font-weight: 700;
+}
+
 .interface-list-item .method-info .parameter-type {
   color: #999;
 }
@@ -217,13 +222,15 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info li.return {
-  border-top: 1px solid #555;
-  padding-top: 0.5em;
+  border-top: 1px solid #3d3d3d;
+  padding: 0.5em;
+  background: #3a3a3a;
+  margin: -0.5em;
+  box-shadow: inset 0 0.1em 0.5em #333;
 }
 
 .interface-list-item .method-info li:first-of-type {
   border-top: none;
-  padding-top: 0;
 }
 
 .interface-list-item .section-header {
