@@ -28,7 +28,7 @@ li.interface-list-item {
 }
 
 .interface-list-item.clickable .interface-header:hover {
-  background-color: #f0f0f0;
+  background: linear-gradient(0, #EAEAEA, #F7F7F7);
   cursor: pointer;
 }
 
@@ -37,7 +37,7 @@ li.interface-list-item {
 }
 
 .interface-list-item.clickable .interface-header:active {
-  background-color: #e0e0e0;
+  background: linear-gradient(0, #E0E0E0, #F0F0F0);
 }
 
 .interface-list-item .interface-header .interface-name {
