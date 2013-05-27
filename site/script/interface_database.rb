@@ -38,7 +38,7 @@ class InterfaceDatabase
 
     results = @cached_searches[search_term]
     if results
-      callback.call(results)
+      callback.call(results.take(LIMIT))
       return
     end
 
@@ -53,9 +53,8 @@ class InterfaceDatabase
     interfaces_to_search = @interfaces if !interfaces_to_search
 
     found_interfaces = find_interfaces_internal(search_term, interfaces_to_search)
-    found_interfaces = found_interfaces.take(LIMIT)
     @cached_searches[search_term] = found_interfaces
-    callback.call(found_interfaces)
+    callback.call(found_interfaces.take(LIMIT))
   end
 
   def find_interface(name: nil, type: nil)
