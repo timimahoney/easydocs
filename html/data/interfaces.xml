@@ -1710,10 +1710,6 @@
       <property id="apis/websocket/WebSocket/url" full_url="http://docs.webplatform.org/wiki/apis/websocket/WebSocket/url" name="url" description="&lt;p&gt;The absolute URL as resolved by the constructor.&lt;/p&gt;" readonly="true" type="String" owner_id="apis/websocket/WebSocket"/>
     </properties>
   </interface>
-  <interface id="apis/window" name="Window" description="&lt;p&gt;The &lt;code&gt;window&lt;/code&gt; object is the top level Javascript object in a page, and is the global scope for a browser tab.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Global Javascript variables appear in the window object, as well as several important objects such as &lt;a class='webplatform-link' data-webplatform-url='dom/apis/document'&gt;&lt;code&gt;document&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;" full_url="http://docs.webplatform.org/wiki/apis/window">
-    <methods/>
-    <properties/>
-  </interface>
   <interface id="apis/workers/Worker" name="Worker" description="&lt;p&gt;An object representing a worker, that is used to communicate with the worker.&lt;/p&gt;" full_url="http://docs.webplatform.org/wiki/apis/workers/Worker">
     <methods>
       <method id="apis/workers/Worker/postMessage" name="postMessage" return_type="void" owner_id="apis/workers/Worker" description="&lt;p&gt;Posts a message to the worker with which the object is associated.&lt;/p&gt;" return_description="" full_url="http://docs.webplatform.org/wiki/apis/workers/Worker/postMessage">

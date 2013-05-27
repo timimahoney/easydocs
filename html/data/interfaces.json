@@ -758,12 +758,6 @@
       "name": "WebSocket"
     },
     {
-      "id": "apis/window",
-      "full_url": "http://docs.webplatform.org/wiki/apis/window",
-      "description": "The '''window''' object is the top level Javascript object in a page, and is the global scope for a browser tab.\n\nGlobal Javascript variables appear in the window object, as well as several important objects such as [[dom/apis/document|document]].",
-      "name": "Window"
-    },
-    {
       "id": "apis/workers/Worker",
       "full_url": "http://docs.webplatform.org/wiki/apis/workers/Worker",
       "description": "An object representing a worker, that is used to communicate with the worker.",

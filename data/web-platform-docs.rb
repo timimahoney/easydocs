@@ -23,7 +23,7 @@ def request_interfaces
 
   interfaces.delete_if { |interface| !interface[:name] }
 
-  bad_interfaces = ['dom/apis/document', 'dom/apis/window']
+  bad_interfaces = ['dom/apis/document', 'apis/window']
   interfaces.delete_if { |interface| bad_interfaces.include? interface[:id] }
   interfaces
 end
