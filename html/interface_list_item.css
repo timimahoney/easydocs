@@ -209,6 +209,11 @@ li.interface-list-item {
   font-weight: 400;
 }
 
+.interface-list-item .method-info li .parameter-description p code {
+  font-weight: 500;
+  color: #fefefe;
+}
+
 .interface-list-item .method-info li .parameter-description p:last-of-type {
   margin-bottom: 0;
 }
