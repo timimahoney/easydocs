@@ -83,3 +83,20 @@
 .search-page input:focus {
   outline: none;
 }
+
+@media screen and (max-width:455px) {
+
+  .search-page .result-list {
+    margin: 0 0.7em;
+  }
+
+  .search-page input {
+    right: 0.42em;
+    left: 0.42em;
+  }
+
+  .search-page header .text {
+    padding: 0 0.7em;
+  }
+}
+

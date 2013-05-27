@@ -60,3 +60,11 @@ p {
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
+
+@media screen and (max-width:455px) {
+
+  html {
+    font-size: 0.8em;
+  }
+
+}

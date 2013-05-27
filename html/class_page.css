@@ -194,3 +194,16 @@
   transition-duration: 0.2s;
   pointer-events: none;
 }
+
+
+@media screen and (max-width:455px) {
+
+  .class-page .sidebar {
+    width: 7em;
+  }
+
+  .class-page .content {
+    left: 7em;
+  }
+
+}
