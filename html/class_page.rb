@@ -154,8 +154,10 @@ class ClassPage < Page
 
     first_sidebar_top = first_sidebar_item.offset_top + 1
     last_sidebar_bottom = last_sidebar_item.offset_top + last_sidebar_item.offset_height - 2
-    @placemarker.style.top = "#{first_sidebar_top}px" # ['-webkit-transform'] = "translateY(#{first_sidebar_top}px)"
-    @placemarker.style.height = "#{last_sidebar_bottom - first_sidebar_top}px"
+    height = last_sidebar_bottom - first_sidebar_top
+
+    @placemarker.style.top = "#{first_sidebar_top}px"
+    @placemarker.style.height = "#{height}px"
   end
 
   def update_interface_elements
