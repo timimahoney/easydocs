@@ -50,7 +50,8 @@
 }
 
 .search-page .input-container {
-  padding: 0.7em 2.6em;
+  position: relative;
+  height: 3.6em;
   background: linear-gradient(#8a8a8a, #808080);
   border-top: 1px solid #999;
   border-bottom: 1px solid #555;
@@ -58,9 +59,13 @@
 }
 
 .search-page input {
+  position: absolute;
+  top: 0.3em;
+  right: 1.5em;
+  bottom: 0.3em;
+  left: 1.5em;
   font-size: 1.7em;
   font-weight: 200;
-  width: 100%;
   max-width: 19.1em;
   padding: 0.1em 0.5em;
   margin: 0;
