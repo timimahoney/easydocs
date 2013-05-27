@@ -23,7 +23,7 @@ class Requirer
   def initialize()
     @url_statuses = {}
     @unfinished_requires = []
-    @prefix = '/'
+    @prefix = '/script/'
   end
 
   ##

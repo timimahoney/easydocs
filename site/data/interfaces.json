@@ -1,0 +1,2393 @@
+{
+  "interfaces": [
+    {
+      "id": "apis/appcache/ApplicationCache",
+      "full_url": "http://docs.webplatform.org/wiki/apis/appcache/ApplicationCache",
+      "description": "The '''Application Cache''' (AppCache) lets web-based applications run offline. Developers can specify resources for the browser to cache, making them available to the application even if no connection can be made to the server. These resources load and work correctly even if users click the refresh button when they are offline.",
+      "name": "ApplicationCache"
+    },
+    {
+      "id": "apis/audio-video/AudioTrack",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/AudioTrack",
+      "description": "AudioTrack is an object representing an audio portion of a video element.",
+      "name": "AudioTrack"
+    },
+    {
+      "id": "apis/audio-video/AudioTrackList",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/AudioTrackList",
+      "description": "An AudioTrackList object represents a dynamic list of zero or more audio tracks, of which zero or more can be enabled at a time. Each audio track is represented by an AudioTrack object.",
+      "name": "AudioTrackList"
+    },
+    {
+      "id": "apis/audio-video/TextTrack",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/TextTrack",
+      "description": "A media element can have a group of associated text tracks, known as the media element's \"list of text tracks\".",
+      "name": "TextTrack"
+    },
+    {
+      "id": "apis/audio-video/TextTrackCue",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/TextTrackCue",
+      "description": "A text track cue is the unit of time-sensitive data in a text track corresponding, for instance, for subtitles and captions to the text that appear at a particular time and disappear at another time.",
+      "name": "TextTrackCue"
+    },
+    {
+      "id": "apis/audio-video/TextTrackCueList",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/TextTrackCueList",
+      "description": "A TextTrackCueList object represents a dynamically updating list of text track cues in a given order.",
+      "name": "TextTrackCueList"
+    },
+    {
+      "id": "apis/audio-video/TextTrackList",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/TextTrackList",
+      "description": "A TextTrackList object represents a dynamically updating list of text tracks in a given order.",
+      "name": "TextTrackList"
+    },
+    {
+      "id": "apis/audio-video/TimeRanges",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/TimeRanges",
+      "description": "A TimeRanges object represents the collection of ranges (time periods) from the media resource that have been buffered or played. Ranges in a TimeRanges collection are sequential and not empty. Adjacent ranges are combined together to create longer ones.",
+      "name": "TimeRanges"
+    },
+    {
+      "id": "apis/audio-video/TrackEvent",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/TrackEvent",
+      "description": "A TrackEvent object exposes (via its ''track'' attribute) the track to which an event relates.",
+      "name": "TrackEvent"
+    },
+    {
+      "id": "apis/audio-video/audio",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/audio",
+      "description": null,
+      "name": "Audio",
+      "parent_id": "dom/HTMLAudioElement"
+    },
+    {
+      "id": "apis/audio-video/track",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/track",
+      "description": null,
+      "name": "Track",
+      "parent_id": "dom/HTMLMediaElement"
+    },
+    {
+      "id": "apis/audio-video/video",
+      "full_url": "http://docs.webplatform.org/wiki/apis/audio-video/video",
+      "description": null,
+      "name": "Video",
+      "parent_id": "dom/HTMLMediaElement"
+    },
+    {
+      "id": "apis/canvas/CanvasGradient",
+      "full_url": "http://docs.webplatform.org/wiki/apis/canvas/CanvasGradient",
+      "description": "An opaque object of the canvas API.",
+      "name": "CanvasGradient"
+    },
+    {
+      "id": "apis/canvas/CanvasPattern",
+      "full_url": "http://docs.webplatform.org/wiki/apis/canvas/CanvasPattern",
+      "description": "An opaque object of the canvas API. See Notes.",
+      "name": "CanvasPattern"
+    },
+    {
+      "id": "apis/canvas/CanvasPixelArray",
+      "full_url": "http://docs.webplatform.org/wiki/apis/canvas/CanvasPixelArray",
+      "description": "Specifies each pixel within a canvas's rectangular selection, via the [[apis/canvas/ImageData|ImageData]] object's [[apis/canvas/ImageData/data|data]] property. The array uses four elements to represent each pixel's red, green, blue, and alpha channels. See Notes.",
+      "name": "CanvasPixelArray"
+    },
+    {
+      "id": "apis/canvas/CanvasRenderingContext2D",
+      "full_url": "http://docs.webplatform.org/wiki/apis/canvas/CanvasRenderingContext2D",
+      "description": "The 2D rendering context for the drawing surface of a <canvas> element.",
+      "name": "CanvasRenderingContext2D"
+    },
+    {
+      "id": "apis/canvas/ImageData",
+      "full_url": "http://docs.webplatform.org/wiki/apis/canvas/ImageData",
+      "description": "The ImageData object of the canvas API.",
+      "name": "ImageData"
+    },
+    {
+      "id": "apis/canvas/TextMetrics",
+      "full_url": "http://docs.webplatform.org/wiki/apis/canvas/TextMetrics",
+      "description": "The TextMetrics object of the canvas API. TextMetrics retrieves numeric informations like the width of a text that is drawn onto the canvas with the current font style.",
+      "name": "TextMetrics"
+    },
+    {
+      "id": "apis/css-regions/CSSRegionStyleRule",
+      "full_url": "http://docs.webplatform.org/wiki/apis/css-regions/CSSRegionStyleRule",
+      "description": "Represents an [[css/atrules/@region|'''@region''']] rule in a CSS style sheet, which applies styles to fragments of content that flow into a [[tutorials/css-regions|CSS region]].",
+      "name": "CSSRegionStyleRule",
+      "parent_id": "css/cssom/CSSRule"
+    },
+    {
+      "id": "apis/css-regions/NamedFlow",
+      "full_url": "http://docs.webplatform.org/wiki/apis/css-regions/NamedFlow",
+      "description": "Represents content to flow among various block ''region'' elements. The '''NamedFlow''' interface allows access to both the content of the flow and the series of regions in which it displays, and helps determine if the content exceeds or falls short of the number of regions necessary to display it.",
+      "name": "NamedFlow"
+    },
+    {
+      "id": "apis/css-regions/Region",
+      "full_url": "http://docs.webplatform.org/wiki/apis/css-regions/Region",
+      "description": "The '''Region''' interface is available for any element that serves as a CSS ''region'', whose [[css/properties/flow-from|'''flow-from''']] CSS specifies it displays content from a ''named flow''.",
+      "name": "Region"
+    },
+    {
+      "id": "apis/file/Blob",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/Blob",
+      "description": "The '''Blob''' object represents immutable raw data. It provides a method to slice data objects between ranges of bytes into further chunks of raw data.",
+      "name": "Blob"
+    },
+    {
+      "id": "apis/file/File",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/File",
+      "description": "The '''File''' object provides information about files stored on the user's computer, and access to their contents. These are generally retrieved from a [[apis/file/FileList|FileList]] object returned when a user selects files using the '''input''' element, or from a drag-and-drop operation's '''DataTransfer''' object.",
+      "name": "File"
+    },
+    {
+      "id": "apis/file/FileError",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/FileError",
+      "description": "Represents an error that occurs while using the FileReader interface.\n\nObsolete per latest specification. Use [[dom/DOMError|DOMError]] instead.",
+      "name": "FileError"
+    },
+    {
+      "id": "apis/file/FileList",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/FileList",
+      "description": "FileList is an object which represents an array of individually selected files from the underlying system.",
+      "name": "FileList"
+    },
+    {
+      "id": "apis/file/FileReader",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/FileReader",
+      "description": "The '''FileReader''' object lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using File or Blob objects to specify the file or data to read. File objects may be obtained from a FileList object returned as a result of a user selecting files using the ''input'' element, from a drag-and-drop operation's ''DataTransfer'' object, or from the ''mozGetAsFile() API'' on an ''HTMLCanvasElement''.",
+      "name": "FileReader"
+    },
+    {
+      "id": "apis/file/FileReaderSync",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/FileReaderSync",
+      "description": "Allows for synchronous reading of File or Blob objects. Only available in Workers, as synchronous I/O would otherwise block the main application from executing.",
+      "name": "FileReaderSync"
+    },
+    {
+      "id": "apis/file/MSStream",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/MSStream",
+      "description": "The '''MSStream''' object is a Document Object Model (DOM) type that represents a stream of unsized, sequential binary data.",
+      "name": "MSStream"
+    },
+    {
+      "id": "apis/file/MSStreamError",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/MSStreamError",
+      "description": "The MSStreamError object reports file-related errors asynchronously.\n\nObsolete per latest specification. Use [[dom/DOMError|DOMError]] instead.",
+      "name": "MSStreamError"
+    },
+    {
+      "id": "apis/file/MSStreamReader",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/MSStreamReader",
+      "description": "Creates random access data (Blob) from an MSStream object.",
+      "name": "MSStreamReader"
+    },
+    {
+      "id": "apis/file/ObjectURLOptions",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/ObjectURLOptions",
+      "description": "Provides the ''oneTimeOnly'' property for use with the ''createObjectURL'' method.",
+      "name": "ObjectURLOptions"
+    },
+    {
+      "id": "apis/file/URL",
+      "full_url": "http://docs.webplatform.org/wiki/apis/file/URL",
+      "description": "A static object for URL related utility operations.",
+      "name": "URL"
+    },
+    {
+      "id": "apis/filesystem/DirectoryEntry",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/DirectoryEntry",
+      "description": "This interface represents a directory on a file system.",
+      "name": "DirectoryEntry"
+    },
+    {
+      "id": "apis/filesystem/DirectoryEntrySync",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/DirectoryEntrySync",
+      "description": "This interface represents a directory on a file system.",
+      "name": "DirectoryEntrySync"
+    },
+    {
+      "id": "apis/filesystem/DirectoryReader",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/DirectoryReader",
+      "description": "This interface lets a user list files and directories in a directory.",
+      "name": "DirectoryReader"
+    },
+    {
+      "id": "apis/filesystem/DirectoryReaderSync",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/DirectoryReaderSync",
+      "description": "This interface lets a user list files and directories in a directory.",
+      "name": "DirectoryReaderSync"
+    },
+    {
+      "id": "apis/filesystem/EntriesCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/EntriesCallback",
+      "description": "When readEntries() succeeds, this callback is made.",
+      "name": "EntriesCallback"
+    },
+    {
+      "id": "apis/filesystem/Entry",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/Entry",
+      "description": "An abstract interface representing entries in a file system, each of which may be a File or DirectoryEntry.",
+      "name": "Entry"
+    },
+    {
+      "id": "apis/filesystem/EntryCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/EntryCallback",
+      "description": "This interface is the callback used to look up Entry objects.",
+      "name": "EntryCallback"
+    },
+    {
+      "id": "apis/filesystem/EntrySync",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/EntrySync",
+      "description": "An abstract interface representing entries in a file system, each of which may be a File or DirectoryEntry.",
+      "name": "EntrySync"
+    },
+    {
+      "id": "apis/filesystem/ErrorCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/ErrorCallback",
+      "description": "When an error occurs, this callback is made.",
+      "name": "ErrorCallback"
+    },
+    {
+      "id": "apis/filesystem/FileCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/FileCallback",
+      "description": "This interface is the callback used to obtain a File.",
+      "name": "FileCallback"
+    },
+    {
+      "id": "apis/filesystem/FileEntry",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/FileEntry",
+      "description": "This interface represents a file on a file system.",
+      "name": "FileEntry"
+    },
+    {
+      "id": "apis/filesystem/FileEntrySync",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/FileEntrySync",
+      "description": "This interface represents a file on a file system.",
+      "name": "FileEntrySync"
+    },
+    {
+      "id": "apis/filesystem/FileSystem",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/FileSystem",
+      "description": "In the File System API, a FileSystem object represents a file system. The object is the argument of a successful callback of requestFileSystem().",
+      "name": "FileSystem"
+    },
+    {
+      "id": "apis/filesystem/FileSystemCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/FileSystemCallback",
+      "description": "When requestFileSystem() succeeds, this callback is made.",
+      "name": "FileSystemCallback"
+    },
+    {
+      "id": "apis/filesystem/FileSystemSync",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/FileSystemSync",
+      "description": "In the File System API, a FileSystemSync object represents a file system.",
+      "name": "FileSystemSync"
+    },
+    {
+      "id": "apis/filesystem/FileWriterCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/FileWriterCallback",
+      "description": "This interface is the callback used to create a FileWriter.",
+      "name": "FileWriterCallback"
+    },
+    {
+      "id": "apis/filesystem/LocalFileSystem",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/LocalFileSystem",
+      "description": "The LocalFileSystem interface of the File System API gives you access to a sandboxed file system.  The methods are implemented by window and worker objects.",
+      "name": "LocalFileSystem"
+    },
+    {
+      "id": "apis/filesystem/LocalFileSystemSync",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/LocalFileSystemSync",
+      "description": "The LocalFileSystemSync interface of the File System API gives you access to a sandboxed file system. It is intended to be used with WebWorkers. The methods are implemented by worker objects.",
+      "name": "LocalFileSystemSync"
+    },
+    {
+      "id": "apis/filesystem/MetadataCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/MetadataCallback",
+      "description": "This interface is the callback used to look up file and directory metadata.",
+      "name": "MetadataCallback"
+    },
+    {
+      "id": "apis/filesystem/VoidCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/filesystem/VoidCallback",
+      "description": "This interface is the generic callback used to indicate success of an asynchronous method.",
+      "name": "VoidCallback"
+    },
+    {
+      "id": "apis/gamepad/Gamepad",
+      "full_url": "http://docs.webplatform.org/wiki/apis/gamepad/Gamepad",
+      "description": "This object defines an individual gamepad device. Data is retrieved via the DOM Navigator object's [[dom/methods/getGamepads|getGamepads()]] method.",
+      "name": "Gamepad"
+    },
+    {
+      "id": "apis/gamepad/GamepadEvent",
+      "full_url": "http://docs.webplatform.org/wiki/apis/gamepad/GamepadEvent",
+      "description": "This object provides access to event data for this gamepad.",
+      "name": "GamepadEvent"
+    },
+    {
+      "id": "apis/geolocation/Coordinates",
+      "full_url": "http://docs.webplatform.org/wiki/apis/geolocation/Coordinates",
+      "description": "The geographic coordinate reference system used by the attributes in this interface is the World Geodetic System (2d).",
+      "name": "Coordinates"
+    },
+    {
+      "id": "apis/geolocation/Geolocation",
+      "full_url": "http://docs.webplatform.org/wiki/apis/geolocation/Geolocation",
+      "description": "The Geolocation object is used by scripts to programmatically determine the location information associated with the hosting device. The location information is acquired by applying a user-agent specific algorithm, creating a '''Position''' object, and populating that object with appropriate data accordingly.",
+      "name": "Geolocation"
+    },
+    {
+      "id": "apis/geolocation/Position",
+      "full_url": "http://docs.webplatform.org/wiki/apis/geolocation/Position",
+      "description": "The container for the geolocation information returned by this API.",
+      "name": "Position"
+    },
+    {
+      "id": "apis/geolocation/PositionError",
+      "full_url": "http://docs.webplatform.org/wiki/apis/geolocation/PositionError",
+      "description": "The container for Position error information returned by this API.",
+      "name": "PositionError"
+    },
+    {
+      "id": "apis/geolocation/PositionOptions",
+      "full_url": "http://docs.webplatform.org/wiki/apis/geolocation/PositionOptions",
+      "description": "A native script object used by the '''getCurrentPosition()''' and '''watchPosition()''' methods.",
+      "name": "PositionOptions"
+    },
+    {
+      "id": "apis/indexeddb/IDBCursor",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBCursor",
+      "description": "Iterates over object stores and indices.",
+      "name": "IDBCursor"
+    },
+    {
+      "id": "apis/indexeddb/IDBCursorWithValue",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBCursorWithValue",
+      "description": "Returns the [[apis/indexeddb/IDBCursor|IDBCursor]]'s value.",
+      "name": "IDBCursorWithValue",
+      "parent_id": "apis/indexeddb/IDBCursor"
+    },
+    {
+      "id": "apis/indexeddb/IDBDatabase",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBDatabase",
+      "description": "Represents a database connection for the purpose of conducting a transaction.",
+      "name": "IDBDatabase"
+    },
+    {
+      "id": "apis/indexeddb/IDBDatabaseException",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBDatabaseException",
+      "description": "Not supported.",
+      "name": "IDBDatabaseException"
+    },
+    {
+      "id": "apis/indexeddb/IDBFactory",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBFactory",
+      "description": "The object type for the [[apis/indexeddb/indexedDB|indexedDB]] property, which   provides access to the IndexedDB features supported by the browser and/or device.",
+      "name": "IDBFactory"
+    },
+    {
+      "id": "apis/indexeddb/IDBIndex",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBIndex",
+      "description": "A metadata index to a referenced object store.",
+      "name": "IDBIndex"
+    },
+    {
+      "id": "apis/indexeddb/IDBKeyRange",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBKeyRange",
+      "description": "A range of keys defined for an object store or index.",
+      "name": "IDBKeyRange"
+    },
+    {
+      "id": "apis/indexeddb/IDBObjectStore",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBObjectStore",
+      "description": "Represents an object store in a database.",
+      "name": "IDBObjectStore"
+    },
+    {
+      "id": "apis/indexeddb/IDBOpenDBRequest",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBOpenDBRequest",
+      "description": "Provides access to the result of a request to open a database.",
+      "name": "IDBOpenDBRequest",
+      "parent_id": "apis/indexeddb/IDBRequest"
+    },
+    {
+      "id": "apis/indexeddb/IDBRequest",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBRequest",
+      "description": "Provides access to the result of a request on the database.",
+      "name": "IDBRequest"
+    },
+    {
+      "id": "apis/indexeddb/IDBTransaction",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBTransaction",
+      "description": "Provides for the scope and type of access to a database, and represents a transaction on the database.",
+      "name": "IDBTransaction"
+    },
+    {
+      "id": "apis/indexeddb/IDBVersionChangeEvent",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBVersionChangeEvent",
+      "description": "The IDBVersionChangeEvent object represents the event object passed to the [[apis/indexeddb/IDBOpenDBRequest/onupgradeneeded| upgradeneeded]] event, which fires when a database is opened using a higher version number.",
+      "name": "IDBVersionChangeEvent"
+    },
+    {
+      "id": "apis/indexeddb/IDBVersionChangeRequest",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/IDBVersionChangeRequest",
+      "description": "Deprecated. Previously used to change the version of the database.",
+      "name": "IDBVersionChangeRequest"
+    },
+    {
+      "id": "apis/indexeddb/indexedDB",
+      "full_url": "http://docs.webplatform.org/wiki/apis/indexeddb/indexedDB",
+      "description": "Implements the IDBFactory object's open method, thereby providing the way to open (create or access) a database.",
+      "name": "IndexedDB"
+    },
+    {
+      "id": "apis/internationalization/Intl",
+      "full_url": "http://docs.webplatform.org/wiki/apis/internationalization/Intl",
+      "description": "Intl object serves as a namespace for the i18n API.\n\nThe Intl object is a standard built-in object that is the initial value of the Intl property of the global object.\n\nIt is not possible to use the Intl object as a constructor with the new operator.\n\nIt is not possible to invoke the Intl object as a function.",
+      "name": "Intl"
+    },
+    {
+      "id": "apis/internationalization/Intl/Collator",
+      "full_url": "http://docs.webplatform.org/wiki/apis/internationalization/Intl/Collator",
+      "description": null,
+      "name": "Collator"
+    },
+    {
+      "id": "apis/internationalization/Intl/DateTimeFormat",
+      "full_url": "http://docs.webplatform.org/wiki/apis/internationalization/Intl/DateTimeFormat",
+      "description": null,
+      "name": "DateTimeFormat"
+    },
+    {
+      "id": "apis/internationalization/Intl/NumberFormat",
+      "full_url": "http://docs.webplatform.org/wiki/apis/internationalization/Intl/NumberFormat",
+      "description": null,
+      "name": "NumberFormat"
+    },
+    {
+      "id": "apis/json",
+      "full_url": "http://docs.webplatform.org/wiki/apis/json",
+      "description": "JSON is a native API for parsing and serialising information to the JSON format.\n\nJSON contains two methods: <code>parse</code> for parsing JSON strings, and <code>stringify</code> for converting a JavaScript object into JSON.",
+      "name": "Json"
+    },
+    {
+      "id": "apis/location",
+      "full_url": "http://docs.webplatform.org/wiki/apis/location",
+      "description": "The location object provides access to the address related properties of the current document.",
+      "name": "Location"
+    },
+    {
+      "id": "apis/navigation timing/Performance",
+      "full_url": "http://docs.webplatform.org/wiki/apis/navigation_timing/Performance",
+      "description": "The HTML5 specification defines a Window interface, which this specification extends.",
+      "name": "Performance"
+    },
+    {
+      "id": "apis/navigation timing/PerformanceNavigation",
+      "full_url": "http://docs.webplatform.org/wiki/apis/navigation_timing/PerformanceNavigation",
+      "description": "An interface that provides Web applications with navigation-related information.",
+      "name": "PerformanceNavigation"
+    },
+    {
+      "id": "apis/navigation timing/PerformanceTiming",
+      "full_url": "http://docs.webplatform.org/wiki/apis/navigation_timing/PerformanceTiming",
+      "description": "An interface that provides Web applications with timing-related information.",
+      "name": "PerformanceTiming"
+    },
+    {
+      "id": "apis/quota management/StorageQuota",
+      "full_url": "http://docs.webplatform.org/wiki/apis/quota_management/StorageQuota",
+      "description": "Provides a means to query and request storage usage and quota information.",
+      "name": "StorageQuota"
+    },
+    {
+      "id": "apis/resource timing/Performance",
+      "full_url": "http://docs.webplatform.org/wiki/apis/resource_timing/Performance",
+      "description": "Provides methods for performance timing.",
+      "name": "Performance"
+    },
+    {
+      "id": "apis/resource timing/PerformanceResourceTiming",
+      "full_url": "http://docs.webplatform.org/wiki/apis/resource_timing/PerformanceResourceTiming",
+      "description": "Includes all resources fetched from the networking layer by the current browsing context.",
+      "name": "PerformanceResourceTiming"
+    },
+    {
+      "id": "apis/timing/objects/FrameRequestCallback",
+      "full_url": "http://docs.webplatform.org/wiki/apis/timing/objects/FrameRequestCallback",
+      "description": null,
+      "name": "FrameRequestCallback"
+    },
+    {
+      "id": "apis/timing/objects/PerformanceEntry",
+      "full_url": "http://docs.webplatform.org/wiki/apis/timing/objects/PerformanceEntry",
+      "description": null,
+      "name": "PerformanceEntry"
+    },
+    {
+      "id": "apis/user timing/Performance",
+      "full_url": "http://docs.webplatform.org/wiki/apis/user_timing/Performance",
+      "description": "Exposes a high precision timestamp to developers so they can better measure the performance of their applications.",
+      "name": "Performance"
+    },
+    {
+      "id": "apis/user timing/PerformanceMark",
+      "full_url": "http://docs.webplatform.org/wiki/apis/user_timing/PerformanceMark",
+      "description": "Exposes marks created via the mark() method to the Performance Timeline.",
+      "name": "PerformanceMark"
+    },
+    {
+      "id": "apis/user timing/PerformanceMeasure",
+      "full_url": "http://docs.webplatform.org/wiki/apis/user_timing/PerformanceMeasure",
+      "description": "Exposes measures created via the measure() method to the Performance Timeline.",
+      "name": "PerformanceMeasure"
+    },
+    {
+      "id": "apis/web-messaging/MessageChannel",
+      "full_url": "http://docs.webplatform.org/wiki/apis/web-messaging/MessageChannel",
+      "description": "Creates a connection (two \"entangled\" ports) to enable independent pieces of code (running in different browsing contexts) to communicate directly.",
+      "name": "MessageChannel"
+    },
+    {
+      "id": "apis/web-messaging/MessagePort",
+      "full_url": "http://docs.webplatform.org/wiki/apis/web-messaging/MessagePort",
+      "description": "Exposes the available methods on the connected ports.",
+      "name": "MessagePort"
+    },
+    {
+      "id": "apis/web-storage/Storage",
+      "full_url": "http://docs.webplatform.org/wiki/apis/web-storage/Storage",
+      "description": "Provides access to a list of key/value pairs, sometimes called \"items\".",
+      "name": "Storage"
+    },
+    {
+      "id": "apis/webaudio/AnalyserNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AnalyserNode",
+      "description": "This interface represents a node which is able to provide real-time frequency and time-domain analysis information. The audio stream will be passed un-processed from input to output.",
+      "name": "AnalyserNode"
+    },
+    {
+      "id": "apis/webaudio/AudioBuffer",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioBuffer",
+      "description": "This interface represents a memory-resident audio asset, primarily for one-shot sounds and other short audio clips. Its format is non-interleaved IEEE 32-bit linear PCM with a nominal range of -1 -> +1. It can contain one or more channels.",
+      "name": "AudioBuffer"
+    },
+    {
+      "id": "apis/webaudio/AudioBufferSourceNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioBufferSourceNode",
+      "description": "This interface represents an audio source from an in-memory audio asset in an [[apis/webaudio/AudioBuffer|'''AudioBuffer''']]. It generally will be used for short audio assets which require a high degree of scheduling flexibility (can playback in rhythmically perfect ways).",
+      "name": "AudioBufferSourceNode"
+    },
+    {
+      "id": "apis/webaudio/AudioContext",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioContext",
+      "description": "The [[apis/webaudio/AudioContext|'''AudioContext''']] represents a set of [[apis/webaudio/AudioNode|'''AudioNode''']] objects and their connections. It allows for arbitrary routing of signals to the [[apis/webaudio/AudioDestinationNode|'''AudioDestinationNode''']] (what the user ultimately hears). Nodes are created from the context and are then connected together. In most use cases, only a single [[apis/webaudio/AudioContext|'''AudioContext''']] is used per document.",
+      "name": "AudioContext"
+    },
+    {
+      "id": "apis/webaudio/AudioDestinationNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioDestinationNode",
+      "description": "An [[apis/webaudio/AudioNode|'''AudioNode''']] representing the final audio destination and is what the user will ultimately hear. It can be considered as an audio output device which is connected to speakers. All rendered audio to be heard will be routed to this node, a ''terminal'' node in the [[apis/webaudio/AudioContext|'''AudioContext''']]'s routing graph. There is only a single [[apis/webaudio/AudioDestinationNode|'''AudioDestinationNode''']] per [[apis/webaudio/AudioContext|'''AudioContext''']], provided through the destination attribute of [[apis/webaudio/AudioContext|'''AudioContext''']].",
+      "name": "AudioDestinationNode"
+    },
+    {
+      "id": "apis/webaudio/AudioListener",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioListener",
+      "description": "This interface represents the position and orientation of the person listening to the audio scene. All [[apis/webaudio/PannerNode|'''PannerNode''']] objects spatialize in relation to the [[apis/webaudio/AudioContext|'''AudioContext''']]'s listener.",
+      "name": "AudioListener"
+    },
+    {
+      "id": "apis/webaudio/AudioNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioNode",
+      "description": "[[apis/webaudio/AudioNode|'''AudioNode''']]s are the building blocks of an [[apis/webaudio/AudioContext|'''AudioContext''']]. An [[apis/webaudio/AudioNode|'''AudioNode''']] represents audio sources, the audio destination, and intermediate processing modules, connected together to form processing graphs for rendering audio to the audio hardware. In general, an AudioNode processes its inputs (if it has any), and generates audio for its outputs (if it has any).",
+      "name": "AudioNode"
+    },
+    {
+      "id": "apis/webaudio/AudioParam",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioParam",
+      "description": "[[apis/webaudio/AudioParam|'''AudioParam''']] controls an individual aspect of an [[apis/webaudio/AudioNode|'''AudioNode''']]'s functioning, such as volume. The parameter can be set immediately to a particular value using the value attribute. Or, value changes can be scheduled to happen at very precise times (in the coordinate system of [[apis/webaudio/AudioContext/currentTime|'''AudioContext.currentTime''']]), for envelopes, volume fades, LFOs, filter sweeps, grain windows, etc. In this way, arbitrary timeline-based automation curves can be set on any [[apis/webaudio/AudioParam|'''AudioParam''']]. Additionally, audio signals from the outputs of [[apis/webaudio/AudioNode|'''AudioNode''']]s can be connected to an [[apis/webaudio/AudioParam|'''AudioParam''']], summing with the intrinsic parameter value.",
+      "name": "AudioParam"
+    },
+    {
+      "id": "apis/webaudio/AudioProcessingEvent",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/AudioProcessingEvent",
+      "description": "This interface is a type of Event which is passed to the [[apis/webaudio/ScriptProcessorNode/onaudioprocess|'''onaudioprocess''']] event handler used by [[apis/webaudio/ScriptProcessorNode|'''ScriptProcessorNode''']]. The event handler processes audio from the input (if any) by accessing the audio data from the [[apis/webaudio/AudioProcessingEvent/inputBuffer|'''inputBuffer''']] attribute. The audio data which is the result of the processing (or the synthesized data if there are no inputs) is then placed into the [[apis/webaudio/AudioProcessingEvent/outputBuffer|'''outputBuffer''']].",
+      "name": "AudioProcessingEvent"
+    },
+    {
+      "id": "apis/webaudio/BiquadFilterNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/BiquadFilterNode",
+      "description": "[[apis/webaudio/BiquadFilterNode|'''BiquadFilterNode''']] is an [[apis/webaudio/AudioNode|'''AudioNode''']] processor implementing common low-order filters, which are the building blocks of basic tone controls (bass, mid, treble), graphic equalizers, and more advanced filters. Multiple [[apis/webaudio/BiquadFilterNode|'''BiquadFilterNode''']] filters can be combined to form more complex filters. Each [[apis/webaudio/BiquadFilterNode|'''BiquadFilterNode''']] can be configured as one of a number of common filter types as listed in the type property page, linked below. The default filter type is LOWPASS.",
+      "name": "BiquadFilterNode"
+    },
+    {
+      "id": "apis/webaudio/ChannelMergerNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/ChannelMergerNode",
+      "description": "Represents an AudioNode for combining channels from multiple audio streams into a single audio stream.",
+      "name": "ChannelMergerNode"
+    },
+    {
+      "id": "apis/webaudio/ChannelSplitterNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/ChannelSplitterNode",
+      "description": "Represents an AudioNode for accessing the individual channels of an audio stream in the routing graph.",
+      "name": "ChannelSplitterNode"
+    },
+    {
+      "id": "apis/webaudio/ConvolverNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/ConvolverNode",
+      "description": "This interface represents a processing node which applies a linear convolution effect given an impulse response.",
+      "name": "ConvolverNode"
+    },
+    {
+      "id": "apis/webaudio/DelayNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/DelayNode",
+      "description": "A delay-line is a fundamental building block in audio applications. This interface is an [[apis/webaudio/AudioNode|'''AudioNode''']] with a single input and single output, which delays the incoming audio signal by a certain amount. The default amount is 0 seconds (no delay).",
+      "name": "DelayNode"
+    },
+    {
+      "id": "apis/webaudio/DynamicsCompressorNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/DynamicsCompressorNode",
+      "description": "[[apis/webaudio/DynamicsCompressorNode|'''DynamicsCompressorNode''']] is an [[apis/webaudio/AudioNode|'''AudioNode''']] processor implementing a dynamics compression effect, which lowers the volume of the loudest parts of the signal and raises the volume of the softest parts. Compression is especially important in games and musical applications where large numbers of individual sounds are played simultaneously to control the overall signal level and help avoid clipping (distorting) the audio output to the speakers.",
+      "name": "DynamicsCompressorNode"
+    },
+    {
+      "id": "apis/webaudio/GainNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/GainNode",
+      "description": "Changing the gain of an audio signal is a fundamental operation in audio applications. The [[apis/webaudio/GainNode|'''GainNode''']] is one of the building blocks for creating mixers. This interface is an [[apis/webaudio/AudioNode|'''AudioNode''']] with a single input and single output, which multiplies the input audio signal by the (possibly time-varying) gain attribute, copying the result to the output.",
+      "name": "GainNode"
+    },
+    {
+      "id": "apis/webaudio/OscillatorNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/OscillatorNode",
+      "description": "[[apis/webaudio/OscillatorNode|'''OscillatorNode''']] represents an audio source generating a periodic waveform. It can be set to a few commonly used waveforms. Additionally, it can be set to an arbitrary periodic waveform through the use of a [[apis/webaudio/WaveTable|'''WaveTable''']] object. Oscillators are common foundational building blocks in audio synthesis.",
+      "name": "OscillatorNode"
+    },
+    {
+      "id": "apis/webaudio/PannerNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/PannerNode",
+      "description": "This interface represents a processing node which positions / spatializes an incoming audio stream in three-dimensional space. The spatialization is in relation to the [[apis/webaudio/AudioContext|'''AudioContext''']]'s [[apis/webaudio/AudioListener|'''AudioListener''']] (listener attribute). The audio stream from the input will be either mono or stereo, depending on the connection(s) to the input. The output of this node is hard-coded to stereo (2 channels) and currently cannot be configured.",
+      "name": "PannerNode"
+    },
+    {
+      "id": "apis/webaudio/ScriptProcessorNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/ScriptProcessorNode",
+      "description": "This interface is an [[apis/webaudio/AudioNode|'''AudioNode''']] which can generate, process, or analyse audio directly using JavaScript.",
+      "name": "ScriptProcessorNode"
+    },
+    {
+      "id": "apis/webaudio/WaveShaperNode",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/WaveShaperNode",
+      "description": "[[apis/webaudio/WaveShaperNode|'''WaveShaperNode''']] is an [[apis/webaudio/AudioNode|'''AudioNode''']] processor implementing non-linear distortion effects. Non-linear waveshaping distortion is commonly used for both subtle non-linear warming, or for more obvious distortion effects.",
+      "name": "WaveShaperNode"
+    },
+    {
+      "id": "apis/webaudio/WaveTable",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webaudio/WaveTable",
+      "description": "WaveTable represents an arbitrary periodic waveform to be used with an [[apis/webaudio/OscillatorNode|'''OscillatorNode''']].",
+      "name": "WaveTable"
+    },
+    {
+      "id": "apis/webrtc/LocalMediaStream",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/LocalMediaStream",
+      "description": "The LocalMediaStream object is the MediaStream object returned from the call to [[dom/methods/getUserMedia|getUserMedia()]]. It has all the properties and events of the MediaStream object and the stop method.",
+      "name": "LocalMediaStream",
+      "parent_id": "apis/webrtc/MediaStream"
+    },
+    {
+      "id": "apis/webrtc/MediaStream",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/MediaStream",
+      "description": "The MediaStream interface of the [[apis/webrtc|WebRTC]] API describes a stream of audio or video data. A MediaStream object represents a linear, potentially infinite timeline. It is not preloadable, nor is it seekable.",
+      "name": "MediaStream"
+    },
+    {
+      "id": "apis/webrtc/MediaStreamTrack",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/MediaStreamTrack",
+      "description": "A MediaStreamTrack is one of two kinds, audio or video, and represents the media source, such as a camera.",
+      "name": "MediaStreamTrack"
+    },
+    {
+      "id": "apis/webrtc/MediaStreamTrackList",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/MediaStreamTrackList",
+      "description": "A MediaStream has two MediaStreamTrackList objects, one for the video tracks and one for the audio tracks.",
+      "name": "MediaStreamTrackList"
+    },
+    {
+      "id": "apis/webrtc/RTCDataChannel",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/RTCDataChannel",
+      "description": "Represents a bi-directional data channel between two peers.",
+      "name": "RTCDataChannel"
+    },
+    {
+      "id": "apis/webrtc/RTCIceCandidate",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/RTCIceCandidate",
+      "description": null,
+      "name": "RTCIceCandidate"
+    },
+    {
+      "id": "apis/webrtc/RTCPeerConnection",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/RTCPeerConnection",
+      "description": "Provides for the connection between remote peers, the transmission of locally generated MediaStream data and arbitrary data between peers.",
+      "name": "RTCPeerConnection"
+    },
+    {
+      "id": "apis/webrtc/RTCSessionDescription",
+      "full_url": "http://docs.webplatform.org/wiki/apis/webrtc/RTCSessionDescription",
+      "description": "Describes the session with a serialized Session Description Protocol object.",
+      "name": "RTCSessionDescription"
+    },
+    {
+      "id": "apis/websocket/CloseEvent",
+      "full_url": "http://docs.webplatform.org/wiki/apis/websocket/CloseEvent",
+      "description": "Object representing the close event for a WebSocket.",
+      "name": "CloseEvent"
+    },
+    {
+      "id": "apis/websocket/MessageEvent",
+      "full_url": "http://docs.webplatform.org/wiki/apis/websocket/MessageEvent",
+      "description": "A MessageEvent is sent to clients using WebSockets when data is received from the server. This is delivered to the listener indicated by the WebSocket object's onmessage attribute.",
+      "name": "MessageEvent"
+    },
+    {
+      "id": "apis/websocket/WebSocket",
+      "full_url": "http://docs.webplatform.org/wiki/apis/websocket/WebSocket",
+      "description": "Object for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.",
+      "name": "WebSocket"
+    },
+    {
+      "id": "apis/workers/Worker",
+      "full_url": "http://docs.webplatform.org/wiki/apis/workers/Worker",
+      "description": "An object representing a worker, that is used to communicate with the worker.",
+      "name": "Worker"
+    },
+    {
+      "id": "apis/workers/WorkerGlobalScope",
+      "full_url": "http://docs.webplatform.org/wiki/apis/workers/WorkerGlobalScope",
+      "description": "An object representing the \"inside\" of a worker.",
+      "name": "WorkerGlobalScope"
+    },
+    {
+      "id": "apis/workers/WorkerLocation",
+      "full_url": "http://docs.webplatform.org/wiki/apis/workers/WorkerLocation",
+      "description": "An object representing an absolute URL, set at the worker's creation.",
+      "name": "WorkerLocation"
+    },
+    {
+      "id": "apis/workers/WorkerNavigator",
+      "full_url": "http://docs.webplatform.org/wiki/apis/workers/WorkerNavigator",
+      "description": "An object representing the identity and state of the user agent (the client).",
+      "name": "WorkerNavigator"
+    },
+    {
+      "id": "apis/xhr/XMLHttpRequest",
+      "full_url": "http://docs.webplatform.org/wiki/apis/xhr/XMLHttpRequest",
+      "description": "XMLHttpRequest allows JavaScript to make HTTP requests, and is the most basic part of AJAX. It allows a website to dynamically request more content, without reloading the entire page.",
+      "name": "XMLHttpRequest"
+    },
+    {
+      "id": "apis/xhr/objects/DOMParser",
+      "full_url": "http://docs.webplatform.org/wiki/apis/xhr/objects/DOMParser",
+      "description": null,
+      "name": "DOMParser"
+    },
+    {
+      "id": "apis/xhr/objects/XDomainRequest",
+      "full_url": "http://docs.webplatform.org/wiki/apis/xhr/objects/XDomainRequest",
+      "description": null,
+      "name": "XDomainRequest"
+    },
+    {
+      "id": "apis/xhr/objects/XMLSerializer",
+      "full_url": "http://docs.webplatform.org/wiki/apis/xhr/objects/XMLSerializer",
+      "description": null,
+      "name": "XMLSerializer"
+    },
+    {
+      "id": "canvas/objects/canvas",
+      "full_url": "http://docs.webplatform.org/wiki/canvas/objects/canvas",
+      "description": "The surface on which to apply graphics and images. The canvas object must contain an graphic created with [[canvas/objects/CanvasRenderingContext2D|'''CanvasRenderingContext2D''']] APIs \nin order to render. When the actual drawing is done using the '''CanvasRenderingContext2D''' object, the properties and methods are used to create and manipulate graphics on a canvas object.",
+      "name": "Html::Elements::Canvas"
+    },
+    {
+      "id": "css/cssom/CSSKeyframeRule",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/CSSKeyframeRule",
+      "description": null,
+      "name": "CSSKeyframeRule"
+    },
+    {
+      "id": "css/cssom/CSSKeyframesRule",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/CSSKeyframesRule",
+      "description": null,
+      "name": "CSSKeyframesRule"
+    },
+    {
+      "id": "css/cssom/CSSMediaList/CSSMediaList",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/CSSMediaList/CSSMediaList",
+      "description": "Represents an ordered collection of media types.",
+      "name": "CSSMediaList"
+    },
+    {
+      "id": "css/cssom/CSSMediaRule/CSSMediaRule",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/CSSMediaRule/CSSMediaRule",
+      "description": null,
+      "name": "CSSMediaRule"
+    },
+    {
+      "id": "css/cssom/CSSNamespaceRule/CSSNamespaceRule",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/CSSNamespaceRule/CSSNamespaceRule",
+      "description": null,
+      "name": "CSSNamespaceRule"
+    },
+    {
+      "id": "css/cssom/CSSRule",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/CSSRule",
+      "description": null,
+      "name": "CSSRule"
+    },
+    {
+      "id": "css/cssom/CSSStyleDeclaration/CSSStyleDeclaration",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/CSSStyleDeclaration/CSSStyleDeclaration",
+      "description": "A CSS style declaration which includes properties, values and priorities.",
+      "name": "CSSStyleDeclaration"
+    },
+    {
+      "id": "css/cssom/currentStyle",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/currentStyle",
+      "description": "Non standard. Gets the computed style declaration. Use [[css/cssom/methods/getComputedStyle|getComputedStyle]] instead.",
+      "name": "CurrentStyle",
+      "parent_id": "css/cssom/CSSStyleDeclaration/CSSStyleDeclaration"
+    },
+    {
+      "id": "css/cssom/imports",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/imports",
+      "description": null,
+      "name": "Imports"
+    },
+    {
+      "id": "css/cssom/page",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/page",
+      "description": null,
+      "name": "Page"
+    },
+    {
+      "id": "css/cssom/pages",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/pages",
+      "description": null,
+      "name": "Pages"
+    },
+    {
+      "id": "css/cssom/rule",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/rule",
+      "description": null,
+      "name": "Rule"
+    },
+    {
+      "id": "css/cssom/rules",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/rules",
+      "description": null,
+      "name": "Rules"
+    },
+    {
+      "id": "css/cssom/runtimeStyle",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/runtimeStyle",
+      "description": null,
+      "name": "RuntimeStyle"
+    },
+    {
+      "id": "css/cssom/screen",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/screen",
+      "description": null,
+      "name": "Screen"
+    },
+    {
+      "id": "css/cssom/style",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/style",
+      "description": null,
+      "name": "Style"
+    },
+    {
+      "id": "css/cssom/styleSheet",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/styleSheet",
+      "description": "A style sheet in the document.",
+      "name": "StyleSheet"
+    },
+    {
+      "id": "css/cssom/styleSheets",
+      "full_url": "http://docs.webplatform.org/wiki/css/cssom/styleSheets",
+      "description": null,
+      "name": "StyleSheets"
+    },
+    {
+      "id": "css/flexbox",
+      "full_url": "http://docs.webplatform.org/wiki/css/flexbox",
+      "description": null,
+      "name": "Flexbox"
+    },
+    {
+      "id": "css/fonts",
+      "full_url": "http://docs.webplatform.org/wiki/css/fonts",
+      "description": "Sets font-style, font-variant, font-weight, font-size/line-height, font-family properties in one declaration.",
+      "name": "Fonts"
+    },
+    {
+      "id": "css/media queries/accelerator",
+      "full_url": "http://docs.webplatform.org/wiki/css/media_queries/accelerator",
+      "description": null,
+      "name": "Accelerator"
+    },
+    {
+      "id": "css/media queries/apis/StyleMedia",
+      "full_url": "http://docs.webplatform.org/wiki/css/media_queries/apis/StyleMedia",
+      "description": "A CSS media related functionality and information.",
+      "name": "StyleMedia"
+    },
+    {
+      "id": "css/regions",
+      "full_url": "http://docs.webplatform.org/wiki/css/regions",
+      "description": null,
+      "name": "Regions"
+    },
+    {
+      "id": "css/regions/MSRange-collection",
+      "full_url": "http://docs.webplatform.org/wiki/css/regions/MSRange-collection",
+      "description": null,
+      "name": "MSRange-collection"
+    },
+    {
+      "id": "css/ruby",
+      "full_url": "http://docs.webplatform.org/wiki/css/ruby",
+      "description": null,
+      "name": "Ruby"
+    },
+    {
+      "id": "css/tables",
+      "full_url": "http://docs.webplatform.org/wiki/css/tables",
+      "description": null,
+      "name": "Tables"
+    },
+    {
+      "id": "css/text",
+      "full_url": "http://docs.webplatform.org/wiki/css/text",
+      "description": null,
+      "name": "Text"
+    },
+    {
+      "id": "css/touch",
+      "full_url": "http://docs.webplatform.org/wiki/css/touch",
+      "description": null,
+      "name": "Touch"
+    },
+    {
+      "id": "css/transforms/MSCSSMatrix",
+      "full_url": "http://docs.webplatform.org/wiki/css/transforms/MSCSSMatrix",
+      "description": null,
+      "name": "MSCSSMatrix"
+    },
+    {
+      "id": "cssom/ClientRect",
+      "full_url": "http://docs.webplatform.org/wiki/cssom/ClientRect",
+      "description": "An interface for objects that store information regarding the position and dimension of an element.",
+      "name": "ClientRect"
+    },
+    {
+      "id": "dom/CDATASection",
+      "full_url": "http://docs.webplatform.org/wiki/dom/CDATASection",
+      "description": "An interface for CDATASection nodes within the XML based document object model.",
+      "name": "CDATASection",
+      "parent_id": "dom/CharacterData"
+    },
+    {
+      "id": "dom/CSSFontFaceRule",
+      "full_url": "http://docs.webplatform.org/wiki/dom/CSSFontFaceRule",
+      "description": null,
+      "name": "CSSFontFaceRule",
+      "parent_id": "css/cssom/CSSRule"
+    },
+    {
+      "id": "dom/CharacterData",
+      "full_url": "http://docs.webplatform.org/wiki/dom/CharacterData",
+      "description": "An interface for common character data operations for objects in the DOM.",
+      "name": "CharacterData",
+      "parent_id": "dom/Node"
+    },
+    {
+      "id": "dom/Comment",
+      "full_url": "http://docs.webplatform.org/wiki/dom/Comment",
+      "description": "An interface for comment nodes within the document object model.",
+      "name": "Comment",
+      "parent_id": "dom/CharacterData"
+    },
+    {
+      "id": "dom/DOMError",
+      "full_url": "http://docs.webplatform.org/wiki/dom/DOMError",
+      "description": "Represents a DOM operation error object.",
+      "name": "DOMError"
+    },
+    {
+      "id": "dom/DOMException",
+      "full_url": "http://docs.webplatform.org/wiki/dom/DOMException",
+      "description": "Represents a DOM operation exception.",
+      "name": "DOMException"
+    },
+    {
+      "id": "dom/DOMSettableTokenList",
+      "full_url": "http://docs.webplatform.org/wiki/dom/DOMSettableTokenList",
+      "description": null,
+      "name": "DOMSettableTokenList"
+    },
+    {
+      "id": "dom/DOMStringList",
+      "full_url": "http://docs.webplatform.org/wiki/dom/DOMStringList",
+      "description": null,
+      "name": "DOMStringList"
+    },
+    {
+      "id": "dom/DOMTokenList",
+      "full_url": "http://docs.webplatform.org/wiki/dom/DOMTokenList",
+      "description": "Represents a whitespace separated token list within the DOM, providing utility methods for manipulating it.",
+      "name": "DOMTokenList"
+    },
+    {
+      "id": "dom/Element",
+      "full_url": "http://docs.webplatform.org/wiki/dom/Element",
+      "description": "Represents an node of type element in the DOM.",
+      "name": "Element",
+      "parent_id": "dom/Node"
+    },
+    {
+      "id": "dom/EventTarget",
+      "full_url": "http://docs.webplatform.org/wiki/dom/EventTarget",
+      "description": null,
+      "name": "EventTarget"
+    },
+    {
+      "id": "dom/FormData",
+      "full_url": "http://docs.webplatform.org/wiki/dom/FormData",
+      "description": null,
+      "name": "FormData"
+    },
+    {
+      "id": "dom/HTMLAllCollection",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLAllCollection",
+      "description": "Obsolete. Represents a collection of all HTML elements within a Document or an HTMLElement.",
+      "name": "HTMLAllCollection",
+      "parent_id": "dom/HTMLCollection"
+    },
+    {
+      "id": "dom/HTMLAnchorElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLAnchorElement",
+      "description": null,
+      "name": "HTMLAnchorElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLAppletElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLAppletElement",
+      "description": null,
+      "name": "HTMLAppletElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLAreaElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLAreaElement",
+      "description": null,
+      "name": "HTMLAreaElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLAudioElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLAudioElement",
+      "description": null,
+      "name": "HTMLAudioElement",
+      "parent_id": "dom/HTMLMediaElement"
+    },
+    {
+      "id": "dom/HTMLBGSoundElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLBGSoundElement",
+      "description": null,
+      "name": "HTMLBGSoundElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLBRElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLBRElement",
+      "description": null,
+      "name": "HTMLBRElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLBaseElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLBaseElement",
+      "description": null,
+      "name": "HTMLBaseElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLBaseFontElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLBaseFontElement",
+      "description": null,
+      "name": "HTMLBaseFontElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLBlockElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLBlockElement",
+      "description": null,
+      "name": "HTMLBlockElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLBodyElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLBodyElement",
+      "description": "An interface for the [[html/elements/body|body]] element.",
+      "name": "HTMLBodyElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLButtonElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLButtonElement",
+      "description": null,
+      "name": "HTMLButtonElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLCanvasElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLCanvasElement",
+      "description": null,
+      "name": "HTMLCanvasElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLDDElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLDDElement",
+      "description": null,
+      "name": "HTMLDDElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLDListElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLDListElement",
+      "description": null,
+      "name": "HTMLDListElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLDTElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLDTElement",
+      "description": null,
+      "name": "HTMLDTElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLDirectoryElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLDirectoryElement",
+      "description": null,
+      "name": "HTMLDirectoryElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLDivElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLDivElement",
+      "description": null,
+      "name": "HTMLDivElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLDocumentCompatibleInfo",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLDocumentCompatibleInfo",
+      "description": "Non standard. Proprietary. Represent a key and value pair of compatible user agent and its version, as specified by the page.",
+      "name": "HTMLDocumentCompatibleInfo"
+    },
+    {
+      "id": "dom/HTMLElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLElement",
+      "description": "HTMLElement is the interface that all DOM Nodes subclass from. It provides functionality specific to HTML that is not present in the basic Element interface.",
+      "name": "HTMLElement",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/HTMLEmbedElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLEmbedElement",
+      "description": null,
+      "name": "HTMLEmbedElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLFieldSetElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLFieldSetElement",
+      "description": null,
+      "name": "HTMLFieldSetElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLFontElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLFontElement",
+      "description": null,
+      "name": "HTMLFontElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLFormElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLFormElement",
+      "description": null,
+      "name": "HTMLFormElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLFrameElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLFrameElement",
+      "description": null,
+      "name": "HTMLFrameElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLFrameSetElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLFrameSetElement",
+      "description": null,
+      "name": "HTMLFrameSetElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLHRElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLHRElement",
+      "description": null,
+      "name": "HTMLHRElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLHeadElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLHeadElement",
+      "description": null,
+      "name": "HTMLHeadElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLHeadingElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLHeadingElement",
+      "description": null,
+      "name": "HTMLHeadingElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLHtmlElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLHtmlElement",
+      "description": null,
+      "name": "HTMLHtmlElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLIFrameElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLIFrameElement",
+      "description": null,
+      "name": "HTMLIFrameElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLImageElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLImageElement",
+      "description": null,
+      "name": "HTMLImageElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLInputElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLInputElement",
+      "description": "Represents an [[html/elements/input|input]] element within the DOM.",
+      "name": "HTMLInputElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLIsIndexElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLIsIndexElement",
+      "description": null,
+      "name": "HTMLIsIndexElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLLIElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLLIElement",
+      "description": null,
+      "name": "HTMLLIElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLLabelElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLLabelElement",
+      "description": null,
+      "name": "HTMLLabelElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLLegendElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLLegendElement",
+      "description": null,
+      "name": "HTMLLegendElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLLinkElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLLinkElement",
+      "description": null,
+      "name": "HTMLLinkElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLMapElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLMapElement",
+      "description": null,
+      "name": "HTMLMapElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLMarqueeElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLMarqueeElement",
+      "description": null,
+      "name": "HTMLMarqueeElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLMediaElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLMediaElement",
+      "description": null,
+      "name": "HTMLMediaElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLMediaError",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLMediaError",
+      "description": "Represents a media element ([[html/elements/audio|audio]] or [[html/elements/video|video]]) error.",
+      "name": "HTMLMediaError"
+    },
+    {
+      "id": "dom/HTMLMenuElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLMenuElement",
+      "description": null,
+      "name": "HTMLMenuElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLMetaElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLMetaElement",
+      "description": null,
+      "name": "HTMLMetaElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLModElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLModElement",
+      "description": null,
+      "name": "HTMLModElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLOListElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLOListElement",
+      "description": null,
+      "name": "HTMLOListElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLObjectElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLObjectElement",
+      "description": null,
+      "name": "HTMLObjectElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLOptGroupElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLOptGroupElement",
+      "description": null,
+      "name": "HTMLOptGroupElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLOptionElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLOptionElement",
+      "description": null,
+      "name": "HTMLOptionElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLParagraphElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLParagraphElement",
+      "description": null,
+      "name": "HTMLParagraphElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLParamElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLParamElement",
+      "description": null,
+      "name": "HTMLParamElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLPhraseElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLPhraseElement",
+      "description": null,
+      "name": "HTMLPhraseElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLPreElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLPreElement",
+      "description": null,
+      "name": "HTMLPreElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLQuoteElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLQuoteElement",
+      "description": null,
+      "name": "HTMLQuoteElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLScriptElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLScriptElement",
+      "description": null,
+      "name": "HTMLScriptElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLSelectElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLSelectElement",
+      "description": null,
+      "name": "HTMLSelectElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLSelection",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLSelection",
+      "description": null,
+      "name": "HTMLSelection",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/HTMLSpanElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLSpanElement",
+      "description": null,
+      "name": "HTMLSpanElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLStyleElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLStyleElement",
+      "description": null,
+      "name": "HTMLStyleElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableCaptionElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableCaptionElement",
+      "description": null,
+      "name": "HTMLTableCaptionElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableCellElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableCellElement",
+      "description": null,
+      "name": "HTMLTableCellElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableColElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableColElement",
+      "description": null,
+      "name": "HTMLTableColElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableDataCellElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableDataCellElement",
+      "description": null,
+      "name": "HTMLTableDataCellElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableElement",
+      "description": null,
+      "name": "HTMLTableElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableHeaderCellElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableHeaderCellElement",
+      "description": null,
+      "name": "HTMLTableHeaderCellElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableRowElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableRowElement",
+      "description": null,
+      "name": "HTMLTableRowElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTableSectionElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTableSectionElement",
+      "description": null,
+      "name": "HTMLTableSectionElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTextAreaElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTextAreaElement",
+      "description": null,
+      "name": "HTMLTextAreaElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTitleElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTitleElement",
+      "description": null,
+      "name": "HTMLTitleElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLTrackElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLTrackElement",
+      "description": null,
+      "name": "HTMLTrackElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLUListElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLUListElement",
+      "description": null,
+      "name": "HTMLUListElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLUnknownElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLUnknownElement",
+      "description": null,
+      "name": "HTMLUnknownElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/HTMLVideoElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/HTMLVideoElement",
+      "description": null,
+      "name": "HTMLVideoElement",
+      "parent_id": "dom/HTMLElement"
+    },
+    {
+      "id": "dom/MSLaunchUriCallback",
+      "full_url": "http://docs.webplatform.org/wiki/dom/MSLaunchUriCallback",
+      "description": null,
+      "name": "MSLaunchUriCallback",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/Node",
+      "full_url": "http://docs.webplatform.org/wiki/dom/Node",
+      "description": "The interface for the primary data type for the entire Document Object Model.",
+      "name": "Node",
+      "parent_id": "dom/EventTarget"
+    },
+    {
+      "id": "dom/PointerEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/PointerEvent",
+      "description": "Provides contextual information associated with input events (for example, from mouse, touch or pen).",
+      "name": "PointerEvent",
+      "parent_id": "dom/objects/MouseEvent"
+    },
+    {
+      "id": "dom/StaticNodeList",
+      "full_url": "http://docs.webplatform.org/wiki/dom/StaticNodeList",
+      "description": null,
+      "name": "StaticNodeList",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/TextNode",
+      "full_url": "http://docs.webplatform.org/wiki/dom/TextNode",
+      "description": null,
+      "name": "TextNode",
+      "parent_id": "dom/CharacterData"
+    },
+    {
+      "id": "dom/TextRectangle",
+      "full_url": "http://docs.webplatform.org/wiki/dom/TextRectangle",
+      "description": null,
+      "name": "TextRectangle",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/ValidityState",
+      "full_url": "http://docs.webplatform.org/wiki/dom/ValidityState",
+      "description": "Represents a validation state of an [[dom/HTMLInputElement|input element]].",
+      "name": "ValidityState"
+    },
+    {
+      "id": "dom/WindowModal",
+      "full_url": "http://docs.webplatform.org/wiki/dom/WindowModal",
+      "description": "Represents a modal or modeless child window of a window, with additional utility methods for arguments and return values.",
+      "name": "WindowModal",
+      "parent_id": "dom/window"
+    },
+    {
+      "id": "dom/apis/HTMLElement",
+      "full_url": "http://docs.webplatform.org/wiki/dom/apis/HTMLElement",
+      "description": "HTMLElement is the interface that all DOM Nodes subclass from. It provides functionality specific to HTML that is not present in the basic Element interface.",
+      "name": "HTMLElement"
+    },
+    {
+      "id": "dom/attributes",
+      "full_url": "http://docs.webplatform.org/wiki/dom/attributes",
+      "description": null,
+      "name": "Attributes",
+      "parent_id": "dom/Node"
+    },
+    {
+      "id": "dom/clientInformation",
+      "full_url": "http://docs.webplatform.org/wiki/dom/clientInformation",
+      "description": null,
+      "name": "ClientInformation",
+      "parent_id": "dom/navigator"
+    },
+    {
+      "id": "dom/clipboardData",
+      "full_url": "http://docs.webplatform.org/wiki/dom/clipboardData",
+      "description": "Retrieves the information from the clipboard as part of clipboard operation events.",
+      "name": "ClipboardData"
+    },
+    {
+      "id": "dom/defaultSelected",
+      "full_url": "http://docs.webplatform.org/wiki/dom/defaultSelected",
+      "description": null,
+      "name": "DefaultSelected",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/document",
+      "full_url": "http://docs.webplatform.org/wiki/dom/document",
+      "description": "<code>document</code> is one of the most important objects in the DOM. It is where a majority of API methods and properties are rooted.",
+      "name": "Document",
+      "parent_id": "dom/Node"
+    },
+    {
+      "id": "dom/documentCompatibleInfoCollection",
+      "full_url": "http://docs.webplatform.org/wiki/dom/documentCompatibleInfoCollection",
+      "description": "Non standard. Proprietary. Represents a collection of compatible user agents as specified by the page.",
+      "name": "DocumentCompatibleInfoCollection"
+    },
+    {
+      "id": "dom/documentType",
+      "full_url": "http://docs.webplatform.org/wiki/dom/documentType",
+      "description": null,
+      "name": "DocumentType",
+      "parent_id": "dom/Node"
+    },
+    {
+      "id": "dom/external",
+      "full_url": "http://docs.webplatform.org/wiki/dom/external",
+      "description": null,
+      "name": "External"
+    },
+    {
+      "id": "dom/history",
+      "full_url": "http://docs.webplatform.org/wiki/dom/history",
+      "description": "The history object provides access to the browser to control navigation through the history. Starting with HTML5 the user can now manipulate the history stack.",
+      "name": "History"
+    },
+    {
+      "id": "dom/images",
+      "full_url": "http://docs.webplatform.org/wiki/dom/images",
+      "description": null,
+      "name": "Images",
+      "parent_id": "dom/DOMCollection"
+    },
+    {
+      "id": "dom/implementation",
+      "full_url": "http://docs.webplatform.org/wiki/dom/implementation",
+      "description": null,
+      "name": "Implementation",
+      "parent_id": "dom/DOMImplementation"
+    },
+    {
+      "id": "dom/location",
+      "full_url": "http://docs.webplatform.org/wiki/dom/location",
+      "description": "The Location instance object of a document.",
+      "name": "Location"
+    },
+    {
+      "id": "dom/msIsStaticHTML",
+      "full_url": "http://docs.webplatform.org/wiki/dom/msIsStaticHTML",
+      "description": null,
+      "name": "MsIsStaticHTML",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/navigator",
+      "full_url": "http://docs.webplatform.org/wiki/dom/navigator",
+      "description": null,
+      "name": "Navigator",
+      "parent_id": "dom/Navigator"
+    },
+    {
+      "id": "dom/objects/AnimationEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/AnimationEvent",
+      "description": null,
+      "name": "AnimationEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/BeforeUnloadEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/BeforeUnloadEvent",
+      "description": "Represents the [[dom/events/beforeunload|beforeunload]] event which can be used to prevent a navigation from happening.",
+      "name": "BeforeUnloadEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/CloseEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/CloseEvent",
+      "description": "Represents a close event of a [[apis/websocket/objects/WebSocket|WebSocket]] connection.",
+      "name": "CloseEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/CompositionEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/CompositionEvent",
+      "description": null,
+      "name": "CompositionEvent",
+      "parent_id": "dom/objects/UIEvent"
+    },
+    {
+      "id": "dom/objects/CustomEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/CustomEvent",
+      "description": "Represents a custom, developer generated event.",
+      "name": "CustomEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/DragEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/DragEvent",
+      "description": null,
+      "name": "DragEvent",
+      "parent_id": "dom/objects/MouseEvent"
+    },
+    {
+      "id": "dom/objects/Event",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/Event",
+      "description": "Represents an event.",
+      "name": "Event"
+    },
+    {
+      "id": "dom/objects/EventException",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/EventException",
+      "description": null,
+      "name": "EventException"
+    },
+    {
+      "id": "dom/objects/FocusEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/FocusEvent",
+      "description": null,
+      "name": "FocusEvent",
+      "parent_id": "dom/objects/UIEvent"
+    },
+    {
+      "id": "dom/objects/KeyboardEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/KeyboardEvent",
+      "description": null,
+      "name": "KeyboardEvent",
+      "parent_id": "dom/objects/UIEvent"
+    },
+    {
+      "id": "dom/objects/MSGesture",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MSGesture",
+      "description": null,
+      "name": "MSGesture"
+    },
+    {
+      "id": "dom/objects/MSGestureEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MSGestureEvent",
+      "description": null,
+      "name": "MSGestureEvent",
+      "parent_id": "dom/objects/UIEvent"
+    },
+    {
+      "id": "dom/objects/MSManipulationEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MSManipulationEvent",
+      "description": null,
+      "name": "MSManipulationEvent",
+      "parent_id": "dom/objects/UIEvent"
+    },
+    {
+      "id": "dom/objects/MSPointerEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MSPointerEvent",
+      "description": "Provides contextual information associated with input events (for example, from mouse, touch or pen).",
+      "name": "MSPointerEvent",
+      "parent_id": "dom/objects/MouseEvent"
+    },
+    {
+      "id": "dom/objects/MSSiteModeEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MSSiteModeEvent",
+      "description": null,
+      "name": "MSSiteModeEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/MessageEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MessageEvent",
+      "description": null,
+      "name": "MessageEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/MouseEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MouseEvent",
+      "description": null,
+      "name": "MouseEvent",
+      "parent_id": "dom/objects/UIEvent"
+    },
+    {
+      "id": "dom/objects/MouseWheelEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MouseWheelEvent",
+      "description": "Non standard. Proprietary. Represents a [[dom/events/mousewheel|mousewheel]] event.",
+      "name": "MouseWheelEvent",
+      "parent_id": "dom/objects/WheelEvent"
+    },
+    {
+      "id": "dom/objects/MutationEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/MutationEvent",
+      "description": "Represents events for tracking modifications, insertions and deletions of attributes and nodes in the DOM.",
+      "name": "MutationEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/PopStateEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/PopStateEvent",
+      "description": null,
+      "name": "PopStateEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/ProgressEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/ProgressEvent",
+      "description": null,
+      "name": "ProgressEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/StorageEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/StorageEvent",
+      "description": null,
+      "name": "StorageEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/TextEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/TextEvent",
+      "description": "Represents a text event that usually occurs when text is actually inserted into the document.",
+      "name": "TextEvent",
+      "parent_id": "dom/objects/UIEvent"
+    },
+    {
+      "id": "dom/objects/TransitionEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/TransitionEvent",
+      "description": null,
+      "name": "TransitionEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/UIEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/UIEvent",
+      "description": "Represents a user interface event, like [[dom/events/click|click]], [[dom/events/blur|blur]] and more.",
+      "name": "UIEvent",
+      "parent_id": "dom/objects/Event"
+    },
+    {
+      "id": "dom/objects/WheelEvent",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/WheelEvent",
+      "description": "Represents a [[dom/events/mousewheel|mousewheel]] event.",
+      "name": "WheelEvent",
+      "parent_id": "dom/objects/MouseEvent"
+    },
+    {
+      "id": "dom/objects/dataTransfer",
+      "full_url": "http://docs.webplatform.org/wiki/dom/objects/dataTransfer",
+      "description": "Represents an object associated with drag and drop or clipboard events, providing the utility operations.",
+      "name": "DataTransfer"
+    },
+    {
+      "id": "dom/option",
+      "full_url": "http://docs.webplatform.org/wiki/dom/option",
+      "description": null,
+      "name": "Option",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/processingInstruction",
+      "full_url": "http://docs.webplatform.org/wiki/dom/processingInstruction",
+      "description": null,
+      "name": "ProcessingInstruction",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/proprietary",
+      "full_url": "http://docs.webplatform.org/wiki/dom/proprietary",
+      "description": "A sink for proprietary properties, methods and events on proprietary objects. This is one step away from removing these completely.",
+      "name": "Proprietary"
+    },
+    {
+      "id": "dom/proprietary/event",
+      "full_url": "http://docs.webplatform.org/wiki/dom/proprietary/event",
+      "description": "Proprietary. Non standard. Use [[dom/objects/Event|Event]] (the first parameter of the handler function) instead. The dynamic [[dom/window|window]].event instance sink.",
+      "name": "Event"
+    },
+    {
+      "id": "dom/selection",
+      "full_url": "http://docs.webplatform.org/wiki/dom/selection",
+      "description": null,
+      "name": "Selection",
+      "parent_id": "dom/Element"
+    },
+    {
+      "id": "dom/shadowdom/ShadowRoot",
+      "full_url": "http://docs.webplatform.org/wiki/dom/shadowdom/ShadowRoot",
+      "description": "The ShadowRoot object is the point of entry to a shadow tree, which provides functional encapsulation of DOM objects within an established document.",
+      "name": "ShadowRoot"
+    },
+    {
+      "id": "dom/traversal/NodeIterator",
+      "full_url": "http://docs.webplatform.org/wiki/dom/traversal/NodeIterator",
+      "description": null,
+      "name": "NodeIterator"
+    },
+    {
+      "id": "dom/traversal/Range",
+      "full_url": "http://docs.webplatform.org/wiki/dom/traversal/Range",
+      "description": null,
+      "name": "Range"
+    },
+    {
+      "id": "dom/traversal/RangeException",
+      "full_url": "http://docs.webplatform.org/wiki/dom/traversal/RangeException",
+      "description": null,
+      "name": "RangeException"
+    },
+    {
+      "id": "dom/traversal/TextRange",
+      "full_url": "http://docs.webplatform.org/wiki/dom/traversal/TextRange",
+      "description": null,
+      "name": "TextRange"
+    },
+    {
+      "id": "dom/traversal/TreeWalker",
+      "full_url": "http://docs.webplatform.org/wiki/dom/traversal/TreeWalker",
+      "description": null,
+      "name": "TreeWalker"
+    },
+    {
+      "id": "dom/traversal/properties/TextRange",
+      "full_url": "http://docs.webplatform.org/wiki/dom/traversal/properties/TextRange",
+      "description": "Non standard. Proprietary. An interface that represents some text in an element.",
+      "name": "TextRange"
+    },
+    {
+      "id": "dom/userProfile",
+      "full_url": "http://docs.webplatform.org/wiki/dom/userProfile",
+      "description": "Non standard. Obsolete. Proprietary. Do not use.",
+      "name": "UserProfile"
+    },
+    {
+      "id": "dom/window",
+      "full_url": "http://docs.webplatform.org/wiki/dom/window",
+      "description": "The '''window''' object is the top level Javascript object in a page, and is the global scope for a browser tab.\n\nGlobal Javascript variables appear in the window object, as well as several important objects such as [[dom/apis/document|document]].",
+      "name": "Window",
+      "parent_id": "dom/EventTarget"
+    },
+    {
+      "id": "svg/objects/SVGAngle",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAngle",
+      "description": null,
+      "name": "SVGAngle",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedAngle",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedAngle",
+      "description": null,
+      "name": "SVGAnimatedAngle",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedBoolean",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedBoolean",
+      "description": null,
+      "name": "SVGAnimatedBoolean",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedEnumeration",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedEnumeration",
+      "description": null,
+      "name": "SVGAnimatedEnumeration",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedInteger",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedInteger",
+      "description": null,
+      "name": "SVGAnimatedInteger",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedLength",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedLength",
+      "description": null,
+      "name": "SVGAnimatedLength",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedLengthList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedLengthList",
+      "description": null,
+      "name": "SVGAnimatedLengthList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedNumber",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedNumber",
+      "description": null,
+      "name": "SVGAnimatedNumber",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedNumberList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedNumberList",
+      "description": null,
+      "name": "SVGAnimatedNumberList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedPreserveAspectRatio",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedPreserveAspectRatio",
+      "description": null,
+      "name": "SVGAnimatedPreserveAspectRatio",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedRect",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedRect",
+      "description": null,
+      "name": "SVGAnimatedRect",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedString",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedString",
+      "description": null,
+      "name": "SVGAnimatedString",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedStringNS",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedStringNS",
+      "description": null,
+      "name": "SVGAnimatedStringNS",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGAnimatedTransformList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGAnimatedTransformList",
+      "description": null,
+      "name": "SVGAnimatedTransformList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGComponentTransferFunctionElement",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGComponentTransferFunctionElement",
+      "description": null,
+      "name": "SVGComponentTransferFunctionElement",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGElement",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGElement",
+      "description": null,
+      "name": "SVGElement",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGElementInstance",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGElementInstance",
+      "description": null,
+      "name": "SVGElementInstance",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGElementInstanceList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGElementInstanceList",
+      "description": null,
+      "name": "SVGElementInstanceList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGException",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGException",
+      "description": null,
+      "name": "SVGException",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGLength",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGLength",
+      "description": null,
+      "name": "SVGLength",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGLengthList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGLengthList",
+      "description": null,
+      "name": "SVGLengthList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGMatrix",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGMatrix",
+      "description": null,
+      "name": "SVGMatrix",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGNumber",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGNumber",
+      "description": null,
+      "name": "SVGNumber",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGNumberList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGNumberList",
+      "description": null,
+      "name": "SVGNumberList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPath",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPath",
+      "description": null,
+      "name": "SVGPath"
+    },
+    {
+      "id": "svg/objects/SVGPathSeg",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSeg",
+      "description": null,
+      "name": "SVGPathSeg",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegArcAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegArcAbs",
+      "description": null,
+      "name": "SVGPathSegArcAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegArcRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegArcRel",
+      "description": null,
+      "name": "SVGPathSegArcRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegClosePath",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegClosePath",
+      "description": null,
+      "name": "SVGPathSegClosePath",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoCubicAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoCubicAbs",
+      "description": null,
+      "name": "SVGPathSegCurvetoCubicAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoCubicRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoCubicRel",
+      "description": null,
+      "name": "SVGPathSegCurvetoCubicRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoCubicSmoothAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoCubicSmoothAbs",
+      "description": null,
+      "name": "SVGPathSegCurvetoCubicSmoothAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoCubicSmoothRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoCubicSmoothRel",
+      "description": null,
+      "name": "SVGPathSegCurvetoCubicSmoothRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoQuadraticAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoQuadraticAbs",
+      "description": null,
+      "name": "SVGPathSegCurvetoQuadraticAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoQuadraticRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoQuadraticRel",
+      "description": null,
+      "name": "SVGPathSegCurvetoQuadraticRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoQuadraticSmoothAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoQuadraticSmoothAbs",
+      "description": null,
+      "name": "SVGPathSegCurvetoQuadraticSmoothAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegCurvetoQuadraticSmoothRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegCurvetoQuadraticSmoothRel",
+      "description": null,
+      "name": "SVGPathSegCurvetoQuadraticSmoothRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegLinetoAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegLinetoAbs",
+      "description": null,
+      "name": "SVGPathSegLinetoAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegLinetoHorizontalAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegLinetoHorizontalAbs",
+      "description": null,
+      "name": "SVGPathSegLinetoHorizontalAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegLinetoHorizontalRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegLinetoHorizontalRel",
+      "description": null,
+      "name": "SVGPathSegLinetoHorizontalRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegLinetoRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegLinetoRel",
+      "description": null,
+      "name": "SVGPathSegLinetoRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegLinetoVerticalAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegLinetoVerticalAbs",
+      "description": null,
+      "name": "SVGPathSegLinetoVerticalAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegLinetoVerticalRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegLinetoVerticalRel",
+      "description": null,
+      "name": "SVGPathSegLinetoVerticalRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegList",
+      "description": null,
+      "name": "SVGPathSegList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegMovetoAbs",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegMovetoAbs",
+      "description": null,
+      "name": "SVGPathSegMovetoAbs",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPathSegMovetoRel",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPathSegMovetoRel",
+      "description": null,
+      "name": "SVGPathSegMovetoRel",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPoint",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPoint",
+      "description": null,
+      "name": "SVGPoint",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPointList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPointList",
+      "description": null,
+      "name": "SVGPointList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGPreserveAspectRatio",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGPreserveAspectRatio",
+      "description": null,
+      "name": "SVGPreserveAspectRatio",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGRect",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGRect",
+      "description": null,
+      "name": "SVGRect",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGStringList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGStringList",
+      "description": null,
+      "name": "SVGStringList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGTransform",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGTransform",
+      "description": null,
+      "name": "SVGTransform",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGTransformList",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGTransformList",
+      "description": null,
+      "name": "SVGTransformList",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGZoom",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGZoom",
+      "description": null,
+      "name": "SVGZoom",
+      "parent_id": "svg/objects/SVGElement"
+    },
+    {
+      "id": "svg/objects/SVGZoomAndPan",
+      "full_url": "http://docs.webplatform.org/wiki/svg/objects/SVGZoomAndPan",
+      "description": null,
+      "name": "SVGZoomAndPan",
+      "parent_id": "svg/objects/SVGElement"
+    }
+  ]
+}

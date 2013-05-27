@@ -46,7 +46,7 @@ class Page
   # By default, the HTML will be loaded from #{page_name}_page.html.
   # Subclasses can override this function to load the HTML manually.
   def load_html(&callback)
-    url = "/#{@page_name}_page.html"
+    url = "/html/#{@page_name}_page.html"
     load_html_internal(url) do |element|
       callback.call(element)
     end
