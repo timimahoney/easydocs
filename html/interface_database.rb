@@ -53,7 +53,8 @@ class InterfaceDatabase
     interfaces_to_search = @interfaces if !interfaces_to_search
 
     found_interfaces = find_interfaces_internal(search_term, interfaces_to_search)
-    found_interfaces = found_interfaces[0..LIMIT] if found_interfaces.size > LIMIT
+    found_interfaces = found_interfaces.take(LIMIT)
+    @cached_searches[search_term] = found_interfaces
     callback.call(found_interfaces)
   end
 
@@ -87,8 +88,6 @@ class InterfaceDatabase
     results_similarities = results_similarities.delete_if { |o| o[0] <= 0 }
     results_similarities.sort! { |a, b| b[0] <=> a[0] }
     results = results_similarities.map { |o| o[1] }
-
-    @cached_searches[search_term] = results
 
     results
   end
