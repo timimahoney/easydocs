@@ -184,6 +184,10 @@ class ClassPage < Page
       attributes_element.style.display = @attributes.length == 0 ? 'none' : 'block'
     end
 
+    @element.query_selector_all('.methods').each do |methods_element|
+      methods_element.style.display = @methods.length == 0 ? 'none' : 'block'
+    end
+
     @title_element.inner_text = @interface[:name]
     @interface_list_item.interface = @interface
 
