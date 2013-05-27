@@ -1,3 +1,7 @@
+// This is a simple Node server that will run the EasyDocs application.
+// Type 'node server.js' to use.
+// You must have Node with the Express package installed.
+
 var express = require('express');
 var fs = require('fs');
 var server = express();
