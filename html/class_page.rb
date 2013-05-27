@@ -26,6 +26,16 @@ class ClassPage < Page
     end
   end
 
+  def self.is_valid_url(url)
+    return false if !url
+
+    class_name, _ = url.split('/')
+    interface = InterfaceDatabase.find_interface(name: class_name, type: :class)
+    return false if !interface
+
+    true
+  end
+
   def interface=(new_interface)
     @interface = new_interface
 

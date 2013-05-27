@@ -11,7 +11,11 @@ class URLHandler
     when 'search'
       SearchPage.new(url: remaining_url)
     when 'class'
-      ClassPage.new(url: remaining_url)
+      if ClassPage.is_valid_url(remaining_url)
+        ClassPage.new(url: remaining_url)
+      else
+        SearchPage.new(url: remaining_url)
+      end
     else
       SearchPage.new
     end
