@@ -7,12 +7,12 @@
 .search-page header {
   transition-duration: 0.3s;
   background-color: #333;
-  padding-top: 0.9em;
+  border-top: 1px solid #111;
   margin-bottom: 1em;
 }
 
 .search-page header .text {
-  margin-top: 0.9em;
+  margin: 0.7em 0 0.2em 0;
   padding: 0 2.6em;
   text-shadow: 1px 1px 0.3em #000;
 }
@@ -39,9 +39,9 @@
 }
 
 .search-page header .border {
-  height: 0.4em;
+  height: 0.7em;
   opacity: 1;
-  background: linear-gradient(180deg, 
+  background: linear-gradient(90deg, 
                               #C45E5A 33%, 
                               #EED776 33%, 
                               #EED776 67%, 
@@ -51,8 +51,10 @@
 
 .search-page .input-container {
   padding: 0.7em 2.6em;
-  background-color: #ddd;
-  box-shadow: 0 0.1em 0.1em rgba(0, 0, 0, 0.2);
+  background: linear-gradient(#8a8a8a, #808080);
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #555;
+  box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.9);
 }
 
 .search-page input {
