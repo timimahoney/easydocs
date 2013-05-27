@@ -3,6 +3,8 @@ require 'loading_screen.rb',
 
 class PageStack < Page
 
+  @@next_page_id = 0
+
   PAGE_AFTER_HIDE_STYLE = 'after-hide-position'
   PAGE_BEFORE_SHOW_STYLE = 'before-show-position'
 
@@ -10,6 +12,7 @@ class PageStack < Page
     super('page-stack')
     @stack = []
     @id_to_page = {}
+    @page_to_id = {}
     $window.add_event_listener('popstate', method(:on_pop_state))
   end
 
@@ -17,7 +20,9 @@ class PageStack < Page
     return if !page
 
     @stack.push(page)
-    @id_to_page[page.object_id] = page
+    @id_to_page[@@next_page_id] = page
+    @page_to_id[page] = @@next_page_id 
+    @@next_page_id += 1
 
     if @stack.size == 1 && !$window.history.state
       $window.history.replace_state(state_object_for_page(page), nil, page.location_bar_url)
@@ -50,7 +55,7 @@ class PageStack < Page
   def state_object_for_page(page)
     {
       :page_stack => true,
-      :page_id => page.object_id,
+      :page_id => @page_to_id[page],
       :page_url => page.location_bar_url
     }
   end
