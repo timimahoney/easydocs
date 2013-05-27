@@ -69,6 +69,11 @@ class ClassPage < Page
     return "/#{@page_name}/#{interface[:name]}/#{member_name}"
   end
 
+  def page_title
+    return nil if !@interface
+    return "#{@interface[:name]} : EasyDocs"
+  end
+
   def will_appear
     $window.add_event_listener('popstate', method(:on_pop_state))
     update_current_member_dimming

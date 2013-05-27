@@ -30,6 +30,8 @@ class PageStack < Page
       $window.history.push_state(state_object_for_page(page), nil, page.location_bar_url)
     end
 
+    update_page_title
+
     load_and_show_page(page, animated)
   end
 
@@ -40,6 +42,21 @@ class PageStack < Page
       return if !page
       $window.history.replace_state(state_object_for_page(page), nil, page.location_bar_url)
     end
+  end
+
+  def update_page_title
+    current_state = $window.history.state
+    return if !current_state || !current_state.is_a?(Hash) || !current_state[:page_stack]
+    page = @id_to_page[current_state[:page_id]]
+    return if !page
+
+    title = $window.document.head.query_selector('title')
+    if !title
+      title = $window.document.create_element('title')
+      $window.document.head.append_child(title)
+    end
+
+    title.inner_html = page.page_title
   end
 
   protected
@@ -126,6 +143,8 @@ class PageStack < Page
     hide(page: @current_page, style: previous_page_new_style)
     @current_page = page_to_show
     show(page: @current_page, style: next_page_new_style)
+
+    update_page_title
   end
 
 end # PageStack

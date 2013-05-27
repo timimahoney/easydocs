@@ -24,6 +24,10 @@ class Page
     "/#{page_name}"
   end
 
+  def page_title
+    return 'EasyDocs : Reference for the web platform API'
+  end
+
   def will_appear
   end
 

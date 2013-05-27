@@ -19,6 +19,13 @@ class SearchPage < Page
     return "/#{@page_name}/#{search_text}"
   end
 
+  def page_title
+    if !self.search_text || self.search_text.size == 0
+      return "EasyDocs: Reference for the web platform API"
+    end
+    return "\"#{self.search_text}\": EasyDocs"
+  end
+
   def search_text
     if !@input
       @initial_search_text 
@@ -59,6 +66,7 @@ class SearchPage < Page
   def on_search_change(event)
     search_string = @input.value
     WebDocs.page_stack.update_location_bar_url
+    WebDocs.page_stack.update_page_title
 
     InterfaceDatabase.instance.find_interfaces(search_string) do |interfaces|
       next if search_string != @input.value
