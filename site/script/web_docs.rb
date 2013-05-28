@@ -14,12 +14,15 @@ class WebDocs
   end
 
   def start
-    $window.console.log('start')
     loader = LoadingScreen.new
-    loader.show
-    $window.console.log('after show', loader.element)
+
+    # Show the loader after a short delay so we don't just pop it open very briefly.
+    did_load_interfaces = false
+    $window.set_timeout(100) { loader.show if !did_load_interfaces }
 
     InterfaceDatabase.instance.load_interfaces do
+      did_load_interfaces = true
+      
       @page_stack.load do
 
         loader.hide

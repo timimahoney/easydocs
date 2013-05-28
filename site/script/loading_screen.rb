@@ -49,13 +49,13 @@ EOF
   end
 
   def show
-    $window.console.log(@element)
-    $window.document.body.append_child(@element)
     @can_hide_at = Time.now + 0.25
     $window.set_timeout(0) { @element.class_list.remove('hidden') }
   end
 
   def hide
+    return if @element.class_list.contains('hidden')
+
     time_left_until_hide = @can_hide_at - Time.now
     if time_left_until_hide.to_f > 0
       new_time_left = time_left_until_hide * 1000
