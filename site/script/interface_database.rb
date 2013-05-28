@@ -3,7 +3,7 @@ require 'interface_loader.rb' do
 class InterfaceDatabase
   @@singleton_instance = nil
 
-  LIMIT = 100
+  LIMIT = 25
 
   attr_reader :interfaces
 
