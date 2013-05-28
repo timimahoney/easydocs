@@ -75,16 +75,11 @@ class ClassPage < Page
   end
 
   def will_appear
-    $window.add_event_listener('popstate', method(:on_pop_state))
     update_current_member_dimming
   end
 
   def did_appear
     update_placemarker
-  end
-
-  def will_disappear
-    $window.remove_event_listener('popstate', method(:on_pop_state))
   end
 
   protected
@@ -270,15 +265,6 @@ class ClassPage < Page
     return nil if !@attributes || !@methods || !member_name
     lowercase_member_name = Documentation.lower_camel_case(member_name).downcase
     (@attributes + @methods).find { |member| member[:name].downcase == lowercase_member_name }
-  end
-
-  def on_pop_state(event)
-    $window.console.log("ClassPage on_pop_state", event.state)
-    return if event.state[:class_page] != object_id
-
-    $window.console.log("ClassPage on_pop_state for this page.")
-    member = find_member(event.state[:member_name])
-    scroll_to_member(member)
   end
 
 end # SearchController
