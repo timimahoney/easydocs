@@ -4,4 +4,66 @@
   right: 0;
   bottom: 0;
   left: 0;
+  background: #333;
+}
+
+.loading-screen .loading-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3em;
+  margin-top: -1.5em;
+  font-size: 1.5em;
+}
+
+.loading-screen p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 0.5em;
+  text-align: center;
+  color: #eee;
+  font-weight: 600;
+}
+
+.loading-screen .loading-bar {
+  position: absolute;
+  left: 0;
+  right: -41.4em;
+  bottom: 0;
+  height: 0.7em;
+  background: linear-gradient(90deg,
+                              #C45E5A 14%,
+                              #EED776 14%,
+                              #EED776 28%,
+                              #5577AA 28%,
+                              #5577AA 42%,
+                              #EED776 42%,
+                              #EED776 57%,
+                              #C45E5A 57%,
+                              #C45E5A 71%,
+                              #EED776 71%,
+                              #EED776 85%,
+                              #5577AA 85%);
+  box-shadow: 0 0.1em 0.4em #111;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: moveacross;
+  -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes moveacross {
+  from {
+    left: 0;
+    right: -41.4em;
+  }
+
+  to {
+    left: -41.4em;
+    right: 0;
+  }
 }

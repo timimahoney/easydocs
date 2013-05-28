@@ -6,7 +6,6 @@ class InterfaceLoader
     load_webdocs_interfaces do |interfaces|
       callback.call(interfaces)
     end
-    # load_xml_interfaces(callback)
   end
 
   private

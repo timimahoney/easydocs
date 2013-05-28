@@ -6,7 +6,19 @@ class LoadingScreen
   def initialize
     @element = $window.document.create_element('div')
     @element.class_list.add('loading-screen', 'hidden', 'transition')
-    @element.id = "loading_screen#{Time.now.to_f}"  
+    @element.id = "loading_screen#{(Time.now.to_f * 1000).to_i}"
+
+    container = $window.document.create_element('div')
+    container.class_list.add('loading-container')
+    @element.append_child(container)
+
+    text = $window.document.create_element('p')
+    text.inner_text = 'Loading data...'
+    container.append_child(text)
+
+    bar = $window.document.create_element('div')
+    bar.class_list.add('loading-bar')
+    container.append_child(bar)
   
     add_spinner_script = $window.document.create_element('script')
     add_spinner_script.type = 'text/javascript'
@@ -19,7 +31,7 @@ class LoadingScreen
     corners: 1, // Corner roundness (0..1)
     rotate: 90, // The rotation offset
     direction: 1, // 1: clockwise, -1: counterclockwise
-    color: '#aaa', // #rgb or #rrggbb
+    color: '#fff', // #rgb or #rrggbb
     speed: 1, // Rounds per second
     trail: 50, // Afterglow percentage
     shadow: false, // Whether to render a shadow
@@ -37,6 +49,7 @@ EOF
   end
 
   def show
+    $window.console.log(@element)
     $window.document.body.append_child(@element)
     @can_hide_at = Time.now + 0.25
     $window.set_timeout(0) { @element.class_list.remove('hidden') }

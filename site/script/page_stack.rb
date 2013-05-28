@@ -1,5 +1,4 @@
-require 'loading_screen.rb',
-        'page.rb' do
+require 'page.rb' do
 
 class PageStack < Page
 
@@ -78,12 +77,7 @@ class PageStack < Page
   end
 
   def load_and_show_page(page, animated)
-    loading_screen = LoadingScreen.new
-    loading_screen.show
-
     page.load do
-      loading_screen.hide
-
       if page.element
         hide(page: @current_page, animated: animated) if @current_page
         @current_page = page

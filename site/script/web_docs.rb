@@ -14,8 +14,15 @@ class WebDocs
   end
 
   def start
+    $window.console.log('start')
+    loader = LoadingScreen.new
+    loader.show
+    $window.console.log('after show', loader.element)
+
     InterfaceDatabase.instance.load_interfaces do
       @page_stack.load do
+
+        loader.hide
         $window.document.body.append_child(@page_stack.element)
 
         path = $window.location.pathname
