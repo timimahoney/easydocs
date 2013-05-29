@@ -53,6 +53,7 @@ class SearchPage < Page
     @input = @element.query_selector('#search-input')
     @result_list = @element.query_selector('.result-list')
     @header = @element.query_selector('header')
+    @site_description = @element.query_selector('.site-description')
 
     @input.add_event_listener('keyup', method(:on_search_change))
 
@@ -76,6 +77,7 @@ class SearchPage < Page
 
   def interfaces=(new_interfaces)
     @interfaces = new_interfaces
+    @site_description.style.display = 'none'
 
     if !@interfaces
       @interface_list_items.each { |item| item.style.display = 'none' }

@@ -1,3 +1,13 @@
+.search-page .site-description {
+  font-size: 1.2em;
+  margin: 0 2.1em;
+  max-width: 26.55em;
+  padding: 0.1em 1em;
+  background: #fafafa;
+  border-radius: 0.2em;
+  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.6);
+}
+
 .search-page .result-list {
   margin: 0 2.6em;
   padding: 0;
@@ -97,6 +107,10 @@
 
   .search-page header .text {
     padding: 0 0.7em;
+  }
+
+  .search-page .site-description {
+    margin: 0 0.62em;
   }
 }
 
