@@ -21,11 +21,12 @@ class LoadingScreen
 
   def show
     @can_hide_at = Time.now + 0.25
+    $window.document.body.append_child(@element)
     $window.set_timeout(0) { @element.class_list.remove('hidden') }
   end
 
   def hide
-    return if @element.class_list.contains('hidden')
+    return if !@can_hide_at
 
     time_left_until_hide = @can_hide_at - Time.now
     if time_left_until_hide.to_f > 0

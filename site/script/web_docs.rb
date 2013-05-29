@@ -21,7 +21,9 @@ class WebDocs
 
     # Show the loader after a short delay so we don't just pop it open very briefly.
     did_load_interfaces = false
-    $window.set_timeout(100) { loader.show if !did_load_interfaces }
+    $window.set_timeout(100) do
+      loader.show if !did_load_interfaces
+    end
 
     InterfaceDatabase.instance.load_interfaces do
       did_load_interfaces = true
