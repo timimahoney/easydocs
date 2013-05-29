@@ -30,6 +30,7 @@ class PageStack < Page
     end
 
     update_page_title
+    $window.post_message({ :type => 'pageview' }, "*")
 
     load_and_show_page(page, animated)
   end
@@ -41,6 +42,8 @@ class PageStack < Page
       return if !page
       $window.history.replace_state(state_object_for_page(page), nil, page.location_bar_url)
     end
+
+    $window.post_message({ :type => 'pageview' }, "*")
   end
 
   def update_page_title
@@ -139,6 +142,7 @@ class PageStack < Page
     show(page: @current_page, style: next_page_new_style)
 
     update_page_title
+    $window.post_message({ :type => 'pageview' }, "*")
   end
 
 end # PageStack
