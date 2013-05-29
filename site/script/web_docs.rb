@@ -17,20 +17,13 @@ class WebDocs
     no_ruby_message = $window.document.query_selector('.no-ruby-message')
     no_ruby_message.parent_node.remove_child(no_ruby_message)
 
-    loader = LoadingScreen.new
-
-    # Show the loader after a short delay so we don't just pop it open very briefly.
-    did_load_interfaces = false
-    $window.set_timeout(100) do
-      loader.show if !did_load_interfaces
-    end
-
     InterfaceDatabase.instance.load_interfaces do
       did_load_interfaces = true
       
       @page_stack.load do
 
-        loader.hide
+        $loading_screen.hide
+        $loading_screen = nil
         $window.document.body.append_child(@page_stack.element)
 
         path = $window.location.pathname
