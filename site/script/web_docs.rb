@@ -14,6 +14,9 @@ class WebDocs
   end
 
   def start
+    no_ruby_message = $window.document.query_selector('.no-ruby-message')
+    no_ruby_message.parent_node.remove_child(no_ruby_message)
+
     loader = LoadingScreen.new
 
     # Show the loader after a short delay so we don't just pop it open very briefly.

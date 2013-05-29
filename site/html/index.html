@@ -16,11 +16,36 @@
   <script type='text/ruby' src='/script/require.rb'></script>
   <script type='text/ruby' src='/script/index.rb'></script>
 
+  <script type='text/javascript'>
+    // If the browser doesn't support Ruby, 
+    // then the no-Ruby message will still be there.
+    window.addEventListener('load', function() {
+      window.setTimeout(function() {
+        noRubyMessage = document.querySelector('.no-ruby-message');
+        if (noRubyMessage) {
+          noRubyMessage.classList.add('transition');
+          noRubyMessage.classList.remove('hidden');
+        }
+      }, 1000);
+    });
+  </script>
+
   <title>EasyDocs: Reference for the web platform API</title>
 
 </head>
 
 <body>
+
+  <div class='no-ruby-message hidden'>
+    <p>
+      <strong>EasyDocs</strong> lets you quickly explore the open web platform API.
+    </p>
+
+    <p>
+      It was built with Ruby, but your browser doesn't support Ruby.<br/>Don't feel bad, no browsers do. To view EasyDocs, download <a href='http://trydecaf.org'>Decaf</a>
+    </p>
+  </div>
+
 </body>
 
 
