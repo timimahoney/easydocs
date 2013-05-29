@@ -26,8 +26,7 @@ class WebDocs
     rescue
       $window.set_timeout(200) do
         $loading_screen.hide
-        $window.console.log('blam', $loading_screen)
-        old_version_message.class_list.remove('hidden')
+        old_version_message.class_list.remove('none')
       end
       return
     end

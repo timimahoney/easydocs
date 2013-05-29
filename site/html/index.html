@@ -31,7 +31,7 @@
         noRubyMessage = document.querySelector('.no-ruby-message');
         if (noRubyMessage) {
           noRubyMessage.classList.add('transition');
-          noRubyMessage.classList.remove('hidden');
+          noRubyMessage.classList.remove('none');
         }
       }, 1000);
     });
@@ -43,17 +43,17 @@
 
 <body>
 
-  <div class='no-ruby-message hidden'>
+  <div class='no-ruby-message none'>
     <p>
       <strong>EasyDocs</strong> lets you quickly explore the open web platform API.
     </p>
 
     <p>
-      It was built with Ruby, but your browser doesn't support Ruby.<br/>Don't feel bad, no browsers do. To use EasyDocs, download <a href='http://trydecaf.org'>Decaf</a>. You can also view <a target href='https://github.com/timahoney/easydocs'>EasyDocs on GitHub</a>.
+      It was built with Ruby, but your browser doesn't support Ruby.<br/>Don't feel bad, no browsers do. To use EasyDocs, download <a target='_blank' href='http://trydecaf.org'>Decaf</a>. You can also view <a target='_blank' href='https://github.com/timahoney/easydocs'>EasyDocs on GitHub</a>.
     </p>
   </div>
 
-  <div class='old-version-message hidden'>
+  <div class='old-version-message none'>
     <p>
       The version of Decaf you're on does not fully support <strong><code>push_state</code></strong>. Please <a href='http://trydecaf.org/latest'>download the latest version</a>.
     </p>

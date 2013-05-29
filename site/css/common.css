@@ -47,6 +47,10 @@ p {
   opacity: 0;
 }
 
+.none {
+  display: none;
+}
+
 .page-stack > div {
   background: #eee;
   background: linear-gradient(#eaeaea, #efefef);
