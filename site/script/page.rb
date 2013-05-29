@@ -25,7 +25,7 @@ class Page
   end
 
   def page_title
-    return 'EasyDocs : Reference for the web platform API'
+    return 'EasyDocs: Reference for the web platform API'
   end
 
   def will_appear
