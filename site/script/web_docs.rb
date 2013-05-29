@@ -17,9 +17,22 @@ class WebDocs
     no_ruby_message = $window.document.query_selector('.no-ruby-message')
     no_ruby_message.parent_node.remove_child(no_ruby_message)
 
+    # Check quickly to make sure we are on Decaf 0.2+
+    # We need push_state to work, which doesn't work in old versions.
+    begin
+      old_version_message = $window.document.query_selector('.old-version-message')
+      $window.post_message(Float32Array.new, '*')
+      old_version_message.parent_node.remove_child(old_version_message)
+    rescue
+      $window.set_timeout(200) do
+        $loading_screen.hide
+        $window.console.log('blam', $loading_screen)
+        old_version_message.class_list.remove('hidden')
+      end
+      return
+    end
+
     InterfaceDatabase.instance.load_interfaces do
-      did_load_interfaces = true
-      
       @page_stack.load do
 
         $loading_screen.hide

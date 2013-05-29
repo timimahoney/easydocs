@@ -12,6 +12,7 @@
   <link rel='stylesheet' type='text/css' href='/css/loading_screen.css' />
   <link rel='stylesheet' type='text/css' href='/css/page_stack.css' />
   <link rel='stylesheet' type='text/css' href='/css/search_page.css' />
+
   <script type='text/ruby' src='/script/loading_screen.rb'></script>
   <script type='text/ruby'>
     $loading_screen = LoadingScreen.new
@@ -49,6 +50,12 @@
 
     <p>
       It was built with Ruby, but your browser doesn't support Ruby.<br/>Don't feel bad, no browsers do. To use EasyDocs, download <a href='http://trydecaf.org'>Decaf</a>. You can also view <a target href='https://github.com/timahoney/easydocs'>EasyDocs on GitHub</a>.
+    </p>
+  </div>
+
+  <div class='old-version-message hidden'>
+    <p>
+      The version of Decaf you're on does not fully support <strong><code>push_state</code></strong>. Please <a href='http://trydecaf.org/latest'>download the latest version</a>.
     </p>
   </div>
 

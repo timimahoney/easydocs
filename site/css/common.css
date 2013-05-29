@@ -58,19 +58,30 @@ p {
   overflow: hidden;
 }
 
-.no-ruby-message {
+.no-ruby-message, .old-version-message {
   position: absolute;
-  width: 27em;
-  height: 8.8em;
   top: 50%;
   left: 50%;
-  margin-top: -4.4em;
-  margin-left: -14.5em;
   padding: 0 1em;
   font-size: 1.2em;
   background: #fafafa;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.6);
+  color: #444;
+}
+
+.no-ruby-message {
+  width: 27em;
+  height: 8.8em;
+  margin-top: -4.4em;
+  margin-left: -14.5em;
+}
+
+.old-version-message {
+  width: 28em;
+  height: 5.1em;
+  margin-top: -2.55em;
+  margin-left: -15em;
 }
 
 a {
