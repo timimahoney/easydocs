@@ -1,4 +1,5 @@
-// This is a simple Node server that will run the EasyDocs application.
+// This is a simple Node server that will serve the EasyDocs application.
+// It redirects URLs that come from the window.history API.
 // Type 'node server.js' to use.
 // You must have Node with the Express package installed.
 
