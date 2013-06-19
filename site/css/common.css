@@ -36,6 +36,8 @@ code * {
 p {
   line-height: 1.5em;
   font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .transition {
@@ -119,11 +121,15 @@ a:visited:active {
   font-family: 'entypo', sans-serif;
 }
 
-@media screen and (max-width:455px) {
-
+@media screen and (max-width:555px) {
   html {
     font-size: 0.8em;
   }
+}
+
+
+
+@media screen and (max-width:455px) {
 
   .no-ruby-message, .old-version-message {
     top: 0.1em;

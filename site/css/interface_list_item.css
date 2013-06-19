@@ -33,7 +33,6 @@ li.interface-list-item {
 
 .interface-list-item .interface-header .interface-name {
   display: block;
-  clear: left;
   font-size: 2.5em;
   font-weight: 300;
   color: #333;
@@ -99,7 +98,8 @@ li.interface-list-item {
   margin: -0.5em;
   padding: 0.5em;
   color: #555;
-  border-bottom: 0.1em solid #e3e3e3;
+  /*border-bottom: 0.1em solid #e3e3e3;*/
+  font-weight: 700;
 }
 
 .interface-list-item.attribute .method-signature {
@@ -162,13 +162,11 @@ li.interface-list-item {
 
 .interface-list-item .method-info li > code {
   font-weight: 400;
-  float: left;
   margin: 0;
 }
 
 .interface-list-item .method-info li > code span {
   display: inline-block;
-  width: 9em;
   padding-right: 0.5em;
   white-space: nowrap;
   overflow: hidden;
@@ -176,12 +174,11 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info .parameter-name {
-  color: #888;
+  color: #555;
 }
 
 .interface-list-item .method-info li.return .parameter-name {
-  font-weight: 600;
-  color: #666;
+  color: #444;
 }
 
 .interface-list-item .method-info .parameter-type {
@@ -193,7 +190,7 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info li .parameter-description {
-  padding-left: 19em;
+  margin: 0.3em 1em;
   color: #555;
 }
 
@@ -219,7 +216,6 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info li.return {
-  border-top: 1px solid #e3e3e3;
   padding: 0.5em;
   background: #f3f3f3;
   margin: -0.5em;

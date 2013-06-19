@@ -82,7 +82,7 @@
   outline: none;
 }
 
-@media screen and (max-width:455px) {
+@media screen and (max-width:555px) {
 
   .search-page .result-list {
     margin: 0 0.7em;
@@ -101,4 +101,3 @@
     margin: 0 0.62em;
   }
 }
-

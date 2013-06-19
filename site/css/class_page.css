@@ -17,19 +17,14 @@
 .class-page .content {
   position: absolute;
   top: 0;
-  left: 12em;
+  left: 8.5em;
   right: 0;
   bottom: 0;
   overflow: auto;
-  font-weight: 300;
-  border-left: 0.1em solid #777;
-  box-shadow: -0.5em 0 1em rgba(0, 0, 0, 0.5);
-  z-index: 1001;
 }
 
 .class-page .interface-description {
-  margin: 1em;
-  margin-top: 2em;
+  margin: 2em 0.5em 1em 0.5em;
 }
 
 .class-page .content > p {
@@ -41,16 +36,15 @@
   font-size: 2.5em;
   font-weight: 200;
   color: #bbb;
-  margin: 0.1em 0.315em;
-  text-shadow: 0 1px 0 #fafafa;
+  margin: 0.1em 0.08em;
 }
 
 .class-page .content h2.attributes {
-  margin-left: 0.41em;
+  margin-left: 0.14em;
 }
 
 .class-page .member-list {
-  margin: 0 1em;
+  margin: 0 0.5em;
   padding: 0;
 }
 
@@ -59,11 +53,11 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 12em;
+  width: 8.5em;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #f3f3f3;
 }
 
 .class-page header {
@@ -80,13 +74,8 @@
   padding: 0 0 0 0.5em;
   margin: 0;
   line-height: 1.5em;
-  color: #eee;
-  text-shadow: 0.1em 0.1em 0.1em #333;
-  box-shadow: 0 0.15em 0em #2D2D2D,
-              0 0.15em 0.5em #2D2D2D;
-  border-left: 0.6em solid #EED776;
-  background: linear-gradient(0, #5a5a5a, #676767);
-  z-index: 1000;
+  color: #555;
+  border-left: 0.2em solid #EED776;
 }
 
 .class-page .search-button {
@@ -124,9 +113,9 @@
   font-size: 1em;
   margin: 0;
   padding-left: 0.5em;
-  color: #CCC;
-  font-weight: 600;
-  border-left: 0.6em solid;
+  color: #777;
+  font-weight: 400;
+  border-left: 0.2em solid;
 }
 
 .class-page .sidebar h2.attributes {
@@ -156,22 +145,18 @@
 
 .class-page .sidebar-list li {
   font-size: 0.8em;
-  padding: 0.1em 1.13em;
+  padding: 0.1em 0.57em;
   margin: 0 0.2em;
-  border-radius: 0.3em;
-  color: #bbb;
+  color: #777;
 }
 
 .class-page .sidebar-list li:hover {
-  background-color: #444444;
-  box-shadow: 0.08em 0.08em 0.4em #222;
+  background-color: #ececec;
   cursor: pointer;
 }
 
 .class-page .sidebar-list li:active {
-  background-color: #404040;
-  box-shadow: 0.08em 0.08em 0.05em #2f2f2f;
-  color: #aaa;
+  background-color: #e7e7e7;
 }
 
 .class-page .sidebar-list li.attribute {
@@ -187,15 +172,14 @@
   top: 0;
   right: 0.2em;
   left: 0.2em;
-  border-radius: 0.3em;
-  border: 0.1em solid rgba(255, 255, 255, 0.05);
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 0.1em solid rgba(255, 255, 255, 0.03);
+  background-color: rgba(0, 0, 0, 0.05);
   transition-duration: 0.2s;
   pointer-events: none;
 }
 
 
-@media screen and (max-width:455px) {
+@media screen and (max-width:555px) {
 
   .class-page .sidebar {
     width: 7em;
@@ -205,4 +189,23 @@
     left: 7em;
   }
 
+}
+
+@media screen and (max-width:320px) {
+
+  .class-page .sidebar {
+    display: none;
+  }
+
+  .class-page .content {
+    left: 0;
+  }
+
+  .class-page .member-list {
+    margin: 0 0.3em;
+  }
+
+  .class-page .interface-description {
+    margin-left: 0.3em;
+  }
 }
