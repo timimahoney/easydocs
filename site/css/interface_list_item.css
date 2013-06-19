@@ -185,7 +185,8 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info li.return .parameter-name {
-  font-weight: 700;
+  font-weight: 600;
+  color: #666;
 }
 
 .interface-list-item .method-info .parameter-type {
