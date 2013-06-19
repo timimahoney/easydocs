@@ -135,7 +135,7 @@ var InterfaceDatabase = {
       var position = haystackDowncase.indexOf(substringDowncase);
       if (position === 0) {
         similarity += 10;
-      } else if (position) {
+      } else if (position > 0) {
         similarity += 5;
       }
     });
