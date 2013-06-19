@@ -113,8 +113,8 @@ PageStack.prototype.show = function(page, animated, style) {
     window.setTimeout(function() {
       page.element.classList.remove('page-stack-transition');
       page._didAppear();
-    }, 300);
-  }, 0);
+    }.bind(this), 300);
+  }.bind(this), 0);
 };
 
 PageStack.prototype.hide = function(page, style, animated) {
@@ -133,7 +133,7 @@ PageStack.prototype.hide = function(page, style, animated) {
       this.element.removeChild(page.element);
       page.element.classList.remove('page-stack-transition', 'after-hide-transparency', style);
       page._didDisappear();
-    }, 300);
+    }.bind(this), 300);
   } else {
     this.element.removeChild(page.element);
     page._didDisappear();

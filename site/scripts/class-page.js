@@ -112,7 +112,7 @@ ClassPage.prototype._didLoad = function() {
   this._placemarker = this.element.querySelector('.place-marker');
   this._sidebarListContainer = this.element.querySelector('.sidebar-list-container');
 
-  this._contentContainer.onscroll = this._onScrollContent;
+  this._contentContainer.onscroll = this._onScrollContent.bind(this);
   this.element.querySelector('.search-button').onclick = this._onClickSearch;
 
   this._updateInterfaceElements();
@@ -215,11 +215,11 @@ ClassPage.prototype._updateInterfaceElements = function() {
 
   this.element.querySelectorAll('.attributes').forEach(function(attributesElement) {
     attributesElement.style.display = this._attributes.length === 0 ? 'none' : 'block';
-  });
+  }, this);
 
   this.element.querySelectorAll('.methods').forEach(function(methodsElement) {
     methodsElement.style.display = this._methods.length === 0 ? 'none' : 'block';
-  });
+  }, this);
 
   this._titleElement.innerText = this.interfaceData.name;
   this._interfaceListItem.interfaceData = this.interfaceData;
@@ -250,11 +250,11 @@ ClassPage.prototype._addMemberElements = function(member, list, sidebarList) {
   sidebarItem.onclick = function() {
     this._scrollToMember(member);
 
-    if (self.currentMember === member) {
+    if (this.currentMember === member) {
       return;
     }
-    self.currentMember = member;
-  };
+    this.currentMember = member;
+  }.bind(this);
 };
 
 ClassPage.prototype._onClickMember = function(event) {
@@ -301,7 +301,7 @@ ClassPage.prototype._centerElementOnPage = function(element) {
   if (itemRect.width === 0 || itemRect.height === 0) {
     window.setTimeout(function() {
       this._centerElementOnPage(element);
-    }, 0);
+    }.bind(this), 0);
     return;
   }
 

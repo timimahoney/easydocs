@@ -10,7 +10,7 @@ window.InterfaceListItem = function() {
   this._title = document.createElement('span');
   this._title.classList.add('interface-name');
   this._titleContainer.appendChild(this._title);
-  this._titleContainer.onclick = this._onClickInterface;
+  this._titleContainer.onclick = this._onClickInterface.bind(this);
   this.element.appendChild(this._titleContainer);
 
   this._content = document.createElement('div');
