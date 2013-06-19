@@ -2,10 +2,6 @@
   font-size: 1.2em;
   margin: 0 2.1em;
   max-width: 26.55em;
-  padding: 0.1em 1em;
-  background: #fafafa;
-  border-radius: 0.2em;
-  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.6);
 }
 
 .search-page .result-list {
@@ -15,8 +11,6 @@
 }
 
 .search-page header {
-  transition-duration: 0.3s;
-  background-color: #333;
   border-top: 1px solid #111;
   margin-bottom: 1em;
 }
@@ -24,10 +18,10 @@
 .search-page header .text {
   margin: 0.7em 0 0.2em 0;
   padding: 0 2.6em;
-  text-shadow: 1px 1px 0.3em #000;
 }
 
 .search-page header h1 {
+  color: #555;
   display: inline-block;
   font-size: 1.5em;
   font-weight: 400;
@@ -35,7 +29,6 @@
   margin-right: 0.2em;
   margin-bottom: 0.2em;
   line-height: 1em;
-  color: #eee;
 }
 
 .search-page header h2 {
@@ -50,22 +43,17 @@
 
 .search-page header .border {
   height: 0.7em;
-  opacity: 1;
   background: linear-gradient(90deg, 
                               #C45E5A 33%, 
                               #EED776 33%, 
                               #EED776 67%, 
                               #5577AA 67%);
-  box-shadow: 1px 1px 0.5em black;
 }
 
 .search-page .input-container {
   position: relative;
   height: 3.6em;
-  background: linear-gradient(#8a8a8a, #808080);
-  border-top: 1px solid #999;
-  border-bottom: 1px solid #555;
-  box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.9);
+  background: #eee;
 }
 
 .search-page input {
@@ -81,7 +69,7 @@
   margin: 0;
   color: #444;
   border: none;
-  box-shadow: 1px 1px 0.1em rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 0.2em rgba(0, 0, 0, 0.1);
   border-radius: 0.1em;
   background-color: #fefefe;
 }

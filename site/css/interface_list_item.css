@@ -2,17 +2,12 @@ li.interface-list-item {
   list-style: none;
   padding-bottom: 1em;
   margin-bottom: 2em;
-  box-shadow: 1px 1px 0.3em rgba(0, 0, 0, 0.5);
-  background-color: #fefefe;
   border-radius: 0.15em;
-  overflow: hidden;
 }
 
 .interface-list-item .interface-header {
-  padding: 0.4em 1.57em 0.2em 1.57em;
-  margin: 0;
-  border-left: 1em solid;
-  background: linear-gradient(0, #F0F0F0, #FAFAFA);
+  padding: 0.4em 1em 0.2em 1em;
+  border-left: 0.5em solid;
 }
 
 .interface-list-item.attribute .interface-header {
@@ -28,24 +23,23 @@ li.interface-list-item {
 }
 
 .interface-list-item.clickable .interface-header:hover {
-  background: linear-gradient(0, #EAEAEA, #F7F7F7);
   cursor: pointer;
-}
-
-.interface-list-item.clickable .interface-header:hover .interface-name {
-  color: #111;
+  background-color: #f4f4f4;
 }
 
 .interface-list-item.clickable .interface-header:active {
-  background: linear-gradient(0, #E0E0E0, #F0F0F0);
+  background-color: #eeeeee;
 }
 
 .interface-list-item .interface-header .interface-name {
   display: block;
   clear: left;
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #222;
+  font-size: 2.5em;
+  font-weight: 300;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .interface-list-item .interface-header .owner-class {
@@ -59,18 +53,29 @@ li.interface-list-item {
 
 .interface-list-item.show-owner .interface-header .owner-class {
   display: block;
-  float: right;
+}
+
+.interface-list-item.show-owner.method .interface-header .owner-class:before {
+  content: 'method of ';
+}
+
+.interface-list-item.show-owner.attribute .interface-header .owner-class:before {
+  content: 'attribute of ';
+}
+
+.interface-list-item.show-owner.class .interface-header .owner-class:before {
+  content: none;
 }
 
 .interface-list-item .interface-content {
   margin: 0;
-  padding: 0 2.6em;
-  border-top: 1px solid #ddd;
+  padding: 0;
 }
 
 .interface-list-item .description {
   display: block;
-  font-size: 1.2em;
+  font-size: 1em;
+  color: #333;
   margin-bottom: 1em;
 }
 
@@ -89,37 +94,29 @@ li.interface-list-item {
 .interface-list-item .declaration {
   font-size: 0.9em;
   padding: 0.5em;
-  background-color: #444;
-  border-radius: 0.3em;
-  box-shadow: inset 0.1em 0.1em 0.5em #333;
-  overflow: auto;
+  overflow: hidden;
+  background: #f5f5f5;
 }
 
 .interface-list-item .method-signature {
   display: block;
   margin: -0.5em;
   padding: 0.5em;
-  color: #fdfdfd;
-  text-shadow: 0 1px 0.1em #555;
-  box-shadow: 0 0.1em 0.5em #333, inset 0.1em 0.1em 0.2em #3d3d3d;
-  border-bottom: 0.1em solid #444;
-  background: linear-gradient(0, #6a6a6a, #737373);
-  z-index: 1000;
-  font-weight: 600;
+  color: #555;
+  border-bottom: 0.1em solid #e3e3e3;
 }
 
 .interface-list-item.attribute .method-signature {
   border-bottom: none;
-  box-shadow: 0 0.1em 0.5em #333, inset 0.1em 0.1em 0.3em #333;
 }
 
 .interface-list-item .declaration .readonly:before {
   content: 'readonly ';
-  color: #bbb;
+  color: #aaa;
 }
 
 .interface-list-item .declaration .return-type {
-  color: #ddd;
+  color: #888;
   display: none;
 }
 
@@ -132,7 +129,7 @@ li.interface-list-item {
 }
 
 .interface-list-item .parameter {
-  color: #f0f0f0;
+  color: #777;
 }
 
 .interface-list-item .parameter:after {
@@ -148,7 +145,6 @@ li.interface-list-item {
 }
 
 .interface-list-item .parameters:before {
-  color: #ddd;
   content: '(';
 }
 
@@ -185,7 +181,7 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info .parameter-name {
-  color: #ddd; 
+  color: #888;
 }
 
 .interface-list-item .method-info li.return .parameter-name {
@@ -193,7 +189,7 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info .parameter-type {
-  color: #999;
+  color: #aaa;
 }
 
 .interface-list-item .method-info li {
@@ -202,7 +198,7 @@ li.interface-list-item {
 
 .interface-list-item .method-info li .parameter-description {
   padding-left: 19em;
-  color: #ddd;
+  color: #555;
 }
 
 .interface-list-item .method-info li .parameter-description p {
@@ -211,7 +207,7 @@ li.interface-list-item {
 
 .interface-list-item .method-info li .parameter-description p code {
   font-weight: 500;
-  color: #fefefe;
+  color: #333;
 }
 
 .interface-list-item .method-info li .parameter-description p:last-of-type {
@@ -227,11 +223,10 @@ li.interface-list-item {
 }
 
 .interface-list-item .method-info li.return {
-  border-top: 1px solid #3d3d3d;
+  border-top: 1px solid #e3e3e3;
   padding: 0.5em;
-  background: #3a3a3a;
+  background: #f3f3f3;
   margin: -0.5em;
-  box-shadow: inset 0 0.1em 0.5em #333;
 }
 
 .interface-list-item .method-info li:first-of-type {

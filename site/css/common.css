@@ -1,8 +1,7 @@
 html {
   margin: 0;
   padding: 0;
-  background: #ededed;
-  background: linear-gradient(#eaeaea, #efefef);
+  background: #fafafa;
   width: 100%;
   height: 100%;
 }
@@ -32,7 +31,7 @@ code {
 
 p {
   line-height: 1.5em;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .transition {
@@ -52,8 +51,7 @@ p {
 }
 
 .page-stack > div {
-  background: #eee;
-  background: linear-gradient(#eaeaea, #efefef);
+  background: #fafafa;
 }
 
 .ellipsize {
