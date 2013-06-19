@@ -59,9 +59,10 @@ var InterfaceDatabase = {
       return null;
     }
 
+    var lowercaseName = name.toLowerCase();
     for (var i = 0; i < this.interfaces.length; i++) {
       var thisInterface = this.interfaces[i];
-      if (thisInterface.name == name && (!type || thisInterface.type == type)) {
+      if (thisInterface.name.toLowerCase() == lowercaseName && (!type || thisInterface.interfaceType == type)) {
         return thisInterface;
       }
     }
