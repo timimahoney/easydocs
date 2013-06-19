@@ -65,7 +65,7 @@ var InterfaceLoader = {
     parsedInterface.description = xml.attributes['description'].value;
     parsedInterface.fullUrl = xml.attributes['full_url'].value;
     if (xml.attributes['parent_id']) {
-      parsedInterface.parent_id = xml.attributes['parent_id'].value;
+      parsedInterface.parentId = xml.attributes['parent_id'].value;
     }
     parsedInterface.interfaceType = 'class';
 
