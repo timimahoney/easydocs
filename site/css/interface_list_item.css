@@ -87,10 +87,6 @@ li.interface-list-item {
   font-weight: 400;
 }
 
-.interface-list-item .declaration > code span {
-  font-family: Source Code Pro, monospace;
-}
-
 .interface-list-item .declaration {
   font-size: 0.9em;
   padding: 0.5em;
@@ -177,7 +173,6 @@ li.interface-list-item {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: Source Code Pro, monospace;
 }
 
 .interface-list-item .method-info .parameter-name {

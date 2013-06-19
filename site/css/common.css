@@ -26,7 +26,11 @@ body {
 }
 
 code {
-  font-family: Source Code Pro, Menlo, Consolas, monospace;
+  font-family: Courier, Courier New, monospace;
+}
+
+code * {
+  font-family: Courier, Courier New, monospace;
 }
 
 p {
