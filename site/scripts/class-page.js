@@ -135,6 +135,8 @@ ClassPage.prototype._updateCurrentMemberDimming = function() {
 };
 
 ClassPage.prototype._undimAll = function() {
+  var allListItems = nodeListToArray(this._attributesList.childNodes);
+  allListItems = allListItems.concat(nodeListToArray(this._methodsList.childNodes));
   allListItems.forEach(function(item) {
     item.classList.remove('dim');
   });
@@ -148,6 +150,8 @@ ClassPage.prototype._undimAll = function() {
 ClassPage.prototype._dimAllExceptCurrentMember = function() {
   var allMembers = this._attributes.concat(this._methods);
   var memberIndex = allMembers.indexOf(this._currentMember);
+  var allListItems = nodeListToArray(this._attributesList.childNodes);
+  allListItems = allListItems.concat(nodeListToArray(this._methodsList.childNodes));
   allListItems.forEach(function(item, index) {
     if (index == memberIndex) {
       item.classList.remove('dim', 'transition');
@@ -213,11 +217,13 @@ ClassPage.prototype._updateInterfaceElements = function() {
     return;
   }
 
-  this.element.querySelectorAll('.attributes').forEach(function(attributesElement) {
+  var attributesElements = nodeListToArray(this.element.querySelectorAll('.attributes'));
+  attributesElements.forEach(function(attributesElement) {
     attributesElement.style.display = this._attributes.length === 0 ? 'none' : 'block';
   }, this);
 
-  this.element.querySelectorAll('.methods').forEach(function(methodsElement) {
+  var methodsElements = nodeListToArray(this.element.querySelectorAll('.methods'));
+  methodsElements.forEach(function(methodsElement) {
     methodsElement.style.display = this._methods.length === 0 ? 'none' : 'block';
   }, this);
 
