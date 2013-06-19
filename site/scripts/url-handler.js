@@ -4,8 +4,7 @@ var URLHandler = {
 
   pageForUrl: function(url) {
     var splitPath = url.split('/');
-    var topLevelPath = splitPath[0];
-    splitPath.shift();
+    var topLevelPath = splitPath.shift();
     var remainingUrl = splitPath.join('/');
 
     switch (topLevelPath) {
