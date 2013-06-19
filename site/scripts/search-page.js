@@ -61,7 +61,8 @@ Object.defineProperty(SearchPage.prototype, 'interfaces', {
 
     var itemsToNone = this._interfaceListItems.slice(this._interfaces.length);
     for (var i = 0; i < itemsToNone.length; i++) {
-      if (itemsToNone[i].element.classList.contains('display-none')) {
+      var item = itemsToNone[i];
+      if (item.element.classList.contains('display-none')) {
         break;
       }
       item.element.classList.add('display-none');

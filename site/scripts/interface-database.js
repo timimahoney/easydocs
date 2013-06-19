@@ -20,8 +20,9 @@ var InterfaceDatabase = {
   },
 
   findInterfaces: function(searchTerm, callback) {
-    if (!this.interfaces) {
-      return [];
+    if (!this.interfaces || !searchTerm || searchTerm.length <= 0) {
+      callback([]);
+      return;
     }
 
     searchTerm = searchTerm.toLowerCase();
