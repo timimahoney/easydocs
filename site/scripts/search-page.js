@@ -5,7 +5,8 @@ var SearchPage = function(url) {
   this._interfaceListItems = [];
 
   if (url) {
-    this.searchText = url.split('/')[0];
+    var escapedSearchText = url.split('/')[0];
+    this.searchText = decodeURIComponent(escapedSearchText);
   }
 };
 
