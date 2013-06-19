@@ -159,10 +159,10 @@ PageStack.prototype._onPopState = function(event) {
   previousPageNewStyle = goingForward ? this.PAGE_AFTER_HIDE_STYLE : this.PAGE_BEFORE_SHOW_STYLE;
   nextPageNewStyle = goingForward ? this.PAGE_BEFORE_SHOW_STYLE : this.PAGE_AFTER_HIDE_STYLE;
 
-  hide(this._currentPage, previousPageNewStyle);
+  this.hide(this._currentPage, previousPageNewStyle);
   this._currentPage = pageToShow;
-  show(this._currentPage, nextPageNewStyle);
+  this.show(this._currentPage, nextPageNewStyle);
 
-  updatePageTitle();
+  this.updatePageTitle();
   window.postMessage({ type: 'pageview' }, '*');
 };
