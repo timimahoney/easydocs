@@ -7,7 +7,7 @@ window.PageStack = function() {
   this._stack = [];
   this._idToPage = {};
   this._pageToId = {};
-  window.addEventListener('popstate', this._onPopState);
+  window.addEventListener('popstate', this._onPopState.bind(this));
 };
 
 PageStack.prototype = new Page();

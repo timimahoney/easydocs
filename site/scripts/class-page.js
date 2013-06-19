@@ -244,7 +244,7 @@ ClassPage.prototype._addMemberElements = function(member, list, sidebarList) {
   var showClass = (member.ownerId != this.interfaceData.id);
   listItem.isHeaderClickable = showClass;
   listItem.showOwnerClass = showClass;
-  listItem.element.addEventListener(InterfaceListItem.CLICKED_INTERFACE, this._onClickMember);
+  listItem.element.addEventListener(InterfaceListItem.CLICKED_INTERFACE, this._onClickMember.bind(this));
   list.appendChild(listItem.element);
 
   var sidebarItem = document.createElement('li');
