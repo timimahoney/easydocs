@@ -33,7 +33,8 @@ PageStack.prototype.push = function(page, animated) {
 
   this.updatePageTitle();
   window.postMessage({ type: 'pageview' }, '*');
-  this.loadAndShowPage(page, animated);
+  var style = this._stack.length > 1 ? this.PAGE_BEFORE_SHOW_STYLE : null;
+  this._loadAndShowPage(page, animated, style);
 };
 
 PageStack.prototype.updateLocationBarUrl = function() {
@@ -82,15 +83,15 @@ PageStack.prototype._stateObjectForPage = function(page) {
   };
 };
 
-PageStack.prototype.loadAndShowPage = function(page, animated) {
+PageStack.prototype._loadAndShowPage = function(page, animated, style) {
   var self = this;
   page.load(function() {
     if (page.element) {
       if (self._currentPage) {
-        self.hide(self._currentPage, animated);
+        self.hide(self._currentPage, animated, style);
       }
       self._currentPage = page;
-      self.show(self._currentPage, animated);
+      self.show(self._currentPage, animated, style);
     }
   });
 };
