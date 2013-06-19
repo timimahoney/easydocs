@@ -57,7 +57,7 @@ Object.defineProperty(ClassPage.prototype, 'currentMember', {
   }
 });
 
-ClassPage.prototype.isValidUrl = function(url) {
+ClassPage.isValidUrl = function(url) {
   if (!url) {
     return false;
   }
