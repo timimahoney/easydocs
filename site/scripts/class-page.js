@@ -33,7 +33,7 @@ Object.defineProperty(ClassPage.prototype, 'interfaceData', {
         parent = parent.parent;
       }
       var stringSort = function(a, b) {
-        return a.localCompare(b);
+        return a.name.localeCompare(b.name);
       };
       this._methods.sort(stringSort);
       this._attributes.sort(stringSort);
