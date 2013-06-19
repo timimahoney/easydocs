@@ -199,6 +199,6 @@ InterfaceListItem.prototype._onClickInterface = function() {
     return;
   }
 
-  var clickInterfaceEvent = new CustomEvent(this.CLICKED_INTERFACE, { detail: self });
+  var clickInterfaceEvent = new CustomEvent(InterfaceListItem.CLICKED_INTERFACE, { detail: this });
   this.element.dispatchEvent(clickInterfaceEvent);
 };
