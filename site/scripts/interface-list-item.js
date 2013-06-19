@@ -36,7 +36,7 @@ window.InterfaceListItem = function() {
   this.isHeaderClickable = true;
 };
 
-InterfaceListItem.prototype.CLICKED_INTERFACE = 'clicked interface';
+InterfaceListItem.CLICKED_INTERFACE = 'clicked interface';
 
 Object.defineProperty(InterfaceListItem.prototype, 'interfaceData', {
   get: function() {
