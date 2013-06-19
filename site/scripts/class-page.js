@@ -147,7 +147,7 @@ ClassPage.prototype._undimAll = function() {
 
 ClassPage.prototype._dimAllExceptCurrentMember = function() {
   var allMembers = this._attributes.concat(this._methods);
-  var memberIndex = allMembers.index(this._currentMember);
+  var memberIndex = allMembers.indexOf(this._currentMember);
   allListItems.forEach(function(item, index) {
     if (index == memberIndex) {
       item.classList.remove('dim', 'transition');
@@ -187,7 +187,7 @@ ClassPage.prototype._updatePlacemarker = function() {
   });
 
   var firstVisibleIndex = allChildren.indexOf(visibleChildren[0]);
-  var lastVisibleIndex = allChildren.index(visibleChildren[visibleChildren.length - 1]);
+  var lastVisibleIndex = allChildren.indexOf(visibleChildren[visibleChildren.length - 1]);
 
   var allSidebarChildren = nodeListToArray(this._attributesSidebarList.childNodes).concat(nodeListToArray(this._methodsSidebarList.childNodes));
   var firstSidebarItem = allSidebarChildren[firstVisibleIndex];
