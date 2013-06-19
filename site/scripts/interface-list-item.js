@@ -75,7 +75,7 @@ Object.defineProperty(InterfaceListItem.prototype, 'showOwnerClass', {
 
 Object.defineProperty(InterfaceListItem.prototype, 'isHeaderClickable', {
   get: function() {
-    return this._showOwnerClass;
+    return this._isHeaderClickable;
   },
   set: function(isHeaderClickable) {
     this._isHeaderClickable = isHeaderClickable;
@@ -195,7 +195,7 @@ InterfaceListItem.prototype._updateInfo = function() {
 };
 
 InterfaceListItem.prototype._onClickInterface = function() {
-  if (!isHeaderClickable) {
+  if (!this.isHeaderClickable) {
     return;
   }
 
