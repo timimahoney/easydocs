@@ -1,7 +1,12 @@
 .search-page .site-description {
-  font-size: 1.2em;
-  margin: 0 2.1em;
-  max-width: 26.55em;
+  margin: 0 auto;
+  max-width: 34em;
+  padding: 0 0.7em;
+}
+
+.search-page .site-description p {
+  font-size: 2em;
+  color: #333;
 }
 
 .search-page .result-list {
@@ -86,12 +91,4 @@
 }
 
 @media screen and (max-width:555px) {
-
-  .search-page header .text {
-    padding: 0 0.7em;
-  }
-
-  .search-page .site-description {
-    margin: 0 0.62em;
-  }
 }
