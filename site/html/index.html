@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:100,200,300,400,500,600,700' rel='stylesheet' type='text/css' />
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css' />
   <link href='http://weloveiconfonts.com/api/?family=entypo' rel='stylesheet' type='text/css' />
@@ -13,55 +15,33 @@
   <link rel='stylesheet' type='text/css' href='/css/page_stack.css' />
   <link rel='stylesheet' type='text/css' href='/css/search_page.css' />
 
-  <script type='text/ruby' src='/script/loading_screen.rb'></script>
+  <!-- <script type='text/ruby' src='/script/loading_screen.rb'></script>
   <script type='text/ruby'>
     $loading_screen = LoadingScreen.new
     $window.add_event_listener('load') do 
      $window.set_timeout(100) { $loading_screen.show if $loading_screen }
     end
-  </script>
-  <script type='text/ruby' src='/script/require.rb'></script>
-  <script type='text/ruby' src='/script/index.rb'></script>
+  </script> -->
+  <!-- <script data-main='scripts/index' src='/scripts/require.js'></script> -->
+  <!-- <script src='/scripts/require-old.js'></script> -->
 
-  <script type='text/javascript'>
-    // If the browser doesn't support Ruby, 
-    // then the no-Ruby message will still be there.
-    window.addEventListener('load', function() {
-      window.setTimeout(function() {
-        noRubyMessage = document.querySelector('.no-ruby-message');
-        if (noRubyMessage) {
-          noRubyMessage.classList.add('transition');
-          noRubyMessage.classList.remove('none');
-          ga('send', 'pageview', '/no-ruby');
-        }
-      }, 1000);
-    });
-  </script>
-
-  <script type='text/javascript' src='/script/analytics.js'></script>
+  <script src='/scripts/helpers.js'></script>
+  <script src='/scripts/page.js'></script>
+  <script src='/scripts/search-page.js'></script>
+  <script src='/scripts/interface-loader.js'></script>
+  <script src='/scripts/interface-database.js'></script>
+  <script src='/scripts/interface-list-item.js'></script>
+  <script src='/scripts/class-page.js'></script>
+  <script src='/scripts/page-stack.js'></script>
+  <script src='/scripts/url-handler.js'></script>
+  <script src='/scripts/web-docs.js'></script>
+  <script src='/scripts/index.js'></script>
 
   <title>EasyDocs: Reference for the web platform API</title>
 
 </head>
 
 <body>
-
-  <div class='no-ruby-message none'>
-    <p>
-      <strong>EasyDocs</strong> lets you quickly explore the open web platform API.
-    </p>
-
-    <p>
-      It was built with Ruby, but your browser doesn't support Ruby.<br/>No browsers do, so don't feel bad. You can download <a target='_blank' href='http://trydecaf.org'>Decaf</a> to use the application, view the source <a target='_blank' href='https://github.com/timahoney/easydocs'>on GitHub</a>, or  <a target='_blank' href='http://www.youtube.com/watch?v=3zsoERojVQs'>watch a video</a>.
-    </p>
-  </div>
-
-  <div class='old-version-message none'>
-    <p>
-      The version of Decaf you're on does not fully support <strong><code>push_state</code></strong>. Please <a href='http://trydecaf.org/latest'>download the latest version</a>.
-    </p>
-  </div>
-
 </body>
 
 

@@ -123,4 +123,29 @@ a:visited:active {
     font-size: 0.8em;
   }
 
+  .no-ruby-message, .old-version-message {
+    top: 0.1em;
+    right: 0.1em;
+    bottom: 0.1em;
+    left: 0.1em;
+    padding: 0.5em;
+    margin: 0;
+    height: auto;
+    width: auto;
+  }
+}
+
+@media screen and (max-width:480px) {
+
+  .no-ruby-message, .old-version-message {
+    font-size: 1em;
+    top: 0.1em;
+    right: 0.1em;
+    bottom: 0.1em;
+    left: 0.1em;
+    padding: 0.5em;
+    margin: 0;
+    height: auto;
+    width: auto;
+  }
 }
