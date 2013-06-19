@@ -4,13 +4,13 @@ window.InterfaceListItem = function() {
 
   this._titleContainer = document.createElement('div');
   this._titleContainer.classList.add('interface-header');
-  this._ownerClass = document.createElement('span');
-  this._ownerClass.classList.add('owner-class');
-  this._titleContainer.appendChild(this._ownerClass);
   this._title = document.createElement('span');
   this._title.classList.add('interface-name');
   this._titleContainer.appendChild(this._title);
   this._titleContainer.onclick = this._onClickInterface.bind(this);
+  this._ownerClass = document.createElement('span');
+  this._ownerClass.classList.add('owner-class');
+  this._titleContainer.appendChild(this._ownerClass);
   this.element.appendChild(this._titleContainer);
 
   this._content = document.createElement('div');
