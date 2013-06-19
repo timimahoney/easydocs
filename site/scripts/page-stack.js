@@ -150,7 +150,7 @@ PageStack.prototype._onPopState = function(event) {
     return;
   }
 
-  var pageIndex = this._stack.index(pageToShow);
+  var pageIndex = this._stack.indexOf(pageToShow);
   var previousIndex = this._stack.indexOf(this._currentPage);
   if (previousIndex == -1) {
     previousIndex = 0;
