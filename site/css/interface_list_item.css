@@ -6,6 +6,7 @@ li.interface-list-item {
 }
 
 .interface-list-item .interface-header {
+  cursor: default;
   display: block;
   text-decoration: none;
   padding: 0.4em 1em 0.2em 1em;
