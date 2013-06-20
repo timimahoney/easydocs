@@ -17,13 +17,14 @@
 }
 
 .search-page header {
+  margin: 0 auto;
   margin-bottom: 1em;
+  max-width: 34em;
 }
 
 .search-page header .text {
   position: relative;
-  max-width: 34em;
-  margin: 0.8em auto 0.5em auto;
+  margin: 0.8em 0 0.5em 0;
   padding: 0 0.3em;
 }
 
@@ -51,9 +52,11 @@
   bottom: 0;
   font-size: 1.5em;
   width: 2em;
+  text-align: right;
+  padding-right: 0.2em;
   font-weight: 600;
   color: #fff;
-  text-shadow: 0 0.05em 0.1em #aaa;
+  text-shadow: 0 0.05em 0.1em #999;
   text-decoration: none;
   transition-duration: 0.1s;
 }
@@ -70,7 +73,6 @@
 
 .search-page .input-row {
   height: 3.6em;
-  background: #eee;
 }
 
 .search-page .input-container {
@@ -93,8 +95,8 @@
   padding: 0.1em 0.5em;
   color: #444;
   border: none;
-  box-shadow: 1px 1px 0.2em rgba(0, 0, 0, 0.1);
-  background-color: #fefefe;
+  box-shadow: 1px 1px 0.2em rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
 .search-page .display-none {
