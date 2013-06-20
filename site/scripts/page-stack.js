@@ -100,7 +100,7 @@ PageStack.prototype.show = function(page, animated, style) {
   }
 
   animated = defaultIfUndefinedOrNull(animated, true);
-  style = defaultIfUndefinedOrNull(style, 'page-stack-before-show');
+  style = defaultIfUndefinedOrNull(style, null);
 
   page._willAppear();
   page.element.classList.add('page-stack-transition', 'before-show-transparency', style);
