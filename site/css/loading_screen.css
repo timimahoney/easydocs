@@ -58,6 +58,11 @@
                                       #EED776 85%,
                                       #5577AA 85%);
   box-shadow: 0 0.1em 0.4em #111;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-name: moveacross;
+  animation-direction: alternate;
   -webkit-animation-duration: 5s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: infinite;
@@ -66,6 +71,18 @@
 }
 
 @-webkit-keyframes moveacross {
+  from {
+    left: 0;
+    right: -41.4em;
+  }
+
+  to {
+    left: -41.4em;
+    right: 0;
+  }
+}
+
+@keyframes moveacross {
   from {
     left: 0;
     right: -41.4em;
