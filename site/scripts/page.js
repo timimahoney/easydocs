@@ -24,7 +24,7 @@ Page.prototype.locationBarUrl = function() {
 };
 
 Page.prototype.pageTitle = function() {
-  return 'EasyDocs: Reference for the web platform API';
+  return 'Webster: Reference for the web platform API';
 };
 
 Page.prototype._willAppear = function() {};

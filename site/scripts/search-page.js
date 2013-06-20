@@ -80,10 +80,10 @@ SearchPage.prototype.locationBarUrl = function() {
 
 SearchPage.prototype.pageTitle = function() {
   if (!this.searchText || this.searchText.length === 0) {
-    return 'EasyDocs: Reference for the web platform API';
+    return 'Webster: Reference for the web platform API';
   }
 
-  return '"' + this.searchText + '": EasyDocs';
+  return '"' + this.searchText + '": Webster';
 };
 
 SearchPage.prototype._didAppear = function() {

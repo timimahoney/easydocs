@@ -87,7 +87,7 @@ ClassPage.prototype.pageTitle = function() {
     return null;
   }
 
-  return this._interfaceData.name + ': EasyDocs';
+  return this._interfaceData.name + ': Webster';
 };
 
 ClassPage.prototype._willAppear = function() {
