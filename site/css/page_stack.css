@@ -25,15 +25,15 @@
 .page-stack .after-hide-position {
   transform: translateX(-0.5em);
   -webkit-transform: translateX(-0.5em);
-  filter: blur(0.1em);
-  -webkit-filter: blur(0.1em);
+  filter: blur(0.3em);
+  -webkit-filter: blur(0.3em);
 }
 
 .page-stack .before-show-position {
   transform: translateX(0.5em);
   -webkit-transform: translateX(0.5em);
-  filter: blur(0.1em);
-  -webkit-filter: blur(0.1em);
+  filter: blur(0.3em);
+  -webkit-filter: blur(0.3em);
 }
 
 .page-stack .before-show-transparency {
@@ -41,5 +41,5 @@
 }
 
 .page-stack .after-hide-transparency {
-  opacity: 1;
+  opacity: 0;
 }
