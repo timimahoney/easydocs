@@ -8,12 +8,6 @@
   padding: 0;
 }
 
-.class-page .container {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-
 .class-page .content {
   position: absolute;
   top: 0;
@@ -41,6 +35,10 @@
 
 .class-page .content h2.attributes {
   margin-left: 0.14em;
+}
+
+.class-page .member-list, .class-page .interface-description {
+  max-width: 34em;
 }
 
 .class-page .member-list {
