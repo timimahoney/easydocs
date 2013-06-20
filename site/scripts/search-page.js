@@ -34,7 +34,6 @@ Object.defineProperty(SearchPage.prototype, 'interfaces', {
   },
   set: function(newInterfaces) {
     this._interfaces = newInterfaces;
-    this._siteDescription.style.display = 'none';
 
     if (!this._interfaces) {
       this._interfaceListItems.forEach(function(item) {
@@ -92,7 +91,6 @@ SearchPage.prototype._didLoad = function() {
   this._input = this.element.querySelector('#search-input');
   this._resultList = this.element.querySelector('.result-list');
   this._header = this.element.querySelector('header');
-  this._siteDescription = this.element.querySelector('.site-description');
 
   this._input.addEventListener('keyup', this._onSearchChange.bind(this));
 
