@@ -49,7 +49,9 @@ Object.defineProperty(InterfaceListItem.prototype, 'interfaceData', {
       return;
     }
 
-    this.element.classList.remove('class', 'method', 'attribute');
+    this.element.classList.remove('class');
+    this.element.classList.remove('method');
+    this.element.classList.remove('attribute');
     this.element.classList.add(this._interface.interfaceType);
 
     this._updateHeader();

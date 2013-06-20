@@ -103,11 +103,14 @@ PageStack.prototype.show = function(page, animated, style) {
   style = defaultIfUndefinedOrNull(style, this.PAGE_BEFORE_SHOW_STYLE);
 
   page._willAppear();
-  page.element.classList.add('page-stack-transition', 'before-show-transparency', style);
+  page.element.classList.add('page-stack-transition');
+  page.element.classList.add('before-show-transparency');
+  page.element.classList.add(style);
   this.element.appendChild(page.element);
 
   window.setTimeout(function() {
-    page.element.classList.remove(style, 'before-show-transparency');
+    page.element.classList.remove(style);
+    page.element.classList.remove('before-show-transparency');
 
     window.setTimeout(function() {
       page.element.classList.remove('page-stack-transition');
@@ -127,10 +130,14 @@ PageStack.prototype.hide = function(page, animated, style) {
   page._willDisappear();
 
   if (animated) {
-    page.element.classList.add('page-stack-transition', 'after-hide-transparency', style);
+    page.element.classList.add('page-stack-transition');
+    page.element.classList.add('after-hide-transparency');
+    page.element.classList.add(style);
     window.setTimeout(function() {
       this.element.removeChild(page.element);
-      page.element.classList.remove('page-stack-transition', 'after-hide-transparency', style);
+      page.element.classList.remove('page-stack-transition');
+      page.element.classList.remove('after-hide-transparency');
+      page.element.classList.remove(style);
       page._didDisappear();
     }.bind(this), 300);
   } else {

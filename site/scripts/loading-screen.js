@@ -35,7 +35,9 @@ var LoadingScreen = {
 
   _initializeElement: function() {
     this._element = document.createElement('div');
-    this._element.classList.add('loading-screen', 'hidden', 'transition');
+    this._element.classList.add('loading-screen');
+    this._element.classList.add('hidden');
+    this._element.classList.add('transition');
 
     var container = document.createElement('div');
     container.classList.add('loading-container');

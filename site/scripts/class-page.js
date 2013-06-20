@@ -154,9 +154,11 @@ ClassPage.prototype._dimAllExceptCurrentMember = function() {
   allListItems = allListItems.concat(nodeListToArray(this._methodsList.childNodes));
   allListItems.forEach(function(item, index) {
     if (index == memberIndex) {
-      item.classList.remove('dim', 'transition');
+      item.classList.remove('dim');
+      item.classList.remove('transition');
     } else {
-      item.classList.add('dim', 'transition');
+      item.classList.add('dim');
+      item.classList.add('transition');
     }
   });
 };
