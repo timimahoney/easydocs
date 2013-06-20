@@ -31,8 +31,7 @@ PageStack.prototype.push = function(page, animated) {
 
   this.updatePageTitle();
   window.postMessage({ type: 'pageview' }, '*');
-  var style = this._stack.length > 1 ? this.PAGE_BEFORE_SHOW_STYLE : null;
-  this._loadAndShowPage(page, animated, style);
+  this._loadAndShowPage(page, animated);
 };
 
 PageStack.prototype.updateLocationBarUrl = function() {
@@ -81,17 +80,16 @@ PageStack.prototype._stateObjectForPage = function(page) {
   };
 };
 
-PageStack.prototype._loadAndShowPage = function(page, animated, style) {
-  var self = this;
+PageStack.prototype._loadAndShowPage = function(page, animated) {
   page.load(function() {
     if (page.element) {
-      if (self._currentPage) {
-        self.hide(self._currentPage, animated, style);
+      if (this._currentPage) {
+        this.hide(this._currentPage, animated);
       }
-      self._currentPage = page;
-      self.show(self._currentPage, animated, style);
+      this._currentPage = page;
+      this.show(this._currentPage, animated);
     }
-  });
+  }.bind(this));
 };
 
 PageStack.prototype.show = function(page, animated, style) {
