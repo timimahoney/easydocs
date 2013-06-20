@@ -11,6 +11,8 @@ li.interface-list-item {
   text-decoration: none;
   padding: 0.4em 1em 0.2em 1em;
   border-left: 0.5em solid;
+  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
 }
 
 .interface-list-item .webplatform-link {
