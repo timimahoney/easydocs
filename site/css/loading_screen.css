@@ -18,11 +18,26 @@
 }
 
 .loading-screen p {
-  font-size: 2em;
+  position: absolute;
+  top: 0;
+  left: -20em;
+  right: -20em;
   margin: 0;
+  font-size: 2em;
   text-align: center;
-  color: rgba(255, 255, 255, 0.8);
+  /*color: rgba(255, 255, 255, 0.8);*/
+  color: transparent;
   font-weight: 200;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-name: fadetext;
+  animation-direction: alternate;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: fadetext;
+  -webkit-animation-direction: alternate;
 }
 
 .loading-screen .loading-bar {
@@ -91,5 +106,29 @@
   to {
     left: -41.4em;
     right: 0;
+  }
+}
+
+@keyframes fadetext {
+  0% {
+    letter-spacing: 0;
+    text-shadow: 0 0 1px #fff;
+  }
+
+  100% {
+    letter-spacing: 1em;
+    text-shadow: 0 0 50px #fff;
+  }
+}
+
+@-webkit-keyframes fadetext {
+  0% {
+    letter-spacing: 0;
+    text-shadow: 0 0 1px #fff;
+  }
+
+  100% {
+    letter-spacing: 1em;
+    text-shadow: 0 0 50px #fff;
   }
 }
