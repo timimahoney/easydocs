@@ -100,7 +100,7 @@ PageStack.prototype.show = function(page, animated, style) {
   }
 
   animated = defaultIfUndefinedOrNull(animated, true);
-  style = defaultIfUndefinedOrNull(style, null);
+  style = defaultIfUndefinedOrNull(style, this.PAGE_BEFORE_SHOW_STYLE);
 
   page._willAppear();
   page.element.classList.add('page-stack-transition', 'before-show-transparency', style);
@@ -116,13 +116,13 @@ PageStack.prototype.show = function(page, animated, style) {
   }.bind(this), 0);
 };
 
-PageStack.prototype.hide = function(page, style, animated) {
+PageStack.prototype.hide = function(page, animated, style) {
   if (!page) {
     return;
   }
 
-  style = defaultIfUndefinedOrNull(style, this.PAGE_AFTER_HIDE_STYLE);
   animated = defaultIfUndefinedOrNull(animated, true);
+  style = defaultIfUndefinedOrNull(style, this.PAGE_AFTER_HIDE_STYLE);
 
   page._willDisappear();
 
@@ -158,9 +158,9 @@ PageStack.prototype._onPopState = function(event) {
   previousPageNewStyle = goingForward ? this.PAGE_AFTER_HIDE_STYLE : this.PAGE_BEFORE_SHOW_STYLE;
   nextPageNewStyle = goingForward ? this.PAGE_BEFORE_SHOW_STYLE : this.PAGE_AFTER_HIDE_STYLE;
 
-  this.hide(this._currentPage, previousPageNewStyle);
+  this.hide(this._currentPage, true, previousPageNewStyle);
   this._currentPage = pageToShow;
-  this.show(this._currentPage, nextPageNewStyle);
+  this.show(this._currentPage, true, nextPageNewStyle);
 
   this.updatePageTitle();
   window.postMessage({ type: 'pageview' }, '*');
