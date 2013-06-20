@@ -12,13 +12,13 @@
   top: 50%;
   left: 0;
   right: 0;
-  height: 5.5em;
+  height: 4.2em;
   margin-top: -2.75em;
   font-size: 1.5em;
 }
 
 .loading-screen p {
-  font-size: 3em;
+  font-size: 2em;
   margin: 0;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
@@ -44,6 +44,19 @@
                               #EED776 71%,
                               #EED776 85%,
                               #5577AA 85%);
+  background: -webkit-linear-gradient(0,
+                                      #C45E5A 14%,
+                                      #EED776 14%,
+                                      #EED776 28%,
+                                      #5577AA 28%,
+                                      #5577AA 42%,
+                                      #EED776 42%,
+                                      #EED776 57%,
+                                      #C45E5A 57%,
+                                      #C45E5A 71%,
+                                      #EED776 71%,
+                                      #EED776 85%,
+                                      #5577AA 85%);
   box-shadow: 0 0.1em 0.4em #111;
   -webkit-animation-duration: 5s;
   -webkit-animation-timing-function: ease-in-out;
