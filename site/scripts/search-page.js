@@ -77,7 +77,7 @@ SearchPage.prototype.locationBarUrl = function() {
 
 SearchPage.prototype.pageTitle = function() {
   if (!this.searchText || this.searchText.length === 0) {
-    return 'Webster: Reference for the web platform API';
+    return 'Webster: Reference for the web';
   }
 
   return '"' + this.searchText + '": Webster';
