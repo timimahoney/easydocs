@@ -59,6 +59,7 @@
   text-shadow: 0 0.05em 0.1em #999;
   text-decoration: none;
   transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
 }
 
 .search-page header .text .info-button:hover {
