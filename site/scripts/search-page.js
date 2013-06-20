@@ -100,6 +100,19 @@ SearchPage.prototype._didLoad = function() {
     this.searchText = this._initialSearchText;
     delete this._initialSearchText;
   }
+
+  this.element.querySelector('.info-button').onclick = this._onClickInfo;
+};
+
+SearchPage.prototype._onClickInfo = function(event) {
+  // Allow them to open the link in a new window or tab.
+  if (event.ctrlKey || event.metaKey) {
+    return;
+  }
+
+  event.preventDefault();
+  var infoPage = new InfoPage();
+  WebDocs.pageStack.push(infoPage, true);
 };
 
 SearchPage.prototype._onSearchChange = function(event) {

@@ -6,6 +6,9 @@ var URLHandler = {
     var remainingUrl = splitPath.join('/');
 
     switch (topLevelPath) {
+      case 'info':
+        return new InfoPage(remainingUrl);
+
       case 'search':
         return new SearchPage(remainingUrl);
 

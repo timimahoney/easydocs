@@ -1,0 +1,19 @@
+.info-page h1 {
+  font-size: 4em;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: 0.8em;
+  color: #444;
+}
+
+.info-page h2 {
+  font-size: 2em;
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  color: #aaa;
+}
+
+.info-page p {
+  color: #444;
+}

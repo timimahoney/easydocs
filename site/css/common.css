@@ -93,6 +93,16 @@ p {
   margin-left: -15em;
 }
 
+.color-border {
+  height: 0.7em;
+  background: linear-gradient(90deg, 
+                              #C45E5A 33%, 
+                              #EED776 33%, 
+                              #EED776 67%, 
+                              #5577AA 67%);
+  opacity: 0.9;
+}
+
 a {
   color: #5577AA;
   font-weight: 600;
@@ -127,8 +137,6 @@ a:visited:active {
     font-size: 0.8em;
   }
 }
-
-
 
 @media screen and (max-width:455px) {
 

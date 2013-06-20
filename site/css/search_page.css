@@ -21,6 +21,7 @@
 }
 
 .search-page header .text {
+  position: relative;
   max-width: 34em;
   margin: 0.8em auto 0.5em auto;
   padding: 0 0.3em;
@@ -44,13 +45,28 @@
   color: #aaa;
 }
 
-.search-page header .border {
-  height: 0.7em;
-  background: linear-gradient(90deg, 
-                              #C45E5A 33%, 
-                              #EED776 33%, 
-                              #EED776 67%, 
-                              #5577AA 67%);
+.search-page header .text .info-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 1.5em;
+  width: 2em;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0.05em 0.1em #aaa;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.search-page header .text .info-button:hover {
+  text-shadow: 0 0.05em 0.2em #888;
+  cursor: pointer;
+}
+
+.search-page header .text .info-button:active {
+  color: #f7f7f7;
+  text-shadow: 0 0.05em 0.1em #888;
 }
 
 .search-page .input-row {
