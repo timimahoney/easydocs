@@ -160,8 +160,8 @@ PageStack.prototype._onPopState = function(event) {
     previousIndex = 0;
   }
   var goingForward = (pageIndex > previousIndex);
-  previousPageNewStyle = goingForward ? this.PAGE_AFTER_HIDE_STYLE : this.PAGE_BEFORE_SHOW_STYLE;
-  nextPageNewStyle = goingForward ? this.PAGE_BEFORE_SHOW_STYLE : this.PAGE_AFTER_HIDE_STYLE;
+  var previousPageNewStyle = goingForward ? this.PAGE_AFTER_HIDE_STYLE : this.PAGE_BEFORE_SHOW_STYLE;
+  var nextPageNewStyle = goingForward ? this.PAGE_BEFORE_SHOW_STYLE : this.PAGE_AFTER_HIDE_STYLE;
 
   this.hide(this._currentPage, true, previousPageNewStyle);
   this._currentPage = pageToShow;
