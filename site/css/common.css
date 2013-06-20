@@ -100,6 +100,11 @@ p {
                               #EED776 33%, 
                               #EED776 67%, 
                               #5577AA 67%);
+  background: -webkit-linear-gradient(0, 
+                                      #C45E5A 33%, 
+                                      #EED776 33%, 
+                                      #EED776 67%, 
+                                      #5577AA 67%);
   opacity: 0.9;
 }
 
