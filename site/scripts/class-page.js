@@ -162,6 +162,11 @@ ClassPage.prototype._dimAllExceptCurrentMember = function() {
 };
 
 ClassPage.prototype._onClickSearch = function(event) {
+  if (event.ctrlKey || event.metaKey) {
+    return;
+  }
+
+  event.preventDefault();
   var searchPage = new SearchPage();
   WebDocs.pageStack.push(searchPage, true);
 };

@@ -2,7 +2,7 @@ window.InterfaceListItem = function() {
   this.element = document.createElement('li');
   this.element.classList.add('interface-list-item');
 
-  this._titleContainer = document.createElement('div');
+  this._titleContainer = document.createElement('a');
   this._titleContainer.classList.add('interface-header');
   this._title = document.createElement('span');
   this._title.classList.add('interface-name');
@@ -90,11 +90,17 @@ Object.defineProperty(InterfaceListItem.prototype, 'isHeaderClickable', {
 InterfaceListItem.prototype._updateHeader = function() {
   this._title.innerText = this._interface.name;
 
+  var websterUrl = '/class/';
+
   if (this._interface.owner) {
+    websterUrl += this._interface.owner.name + '/';
     this._ownerClass.innerText = this._interface.owner.name;
   } else {
     this._ownerClass.innerHTML = '';
   }
+
+  websterUrl += this._interface.name;
+  this._titleContainer.href = websterUrl;
 };
 
 InterfaceListItem.prototype._updateDeclaration = function() {
@@ -194,11 +200,17 @@ InterfaceListItem.prototype._updateInfo = function() {
   }, this);
 };
 
-InterfaceListItem.prototype._onClickInterface = function() {
+InterfaceListItem.prototype._onClickInterface = function(event) {
   if (!this.isHeaderClickable) {
     return;
   }
 
+  // Allow them to open the link in a new window or tab.
+  if (event.metaKey || event.ctrlKey) {
+    return;
+  }
+
+  event.preventDefault();
   var clickInterfaceEvent = new CustomEvent(InterfaceListItem.CLICKED_INTERFACE, { detail: this });
   this.element.dispatchEvent(clickInterfaceEvent);
 };
