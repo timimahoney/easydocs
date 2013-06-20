@@ -1,5 +1,3 @@
-console.log('Running helpers.js');
-
 function defaultIfUndefinedOrNull(object, defaultValue) {
   if (typeof object === 'undefined' || object === null) {
     return defaultValue;

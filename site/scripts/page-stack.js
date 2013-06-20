@@ -1,5 +1,3 @@
-console.log('Running page-stack.js');
-
 window.PageStack = function() {
   Page.call(this, 'page-stack');
   this._currentPage = null;

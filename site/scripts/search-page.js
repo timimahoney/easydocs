@@ -1,5 +1,3 @@
-console.log('Running search-page.js');
-
 var SearchPage = function(url) {
   Page.call(this, 'search');
   this._interfaceListItems = [];

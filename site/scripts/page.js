@@ -1,5 +1,3 @@
-console.log('Running page.js');
-
 var Page = function(pageName) {
   this.pageName = pageName;
   this.element = null;

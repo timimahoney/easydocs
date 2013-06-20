@@ -1,5 +1,3 @@
-console.log('Running url-handler.js');
-
 var URLHandler = {
 
   pageForUrl: function(url) {

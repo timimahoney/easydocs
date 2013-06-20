@@ -1,5 +1,3 @@
-console.log('Running web-docs.js');
-
 window.WebDocs = {
   pageStack: new PageStack(),
 
