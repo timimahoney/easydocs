@@ -25,7 +25,7 @@
 .search-page header .text {
   position: relative;
   margin: 0.8em 0 0.5em 0;
-  padding: 0 0.3em;
+  padding: 0;
 }
 
 .search-page header h1 {
@@ -72,27 +72,29 @@
 }
 
 .search-page .input-row {
-  height: 3.6em;
+  position: relative;
+  height: 4em;
+  max-width: 34em;
+  margin: 0 auto;
 }
 
 .search-page .input-container {
-  position: relative;
-  top: 0.45em;
-  max-width: 34em;
-  height: 2.7em;
-  margin: 0 auto;
-  padding: 0 0.4em;
+  position: absolute;
+  top: 0.7em;
+  right: 0;
+  bottom: 0.7em;
+  left: 0;
+  /*padding: 0 0.4em;*/
 }
 
 .search-page input {
-  position: absolute;
-  top: 0;
-  right: 0.1em;
-  bottom: 0;
-  left: 0.1em;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 0.4em;
   font-size: 1.7em;
   font-weight: 200;
-  padding: 0.1em 0.5em;
   color: #444;
   border: none;
   box-shadow: 1px 1px 0.2em rgba(0, 0, 0, 0.2);
