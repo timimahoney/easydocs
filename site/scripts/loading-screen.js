@@ -42,7 +42,7 @@ var LoadingScreen = {
     this._element.appendChild(container);
 
     text = document.createElement('p');
-    text.innerText = 'Loading data...';
+    text.innerHTML = 'Loading data...';
     container.appendChild(text);
 
     bar = document.createElement('div');

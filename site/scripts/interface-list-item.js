@@ -88,13 +88,13 @@ Object.defineProperty(InterfaceListItem.prototype, 'isHeaderClickable', {
 });
 
 InterfaceListItem.prototype._updateHeader = function() {
-  this._title.innerText = this._interface.name;
+  this._title.innerHTML = this._interface.name;
 
   var websterUrl = '/class/';
 
   if (this._interface.owner) {
     websterUrl += this._interface.owner.name + '/';
-    this._ownerClass.innerText = this._interface.owner.name;
+    this._ownerClass.innerHTML = this._interface.owner.name;
   } else {
     this._ownerClass.innerHTML = '';
   }
@@ -122,13 +122,13 @@ InterfaceListItem.prototype._updateDeclaration = function() {
 
   switch (type) {
   case 'method':
-    returnTypeElement.innerText = this._interface.returnType;
+    returnTypeElement.innerHTML = this._interface.returnType;
     this._appendMethodSignature();
     break;
   case 'attribute':
-    returnTypeElement.innerText = this._interface.type;
+    returnTypeElement.innerHTML = this._interface.type;
     var name = document.createElement('span');
-    name.innerText = this._interface.name;
+    name.innerHTML = this._interface.name;
     this._declaration.appendChild(name);
     break;
   }
@@ -136,7 +136,7 @@ InterfaceListItem.prototype._updateDeclaration = function() {
 
 InterfaceListItem.prototype._appendMethodSignature = function() {
   var methodName = document.createElement('span');
-  methodName.innerText = this._interface.name;
+  methodName.innerHTML = this._interface.name;
   this._declaration.appendChild(methodName);
 
   var parameters = document.createElement('span');
@@ -144,7 +144,7 @@ InterfaceListItem.prototype._appendMethodSignature = function() {
   this._interface.parameters.forEach(function(parameter) {
     var paramSpan = document.createElement('span');
     paramSpan.classList.add('parameter');
-    paramSpan.innerText = parameter.name;
+    paramSpan.innerHTML = parameter.name;
     parameters.appendChild(paramSpan);
   });
   this._declaration.appendChild(parameters);
@@ -183,11 +183,11 @@ InterfaceListItem.prototype._updateInfo = function() {
     var code = document.createElement('code');
     var name = document.createElement('span');
     name.classList.add('parameter-name');
-    name.innerText = parameter.name;
+    name.innerHTML = parameter.name;
     code.appendChild(name);
     var type = document.createElement('span');
     type.classList.add('parameter-type');
-    type.innerText = parameter.type;
+    type.innerHTML = parameter.type;
     code.appendChild(type);
     listItem.appendChild(code);
 

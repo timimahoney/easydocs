@@ -232,7 +232,7 @@ ClassPage.prototype._updateInterfaceElements = function() {
     methodsElement.style.display = this._methods.length === 0 ? 'none' : 'block';
   }, this);
 
-  this._titleElement.innerText = this.interfaceData.name;
+  this._titleElement.innerHTML = this.interfaceData.name;
   this._interfaceListItem.interfaceData = this.interfaceData;
 
   this._methods.forEach(function(method) {
@@ -253,7 +253,7 @@ ClassPage.prototype._addMemberElements = function(member, list, sidebarList) {
   list.appendChild(listItem.element);
 
   var sidebarItem = document.createElement('li');
-  sidebarItem.innerText = member.name;
+  sidebarItem.innerHTML = member.name;
   sidebarItem.classList.add(member.interfaceType);
   sidebarItem.classList.add('ellipsize');
   sidebarList.appendChild(sidebarItem);
