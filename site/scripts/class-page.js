@@ -324,11 +324,12 @@ ClassPage.prototype._findMember = function(memberName) {
 
   var lowercaseMemberName = memberName.toLowerCase();
   var allMembers = this._attributes.concat(this._methods);
-  allMembers.forEach(function(member) {
+  for (var i = 0; i < allMembers.length; i++) {
+    var member = allMembers[i];
     if (member.name.toLowerCase() == lowercaseMemberName) {
       return member;
     }
-  });
+  }
 
   return null;
 };
