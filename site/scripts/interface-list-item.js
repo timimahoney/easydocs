@@ -57,7 +57,7 @@ Object.defineProperty(InterfaceListItem.prototype, 'interfaceData', {
     this._updateHeader();
     this._updateDescription();
     this._updateDeclaration();
-    this._updateInfo();
+    this._updateMethodInfo();
   }
 });
 
@@ -147,6 +147,9 @@ InterfaceListItem.prototype._appendMethodSignature = function() {
     var paramSpan = document.createElement('span');
     paramSpan.classList.add('parameter');
     paramSpan.innerHTML = parameter.name;
+    if (parameter.optional) {
+      paramSpan.classList.add('optional');
+    }
     parameters.appendChild(paramSpan);
   });
   this._declaration.appendChild(parameters);
@@ -156,7 +159,7 @@ InterfaceListItem.prototype._updateDescription = function() {
   this._description.innerHTML = this._interface.description;
 };
 
-InterfaceListItem.prototype._updateInfo = function() {
+InterfaceListItem.prototype._updateMethodInfo = function() {
   this._methodInfo.innerHTML = '';
   if (this._interface.interfaceType != 'method') {
     return;
@@ -191,6 +194,14 @@ InterfaceListItem.prototype._updateInfo = function() {
     type.classList.add('parameter-type');
     type.innerHTML = parameter.type;
     code.appendChild(type);
+
+    if (parameter.optional) {
+      var optional = document.createElement('span');
+      optional.classList.add('parameter-optional');
+      optional.innerHTML = '(optional)';
+      code.appendChild(optional);
+    }
+
     listItem.appendChild(code);
 
     var description = document.createElement('div');

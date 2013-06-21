@@ -142,6 +142,11 @@ li.interface-list-item {
   content: ', ';
 }
 
+.interface-list-item .parameter.optional {
+  color: #aaa;
+  font-style: italic;
+}
+
 .interface-list-item .parameters span:last-of-type.parameter:after {
   content: none;
 }
@@ -194,6 +199,12 @@ li.interface-list-item {
 
 .interface-list-item .method-info .parameter-type {
   color: #aaa;
+}
+
+.interface-list-item .method-info .parameter-optional {
+  font-weight: 400;
+  color: #ccc;
+  font-style: italic;
 }
 
 .interface-list-item .method-info li {
